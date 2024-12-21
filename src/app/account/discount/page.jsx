@@ -1,0 +1,48 @@
+"use client"
+import { useState } from 'react'
+import { IoSearch, IoClipboardOutline } from 'react-icons/io5'
+export default function Myorders() {
+  let [allOrders, setAllOrders] = useState("");
+  return (
+    <section className="flex flex-col gap-4 max-md:gap-2">
+      <div className="w-full bg-white dark:bg-dark rounded-xl h-fit py-2 px-4">
+        <p className="font-bold text-xl dark:text-gray-200 text-slate-400">
+          My Orders
+        </p>
+      </div>
+      <div className=" w-full bg-white h-auto rounded-lg px-4 py-4">
+        <form className="w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2">
+          <input
+            className="w-full h-8 px-3 caret-secondary bg-slate-100 rounded-l-full outline-secondary"
+            type="text"
+            name="order_tracking_id"
+            placeholder="Order ID, Product or Store Name "
+          />
+          <button
+            className="bg-primary text-white font-semibold text-base px-2"
+            type="submit"
+          >
+            {" "}
+            <IoSearch />{" "}
+          </button>{" "}
+        </form>
+        <ul className="flex gap-4 font-semibold text-sm text-primary px-2">
+          <li>View All</li>
+          <li>To Pay</li>
+          <li>To Ship</li>
+          <li>Shipped</li>
+          <li>Processed</li>
+        </ul>
+        <hr className=" my-2" />
+        {allOrders ? (
+          <div className="">yes</div>
+        ) : (
+          <div className="w-full h-64 flex flex-col justify-center items-center text-slate-300">
+            <IoClipboardOutline className="text-4xl" />
+            <p>You have not made any order</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

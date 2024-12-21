@@ -1,0 +1,34 @@
+{
+  "name": "Product Name",
+  "description": "A brief description of the product.",
+  "image": ["image url 1","image url 2","image url 3","image url 4"],
+  "brand": {
+    "name": "Brand Name"
+  },
+  "offers": {
+    "price": 19.99,
+    "priceCurrency": "USD",
+    "availability": 12,
+    "sku": "PRODUCT-SKU-1234"
+  }, 
+  "category": "Category Name",
+  "subcategory": "Sub-category Name",
+  "segment": "Segment Name",
+  "color": "Red",
+  "size": "Medium",
+  "material": "Cotton", 
+  "mpn": "1234567890",
+  "url": "https://www.example.com/product-page",
+  "rating": { "rate": 4.1, "count": 259 },
+  "review": [ 
+    {
+      "author": "John Doe",
+      "reviewBody": "This product is great!",
+      "reviewRating": {
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1
+      }
+    }
+  ]
+}

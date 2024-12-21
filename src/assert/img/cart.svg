@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 25.19">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #4169E1;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: FranklinGothic-Medium, 'Franklin Gothic Medium';
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <path class="cls-1" d="m9.26,20.19c-1.38,0-2.49,1.13-2.49,2.5s1.11,2.49,2.49,2.49,2.5-1.11,2.5-2.49-1.12-2.5-2.5-2.5Z"/>
+      <path class="cls-1" d="m20.66,20.19c-1.38,0-2.5,1.12-2.5,2.5s1.12,2.49,2.5,2.49,2.49-1.11,2.49-2.49-1.1-2.5-2.49-2.5Z"/>
+      <path class="cls-1" d="m25.22,5.42C8.69,5.42,4.48,4.72,0,0c1.88,2.83,2.91,8.14,20.4,7.89,18.23-.27,7.11,4.71,3.87,10.33,10.21-9.12,17.47-12.79.94-12.79Z"/>
+    </g>
+    <text class="cls-2" transform="translate(7.34 19.12)"><tspan class="cls-3" x="0" y="0">1</tspan><tspan x="8.07" y="0">0</tspan></text>
+  </g>
+</svg>

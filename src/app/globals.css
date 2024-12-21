@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bar::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+  @apply dark:bg-dim;
+  @apply w-2;
+}
+
+.bar::-webkit-scrollbar-thumb {
+  @apply bg-dim;
+  @apply dark:bg-gray-400;
+  @apply w-2;
+  @apply rounded-full;
+}
+
+.bar::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.logo-fill_primary {
+  fill: #ff69b4;
+}
+.logo-fill_Secondary {
+  fill: #4169e1;
+}
+
+.scroll-none {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.scroll-none::-webkit-scrollbar {
+  @apply hidden;
+}
+
+.scroll-none::-webkit-scrollbar-track {
+  @apply hidden;
+}
+
+.trans-3 {
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
+}
+
+.visibility-none{
+  visibility: hidden;
+}
+
+.Imgfilter{
+  filter: saturate(0) sepia(0) contrast(0) hue-rotate(0) invert(0) grayscale(0) ;
+}
+
+.mask{
+ mask-size: contain; 
+ mask-position: center;
+ mask-mode: alpha;
+}
+
+.gradient{
+  animation-name: grad;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes grad {
+  0%{
+    background-color:  #d8d8d8;
+  }
+  100%{
+    background-color: #c7c7c7;
+  }
+}
+
+.animate-slider{
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+@keyframes slide {
+  0%{
+    width: 0px;
+  }
+  100%{
+    width: 20%;
+  }
+}
+.bg-ads{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-image: url("./assert/img/dish.jpg"); */
+}

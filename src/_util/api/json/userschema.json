@@ -1,0 +1,33 @@
+{
+    "customer": {
+      "firstName": "",
+      "lastName": "",
+      "email": {
+        "address": "",
+        "confirmed": false
+      },
+      "password": ""
+    },
+    "address": {
+      "shipping": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "city": "",
+        "state": "",
+        "postalCode": "",
+        "country": ""
+      },
+      "billing": {
+        "sameAsShipping": true, 
+        "addressLine1": "",
+        "addressLine2": "",
+        "city": "",
+        "state": "",
+        "postalCode": "",
+        "country": ""
+      }
+    },
+    "options": {
+      "subscribeToNewsletter": false 
+    }
+  }

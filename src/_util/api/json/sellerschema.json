@@ -1,0 +1,91 @@
+{
+    "seller_information": {
+      "title": "Seller Information",
+      "properties": {
+        "shop_name": {
+          "title": "Shop Name",
+          "description": "Enter the name of your shop"
+        },
+        "first_name": {
+          "title": "First Name"
+        },
+        "last_name": {
+          "title": "Last Name"
+        },
+        "email": {
+          "title": "Email Address",
+          "format": "email"
+        },
+        "phone_number": {
+          "title": "Phone Number",
+          "description": "Enter phone number in international format (e.g. +1234567890)"
+        }
+      },
+      "required": [
+        "shop_name",
+        "first_name",
+        "last_name",
+        "email"
+      ]
+    },
+    "account_details": {
+      "title": "Account Details",
+      "properties": {
+        "password": {
+          "title": "Password",
+          "minLength": 8
+        },
+        "confirm_password": {
+          "title": "Confirm Password"
+        }
+      },
+      "required": [
+        "password",
+        "confirm_password"
+      ]
+    },
+    "country": {
+        "type": "string",
+        "enum": [
+          "US",
+          "CA",
+          "GB",
+          "AU", 
+          "OTHER" 
+        ],
+        "title": "Country",
+        "description": "Select your country of residence."
+      },
+      "currency": {
+        "enum": [
+          "USD",
+          "CAD",
+          "GBP",
+          "AUD",
+          "OTHER"
+        ],
+        "title": "Preferred Currency",
+        "description": "Select the currency you'd like to use for your store."
+      },
+    "shop_details": {
+      "title": "Shop Details",
+      "properties": {
+        "shop_description": {
+          "title": "Shop Description",
+          "description": "Briefly describe your shop and the products you sell"
+        },
+        "shop_location": {
+          "title": "Shop Location"
+        },
+        "return_policy": {
+          "title": "Return Policy",
+          "description": "Describe your return and exchange policy"
+        }
+      },
+      "termsAndConditions": {
+        "title": "Terms and Conditions",
+        "description": "You must agree to our terms and conditions to continue."
+      }
+    }
+  }
+  
