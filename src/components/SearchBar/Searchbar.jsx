@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect,useRef } from "react";
-import categories from "@/_util/api/category";
+import depts from "@/_util/api/departments";
 import { IoAperture, IoSearch } from "react-icons/io5";
 import Selection from "../Selection/SelectionCard"
 import Search from "../Dropdown/Search";
@@ -15,9 +15,9 @@ export default function Searchbar() {
   let router = useRouter()
   useEffect(() => {
     setInterval(() => {
-      for (let i = 0; i < categories.length; i++) {
+      for (let i = 0; i < depts.length; i++) {
         setPlaceholderVal(
-          categories[Math.floor(Math.random() * categories.length)].name
+          depts[Math.floor(Math.random() * depts.length)].name
         );
       }
     }, 10000);
