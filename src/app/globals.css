@@ -95,3 +95,7 @@
   background-repeat: no-repeat;
   /* background-image: url("./assert/img/dish.jpg"); */
 }
+
+.hag{
+  left: unset;
+}

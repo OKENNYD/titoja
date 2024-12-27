@@ -5,6 +5,7 @@ import products from "@/_util/api/products";
 import departments from "@/_util/api/departments";
 import Link from "next/link";
 import Loader from "../Card/Loader";
+import { IoArrowForward } from "react-icons/io5";
 export default function Products() {
   let goods = [
     {
@@ -1040,10 +1041,11 @@ export default function Products() {
           key={i}
           className="flex flex-col gap-1 w-full justify-center m-auto"
         >
-          <span className="max-md:text-base text-dim dark:text-gray-400 font-normal text-lg border-l-2 border-primary px-2 m-1">
+          <Link href={"/" + _.name} className="max-md:text-base text-dim dark:text-gray-400 font-normal text-lg border-l-2 border-primary px-2 m-1 flex justify-between items-center rounded-r-2xl hover:dark:bg-dark hover:bg-white">
             {_.name}
-          </span>
-          <div className="w-full h-auto flex flex-wrap">
+            <IoArrowForward/>
+          </Link>
+          <div className="w-full h-auto flex overflow-x-scroll scroll-none overflow-y-scroll">
             {products
               ?.filter((a) => a.department === _.name)
               ?.map((_p, j) => {
@@ -1061,14 +1063,6 @@ export default function Products() {
                   />
                 );
               }) || <Loader />}
-            <div className=" max-2xl:w-1/6 max-xl:w-1/6 max-lg:w-1/4 max-md:w-1/4 max-sm:w-1/2 h-auto box-border flex justify-center items-center">
-              <Link
-                className="bg-primary text-white py-1 px-2 rounded-full text-base"
-                href="#"
-              >
-                Show more
-              </Link>
-            </div>
           </div>
         </div>
       ))}

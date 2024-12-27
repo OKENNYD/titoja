@@ -13,6 +13,7 @@ import Languages from "../Languages/Languages";
 import Theme from "../Toggle/Theme";
 import Nav from "../Nav/Nav";
 import { useTheme } from "next-themes";
+import Test from "../test/test";
 export default function Header() {
   let { theme } = useTheme();
   const { isMenu, setIsMenu, setIsDropDown } = useGlobalContext();
@@ -77,6 +78,7 @@ export default function Header() {
         </div>
       </div>
       <Nav />
+      {/* <Test/> */}
     </header>
   );
 }

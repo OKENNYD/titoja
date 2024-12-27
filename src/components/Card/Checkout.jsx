@@ -25,7 +25,7 @@ export default function CheckoutCard({
         priority
       />
       <div className=" w-full flex flex-col">
-        <p className="text-ellipsis capitalize text-lg max-md:text-sm dark:text-gray-200 font-medium text-dark">
+        <p className="text-ellipsis capitalize text-lg max-md:text-sm dark:text-gray-200 font-medium text-dark line-clamp-1">
           {title}
         </p>
         <div className=" w-full">

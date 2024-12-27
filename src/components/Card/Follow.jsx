@@ -8,7 +8,7 @@ export default function Follow() {
         <Link href={"shop"+"kidet"}></Link>
       <Image src={images.icon} alt="image" className="w-full h-auto aspect-square" />
       <div className="">
-        <p className=" text-center text-dark dark:text-gray-200 font-bold text-lg">Kidet stores</p>
+        <p className=" text-center text-dark dark:text-gray-200 font-bold text-lg line-clamp-1">Kidet stores</p>
         <div className="w-full justify-center gap-4 flex text-dim dark:text-gray-400">
             <div className="flex flex-col items-center justify-center">
               <IoHeartOutline size={20}/>

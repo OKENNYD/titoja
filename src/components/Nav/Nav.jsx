@@ -32,18 +32,18 @@ export default function Nav() {
               id="category"
               className={
                 activeDepartment === _d.id
-                  ? "place-content-around absolute dark:bg-dark bg-white shadow-sm shadow-slate-400 dark:shadow-dim p-4 mt-2 rounded-lg w-auto text-lg flex gap-4 text-nowrap font-normal text-dark"
+                  ? "place-content-around absolute dark:bg-dark bg-white shadow-sm shadow-slate-400 dark:shadow-dim p-4 mt-2 rounded-lg w-auto text-lg flex gap-4 text-nowrap font-normal text-dark left-[unset]"
                   : "hidden"
               }
             >
               {_d.categories?.map((_c, j) => (
                 <li key={j} className="relative">
-                  <p className="font-medium text-lg dark:text-gray-200">
+                  <p className="font-medium text-base dark:text-gray-200">
                     {_c.name}
                   </p>
                   <ul className="ml-2">
                     {_c.segments?.map((_s, k) => (
-                      <li key={k} className="text-base font medium">
+                      <li key={k} className="text-sm font medium">
                         <Link
                           className="font-normal text-dim dark:text-gray-400 text-lg hover:text-primary dark:hover:text-secondary"
                           href={

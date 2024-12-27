@@ -45,8 +45,8 @@ export default function CartCard(
         />
         <div className=" w-full flex flex-col ">
           <Link href={"item/" + id + "/" + title}>
-            <p className="text-ellipsis capitalize font-medium text-lg max-md:text-sm dark:text-gray-200 text-dark">
-              {title.length > 15 ? "Product Name" : title}
+            <p className="text-ellipsis capitalize font-medium text-lg max-md:text-sm dark:text-gray-200 text-dark line-clamp-1">
+              {title}
             </p>
           </Link>
           <div className=" w-full flex justify-between items-center">

@@ -34,8 +34,7 @@ export default function List(
         />
         <div className="h-full w-full flex flex-col ">
           <Link href={"item/"+id+"/"+title}>
-            <p className="sm:hidden capitalize font-semibold text-lg max-md:text-sm max-md:font-bold text-dim dark:text-gray-200 text-ellipsis ">{title.length > 20 ? title.slice(0, 20) + "..." : title}</p>
-            <p className="max-md:hidden capitalize font-bold text-xl max-md:text-sm max-md:font-bold text-dim dark:text-gray-200 text-ellipsis ">{title.length > 20 ? title.slice(0, 25) + "..." : title}</p>
+            <p className="capitalize font-semibold text-lg max-md:text-sm max-md:font-bold text-dim dark:text-gray-200 line-clamp-1">{title.length > 20 ? title.slice(0, 20) + "..." : title}</p>
           </Link>  
           <div className=" w-full flex justify-between items-center">
             <div className="">

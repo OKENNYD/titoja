@@ -5,7 +5,7 @@ export default function Faq() {
       <summary className="flex h-10 w-full px-3 py-2 justify-between items-center transition-all">
         <div className="flex gap-2 items-center">
           <FaChevronRight className="text-base dark:text-gray-200 text-dim" />
-          <p className="font-semibold dark:text-gray-200 text-dim">Topic Stays Here</p>
+          <p className="font-semibold dark:text-gray-200 text-dim line-clamp-1">Topic Stays Here</p>
         </div>
       </summary>
       <div className="px-3 pb-2">

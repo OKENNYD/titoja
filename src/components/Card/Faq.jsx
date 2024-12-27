@@ -8,7 +8,7 @@ export default function Faq() {
       <summary onClick={() => { setIsOpen(!isOpen) }} className="flex h-10 w-full px-3 py-2 justify-between items-center transition-all">
         <div className="flex gap-2 items-center">
           <FaQuestion className="text-lg dark:text-gray-200 text-dim" />
-          <p className="font-semibold text-dim dark:text-gray-200">Question Stays Here</p>
+          <p className="font-semibold text-dim dark:text-gray-200 line-clamp-1">Question Stays Here</p>
         </div>
         {isOpen ? <FaMinus className="text-lg text-slate-600 dark:text-gray-200" /> : <FaPlus className="text-lg text-dim dark:text-gray-200" />}
       </summary>

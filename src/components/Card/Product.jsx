@@ -46,7 +46,7 @@ export default function Product({
             ) : null}
           </div>
           <div className="w-auto p-1">
-            <p className="capitalize font-medium text-dark dark:text-gray-200 text-ellipsis max-2xl:text-lg max-xl:text-lg max-lg:text-base max-md:text-base max-sm:text-base">
+            <p className="capitalize font-medium text-dark dark:text-gray-200 text-ellipsis max-2xl:text-lg max-xl:text-lg max-lg:text-base max-md:text-base max-sm:text-base line-clamp-1">
               {title}
             </p>
             <div className="flex gap-1">

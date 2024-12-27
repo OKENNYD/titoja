@@ -9,7 +9,7 @@ export default function Bid({status,name,price}) {
   });
   return (
     <Link
-      href="/bid?id=2&name=okennyd"
+      href="/bid/1?id=2&name=okennyd"
       className="max-2xl:w-72 max-xl:w-72 max-lg:w-60 max-md:w-full max-sm:w-full h-fit flex gap-2 bg-white dark:bg-dark hover:shadow-2xl hover:shadow-gray-400 hover:dark:shadow-dim rounded-2xl relative p-2 box-border"
     >
       <Image
@@ -19,25 +19,25 @@ export default function Bid({status,name,price}) {
         priority
       />
       <div className="flex flex-col text-dim dark:text-gray-400 gap-1">
-        <p className="text-lg font-normal text-nowrap text-clip">
+        <p className="text-lg font-normal text-nowrap text-clip line-clamp-1">
           Product Name
         </p>
         <div className="flex gap-4 items-center">
           {status ? (
-          <span className="flex items-center gap-[2px] bg-[#FF0000] w-fit h-auto px-2 text-sm text-white max-sm:text-xs rounded-2xl animate-pulse font-normal">
-            <IoDisc />
-            Live
-          </span>
-        ) : (
-          <span className="gap-1 bg-[#FF0000] w-fit h-auto px-2 rounded-full">
-            <p className="font-normal text-sm text-white max-sm:text-xs">
-              Ended
-            </p>
-          </span>
+            <span className="flex items-center gap-[2px] bg-[#FF0000] w-fit h-auto px-2 text-sm text-white max-sm:text-xs rounded-2xl animate-pulse font-normal">
+              <IoDisc />
+              Live
+            </span>
+          ) : (
+            <span className="gap-1 bg-[#FF0000] w-fit h-auto px-2 rounded-full">
+              <p className="font-normal text-sm text-white max-sm:text-xs">
+                Ended
+              </p>
+            </span>
           )}
           <div className="flex gap-1 items-center text-sm">
-          <IoPersonOutline />8
-        </div>
+            <IoPersonOutline />8
+          </div>
         </div>
         <span className="text-lg font-bold">{formatter.format(1234.23)}</span>
       </div>
