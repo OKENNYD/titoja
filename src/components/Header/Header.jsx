@@ -13,40 +13,38 @@ import Languages from "../Languages/Languages";
 import Theme from "../Toggle/Theme";
 import Nav from "../Nav/Nav";
 import { useTheme } from "next-themes";
-import Test from "../test/test";
 export default function Header() {
   let { theme } = useTheme();
   const { isMenu, setIsMenu, setIsDropDown } = useGlobalContext();
   return (
-    <header className="z-50 sticky left-0 top-0 py-4 px-14 max-md:px-2 w-full h-auto max-md:h-auto bg-white border-b-2 border-gray-100 dark:border-dim dark:bg-dark flex flex-col gap-2">
+    <header className="z-50 sticky left-0 top-0 py-4 px-14 max-md:px-2 w-full h-auto max-md:h-auto bg-white border-b-2 border-gray-100 flex flex-col gap-2">
       <div className=" flex items-center gap-4">
         <div className="w-auto max-md:hidden flex gap-2 items-center ">
           <Link href="/">
-            <Image
+          { theme == "light" ? <Image
               src={Images.light}
               alt="@Titoja"
               priority
-              className="w-40 max-sm:w-32 h-auto dark:hidden"
-            />
-            <Image
+              className="w-40 max-md:w-56 h-auto"
+            />:<Image
               src={Images.dark}
               alt="@Titoja"
               priority
-              className="hidden dark:block w-40 max-sm:w-32 h-auto"
-            />
+              className="hidden w-40 max-md:w-56 h-auto"
+            />}
           </Link>
         </div>
         <div className="w-full flex max-md:flex-col-reverse">
           <Searchbar />
           <div className="w-auto flex max-md:justify-between items-center">
-            <div className="hidden max-md:flex max-md:w-auto gap-2 items-center ">
+            <div className="hidden max-md:flex max-md:w-auto gap-2 items-center">
               <IoMenu
                 onClick={() => setIsMenu(!isMenu)}
-                className="text-4xl sm-hidden"
+                className="text-5xl sm-hidden"
               />
               <Link href="/">
                 <Image
-                  src={theme == "light " ? Images.dark : Images.light}
+                  src={theme == "light" ? Images.dark : Images.light}
                   alt="@Titoja"
                   priority
                   className="w-24 h-auto"
@@ -60,7 +58,7 @@ export default function Header() {
                 <Languages />
               </div>
               <Link
-                className=" text-primary dark:text-secondary fill-primary dark:fill-secondary "
+                className=" text-primary fill-primary"
                 href="/cart"
               >
                 <Cart />
@@ -78,7 +76,6 @@ export default function Header() {
         </div>
       </div>
       <Nav />
-      {/* <Test/> */}
     </header>
   );
 }

@@ -13,17 +13,17 @@ export default function User() {
   ];
   return (
     <section className="flex flex-col gap-4 max-md:gap-2">
-      <div className="w-full dark:bg-dark bg-white rounded-xl h-fit py-2 px-4">
-        <p className="font-bold text-xl text-dark dark:text-gray-200">User</p>
+      <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
+        <p className="font-bold text-xl text-dark">User</p>
       </div>
-      <div className=" w-full dark:bg-dark bg-white h-auto text-dim dark:text-gray-200 rounded-lg px-4 py-4">
+      <div className=" w-full bg-white h-auto text-dim rounded-lg px-4 py-4">
         <div className="flex gap-2 items-center">
           <Image
             src={Images.avatar}
             alt="avatar"
             className="w-12 h-12 rounded-full"
           />
-          <p className="font-semibold text-lg text-dim dark:text-gray-200">
+          <p className="font-semibold text-lg text-dim">
             Oyetade Kehinde
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function User() {
                 className="flex flex-col justify-center items-center"
               >
                 {_.icon}
-                <p className="text-base text-dim dark:text-gray-400 font-semibold">
+                <p className="text-base text-dim font-semibold">
                   {_.name}
                 </p>
               </Link>

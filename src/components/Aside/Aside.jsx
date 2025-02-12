@@ -32,21 +32,21 @@ export default function Aside() {
     { range: "37-48" },
   ];
   return (
-    <aside className="p-4 max-md:hidden h-fit w-1/4 rounded-2xl bg-white dark:bg-dark cursor-pointer sticky ">
-      <div className=" justify-between flex text-slate-600 dark:text-gray-200 items-center font-bold text-base">
+    <aside className="p-4 max-md:hidden h-fit w-1/4 rounded-2xl bg-white cursor-pointer sticky ">
+      <div className=" justify-between flex text-dim items-center font-bold text-base">
         <p>Filter</p>
         <IoShuffle size={20} />
       </div>
       <ul className=" h-auto scroll-none overflow-y-scroll">
         <li>
-          <p className="text-base font-semibold dark:text-gray-200 text-slate-600">
+          <p className="text-base font-semibold text-dim">
             Category
           </p>
           <ul className="ms-2 accent-secondary">
             {departments.map((_c, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-base text-dim text-nowrap dark:text-gray-400 font-medium "
+                className="flex gap-1 text-base text-dim text-nowrap"
               >
                 <input type="checkbox" name="category" id={_c.name} />
                 <label htmlFor={_c.name}>{_c.name}</label>

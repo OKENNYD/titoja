@@ -32,7 +32,7 @@ export default function Searchbar() {
             search : searchParam.get("search"),
             category: searchParam.get("category_selection")
           }; router.push("/search?category="+ searchObj.category + "&product=" + searchObj.search)}}
-        className="w-full relative flex dark:bg-dim bg-gray-100 max-md:items-center max-md:justify-center rounded-3xl max-md:h-10 max-md:mt-2 p-1 bg-opacity-70 items-center h-10"
+        className="w-full relative flex bg-gray-100 max-md:items-center max-md:justify-center rounded-3xl max-md:mt-2 p-1 bg-opacity-70 items-center h-10 max-md:h-12"
       >
         <Selection />
         <input
@@ -44,17 +44,17 @@ export default function Searchbar() {
           ref={searchPrompt}
           onChange={()=>setIsPrompt(searchPrompt.current.value)}
           placeholder={placeholderVal}
-          className=" default:hidden marker:hidden w-full ps-2 placeholder:text-slate-400 placeholder:dark:text-gray-200 marker:text-dim dark:marker:text-white max-md:placeholder:font-medium max-md:placeholder:text-lg bg-transparent caret-primary text-dim dark:text-gray-400 font-normal text-lg outline-none"
+          className=" default:hidden marker:hidden w-full ps-2 placeholder:text-dim marker:text-dim max-md:placeholder:text-lg bg-transparent caret-primary text-dim text-lg outline-none"
         />
         <div 
         onMouseEnter={()=>setIsCamera(true)}
         onMouseLeave={()=>setIsCamera(false)}
           className=" text-white my-2 fill-white align-middle relative p-2"
-        ><IoAperture  size={25} className="text-slate-400 dark:text-gray-200"/>
-        {isCamera && <div className="bg-gray-100 dark:bg-dark shadow shadow-gray-400 dark:shadow-gray-dim p-2 z-50 w-72 h-48 absolute rounded-2xl flex justify-center items-center">
+        ><IoAperture size={25} className="text-slate-400 max-md:text-4xl"/>
+        {isCamera && <div className="bg-gray-100 shadow shadow-gray-400  p-2 z-50 w-72 h-48 absolute rounded-2xl flex justify-center items-center max-md:right-2">
         <div className="w-full h-full flex flex-col gap-2" >
-          <div className="bg-white dark:bg-dim h-full rounded-lg w-full flex flex-col justify-center items-center">
-          <p className="font-medium text-base text-dim dark:text-gray-200">Upload Image&nbsp; 
+          <div className="bg-white h-full rounded-lg w-full flex flex-col justify-center items-center">
+          <p className="font-medium text-base text-dim">Upload Image&nbsp; 
             <label className=" underline" htmlFor="imgUpld">here
             <input ref={imageVal} className=" sr-only" type="file" accept="jpg" name="imgUpld" id="imgUpld" />
           </label>
@@ -65,14 +65,14 @@ export default function Searchbar() {
           </button>
         </div>
     </div>}
-        </div>
+        </div> 
         <button
           type="submit"
-          className=" text-white my-2 fill-white align-middle p-2 rounded-full bg-primary"
+          className=" text-white my-2 fill-white aspect-square w-auto h-full align-middle p-2 rounded-full bg-primary"
         >
           <IoSearch
             size={15}
-            className=" text-white align-middle"
+            className="max-md:text-4xl text-white align-middle"
           />
         </button>
       </form>

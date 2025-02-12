@@ -23,8 +23,8 @@ export default function Checkout() {
   return (
     <div className="w-full px-10 max-md:px-4 py-4 h-fit flex gap-4 max-md:gap-2 max-md:flex-col">
       <div className="w-3/5 max-md:w-full rounded-lg h-fit flex flex-col gap-4 max-md:gap-2">
-        <div className="w-full justify-between bg-white dark:bg-dark rounded-2xl p-2">
-          <h2 className="font-bold text-lg max-md:text-base dark:text-gray-400 text-dim">
+        <div className="w-full justify-between bg-white rounded-2xl p-2">
+          <h2 className="font-bold text-lg max-md:text-base text-dim">
             CheckList {"(23)"}
           </h2>
           <div className="w-full h-auto min-h-48 flex flex-col gap-2 py-2">
@@ -40,25 +40,25 @@ export default function Checkout() {
             })}
           </div>
         </div>
-        <div className="w-full bg-white dark:bg-dark rounded-2xl p-4">
-          <h2 className="font-bold text-lg max-md:text-base dark:text-gray-400 text-dim">
+        <div className="w-full bg-white rounded-2xl p-4">
+          <h2 className="font-bold text-lg max-md:text-base text-dim">
             Summary
           </h2>
           <div className=" w-full flex flex-col gap-2">
             {sum?.map((_s, i) => (
               <div
                 key={i}
-                className=" w-full gap-2 dark:text-gray-400 text-dim font-medium text-lg flex justify-between items-center px-2"
+                className=" w-full gap-2 text-dim font-medium text-lg flex justify-between items-center px-2"
               >
                 <span className=" text-nowrap max-md:text-sm">{_s.name}</span>
                 <div className="price items-baseline flex flex-col ">
-                  <h3 className=" text-xl max-md:text-lg font-bold flex items-baseline dark:text-gray-400 text-dark">
+                  <h3 className=" text-xl max-md:text-lg font-bold flex items-baseline text-dark">
                     {formatter.format(_s.price)}
                   </h3>
                 </div>
               </div>
             ))}
-            <button className="w-full dark:bg-secondary bg-primary text-white rounded-full py-2 font-bold">
+            <button className="w-full bg-primary text-white rounded-full py-2 font-bold">
               Order
             </button>
           </div>
@@ -69,14 +69,14 @@ export default function Checkout() {
           <div
             onClick={() => setDeliveryType(true)}
             className={`w-1/2 h-auto rounded-full ${
-              deliveryType ? "dark:bg-dark bg-white" : "bg-none"
+              deliveryType ? "bg-white" : "bg-none"
             } py-2 px-4 flex gap-2 items-center`}
           >
             <div
               className={`size-4 rounded-full ${
                 deliveryType
-                  ? "bg-primary dark:bg-secondary"
-                  : "bg-white dark:bg-dark"
+                  ? "bg-primary"
+                  : "bg-white"
               }`}
             ></div>
             <h3>Delivery</h3>
@@ -84,23 +84,23 @@ export default function Checkout() {
           <div
             onClick={() => setDeliveryType(false)}
             className={`w-1/2 h-auto rounded-full ${
-              deliveryType ? "" : "dark:bg-dark bg-white"
+              deliveryType ? "" : " bg-white"
             } py-2 px-4 flex gap-2 items-center`}
           >
             <div
               className={`size-4 rounded-full  ${
                 deliveryType
-                  ? "bg-white dark:bg-dark"
-                  : "bg-primary dark:bg-secondary"
+                  ? "bg-white"
+                  : "bg-primary"
               }`}
             ></div>
             <h3>Pickup</h3>
           </div>
         </div>
         {deliveryType ? (
-          <div className="w-full rounded-2xl h-fit bg-white dark:bg-dark py-2 px-4">
+          <div className="w-full rounded-2xl h-fit bg-white py-2 px-4">
             <div className="flex justify-between">
-              <p className=" text-nowrap font-bold text-lg max-md:text-base max-md:font-extrabold dark:text-primary text-dark">
+              <p className=" text-nowrap font-bold text-lg max-md:text-base max-md:font-extrabold text-dark">
                 Delivery Information
               </p>
               <Link
@@ -112,59 +112,59 @@ export default function Checkout() {
             </div>
             <ul className="flex flex-col">
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   Name:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">
+                <p className="text-dim text-lg">
                   Oyetade Kehinde
                 </p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   Mobile:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">
+                <p className="text-dim text-lg">
                   +2349070387981
                 </p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   Email:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">
+                <p className="text-dim text-lg">
                   kehindeoyetade67@gmail.com
                 </p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   Address:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">
+                <p className="text-dim text-lg">
                   30, Dozie Okolo street, unity estate.
                 </p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   City:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">Lagos</p>
+                <p className="text-dim text-lg">Lagos</p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   State/Region:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">Lagos</p>
+                <p className="text-dim text-lg">Lagos</p>
               </li>
               <li className="flex justify-between">
-                <p className="font-semibold text-dim text-lg dark:text-gray-200">
+                <p className="font-semibold text-dim text-lg">
                   Country:
                 </p>{" "}
-                <p className="text-dim text-lg dark:text-gray-400">Nigeria</p>
+                <p className="text-dim text-lg">Nigeria</p>
               </li>
             </ul>
           </div>
         ) : (
-          <div className="w-full rounded-2xl h-72 bg-white dark:bg-dark p-2">
+          <div className="w-full rounded-2xl h-72 bg-white p-2">
             there are no near by hb to you
           </div>
         )}

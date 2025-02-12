@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation";
 import Footer from "@/components/Footer/Footer";
 import AccountHeader from "@/components/Header/AccountHeader";
@@ -14,13 +15,13 @@ export default function Layout({ children }) {
     title: "User",
     url: "/account/user"
   },{
-    title: "following",
+    title: "Following",
     url: "/account/following"
   },{
-    title: "payment",
+    title: "Payment",
     url: "/account/payment"
   },{
-    title: "my orders",
+    title: "My orders",
     url: "/account/my_orders"
   },{
     title: "My List",
@@ -32,38 +33,48 @@ export default function Layout({ children }) {
     title: "Coupons",
     url: "/account/coupons"
   },{
-    title: "customer service",
+    title: "Customer Service",
     url: "/account/customer_service"
   },{
-    title: "help center",
+    title: "Help Center",
     url: "/account/help_center"
   },{
-    title: "feedback",
+    title: "Feedback",
     url: "/account/feedback"
   },{
-    title: "settings",
+    title: "Settings",
     url: "/account/settings"
   }]
   return (
     <div className="w-full h-auto ">
       <AccountHeader />
-      <div className=" flex px-8 max-md:px-4 py-4 gap-4">
-      <div className={`w-1/4 max-md:z-20 h-fit bg-white dark:bg-dark rounded-2xl py-2 px-4 max-md:absolute max-md:w-fit max-md:shadow-dim max-md:shadow-sm ${isAcctMenu ? "max-md:block" : "max-md:hidden"}`}>
-        <p className="text-dark dark:text-gray-200 text-xl font-bold">Account</p>
-        <ul className="flex flex-col gap-2">
-          {nav.map((_,i) => (
-            <li key={i}><Link className={`text-dim dark:text-gray-400 font-semibold text-lg h-14 w-full px-4 capitalize hover:text-primary ${pathname == _.url && "border-l-2 border-secondary -px-2"}`} href={_.url} >
-              {_.title}
-            </Link></li>
-          ))}
-        </ul>
+      <div className=" flex max-md:px-4 gap-4">
+        <aside
+          className={`w-1/4 h-fit p-2 bg-white duration-1000 ${
+            isMenu
+              ? "max-md:w-3/4 max-md:absolute "
+              : "max-md:w-0 max-md:hidden"
+          }`}
+        >
+          <ul className="p-2 flex flex-col gap-1">
+            {nav.map((_, i) => (
+              <Link key={i} href={_.url}>
+                <li
+                  className={`w-full p-2 px-3 flex ${
+                    pathname === _.url
+                      ? "bg-primary text-white hover:bg-primary"
+                      : "hover:bg-gray-200"
+                  } items-center cursor-pointer gap-1 font-normal hover:px-2 text-base max-sm:text-xl text-gray-600 rounded-lg`}
+                >
+                  {_.title}
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </aside>
+        <div className="w-full h-fit">{children}</div>
       </div>
-      <div className="w-full h-fit">
-        {children}
-      </div>
+      <Footer />
     </div>
-      <Footer/>
-    </div>
-    
   );
 }

@@ -20,11 +20,11 @@ export default function Avatar() {
           ></Image>
             {isDropDown ? (
               <IoChevronUp
-                className="max-md:w-5 w-6 text-dim dark:text-gray-200"
+                className="max-md:w-5 w-6 text-dim"
               />
             ) : (
               <IoChevronDown
-                className="max-md:w-5 w-6 text-dim dark:text-gray-200"
+                className="max-md:w-5 w-6 text-dim"
               />
             )}
         </div>
@@ -33,7 +33,7 @@ export default function Avatar() {
           <div className="w-auto text-slate-400 h-auto flex items-center gap-1">
             <IoPerson className="text-2xl sm:text-2xl" />
             <IoChevronDown
-              className="text-lg fill-slate-400 dark:text-gray-200 max-md:w-5  me-2"
+              className="text-lg fill-dim max-md:w-5  me-2"
             />
           </div>
         </Link>

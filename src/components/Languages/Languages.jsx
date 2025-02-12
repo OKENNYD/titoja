@@ -5,4 +5,4 @@ export default function Languages() {
   return (
     <Select primary="EN" options={arr}/>
   )
-}
+}  

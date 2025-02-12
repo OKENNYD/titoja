@@ -6,7 +6,7 @@ import Images from "@/_util/constants/images";
 import Head from "next/head";
 import likes from "@/_util/api/liked"
 import Rating from "@/components/Rate/Rate";
-import goods from "../../../../_util/api/goods"
+import products from "../../../../_util/api/products"
 import { IoAdd, IoRemove, IoClipboardOutline, IoChevronForward, IoTicket, IoMedalOutline, IoCashOutline, IoCar, IoTimeOutline, IoPaperPlane, IoShieldCheckmark, IoBus, IoShareSocial, IoBookmark, IoBookmarkOutline } from "react-icons/io5";
 import { useGlobalContext } from "@/_util/constants/context";
 export default function Item({ params }) {
@@ -16,9 +16,10 @@ export default function Item({ params }) {
   const image = "Product name";
   let [stockCount, setStockCount] = useState(1)
   let [liked, setLiked] = useState(false)
+  let [tab, setTab] = useState(true)
   let arrLoop = [Images.img_1,Images.img_2,Images.img_3,Images.img_4,Images.img_5]
   let [currentSrc, setCurrentSrc] = useState(arrLoop[0])
-  let filterGoods = goods.filter(stock => stock.id == params.slug[0])
+  let filterGoods = products.filter(stock => stock.mpn == params.slug[0])
   let colorArr = [{title: "red", hex: "#ff0000"},{title: "blue", hex: "#00ff00"},{title: "green", hex: "#0000ff"},{title: "orange", hex: "#ff421"}]
   let [color,setColor] = useState(colorArr[0])
   let sizeArr = [42,43,44,45]
@@ -45,7 +46,7 @@ export default function Item({ params }) {
       </Head>
       <div className="w-full h-auto gap-2 flex max-md:flex-col">
         <div className="w-3/4 max-md:w-full h-auto flex flex-col gap-3">
-          <div className=" w-full h-auto flex max-md:flex-col gap-2 max-md:gap-2 bg-white dark:bg-dark max-md:bg-transparent rounded-3xl p-2 max-md:p-0">
+          <div className=" w-full h-auto flex max-md:flex-col gap-2 max-md:gap-2 bg-white max-md:bg-transparent rounded-3xl p-2 max-md:p-0">
             <div className="flex w-4/6 max-md:w-full max-md:gap-2 box-border max-md:flex-col">
               <Image
                 id="banner"
@@ -71,71 +72,70 @@ export default function Item({ params }) {
               </div>
             </div>
             <div className="w-2/6 box-border max-md:w-full h-auto gap-2 max-md:px-4 max-md:pb-4 flex flex-col">
-              <h2 className="font-bold text-lg text-dark dark:text-gray-200">
-                {filterGoods[0].title}
-              </h2>
+              <div className="">
+                <p className="text-lg text-dark line-clamp-1">
+                  {filterGoods[0].name}
+                </p>
+                <span className="text-dark text-base flex">
+                  Brand: &nbsp;
+                  <Link href={"/brand?brandname="} className="text-secondary">
+                    Apple
+                  </Link>
+                </span>
+              </div>
+
               <div className="flex gap-2 flex-col">
                 <div
                   title={
                     filterGoods[0].title +
                     " has a " +
-                    filterGoods[0].rating.toFixed(1) +
+                    filterGoods[0].rating.count.toFixed(1) +
                     " rating"
                   }
-                  className="font-normal text-xs dark:text-gray-400 text-slate-600 inline-flex gap-1"
+                  className="w-full text-xs text-dim items-center justify-between flex gap-1"
                 >
-                  <Rating size={4} rate={filterGoods[0].rating.toFixed(1)} />
-                  <p className="">{filterGoods[0].rating}</p>
-                </div>
-                <div className="font-normal text-xs text-dim dark:text-gray-400 flex justify-evenly">
-                  <p className=" text-center flex flex-col ">
+                  <Rating
+                    size={5}
+                    rate={filterGoods[0].rating.rate.toFixed(1)}
+                  />
+                  <div className="font-normal text-xs text-dim flex justify-evenly gap-2">
+                    {/* <p className=" text-center flex flex-col ">
                     <span className=" text-base font-semibold text-center">
-                      671
-                    </span>
-                    reviews
-                  </p>
-                  <p className=" text-center flex flex-col ">
-                    <span className=" text-base font-semibold text-center">
-                      100+
-                    </span>
-                    sold
-                  </p>
-                  <p className=" text-center flex flex-col ">
-                    <span className=" text-base font-semibold text-center">
-                      {filterGoods[0].stock}
+                      {filterGoods[0].rating.count}
                     </span>
                     stock
-                  </p>
-                  <p className=" text-center flex flex-col ">
-                    <span
-                      className=" text-[24px]  text-secondary font-semibold text-center"
-                      onClick={() => {
-                        setLiked(!liked);
-                        liked ? likes.pop() : likes.push(filterGoods[0].id);
-                      }}
+                  </p> */}
+                    <p className=" text-center flex flex-col ">
+                      <span
+                        className=" text-[24px]  text-secondary font-semibold text-center"
+                        onClick={() => {
+                          setLiked(!liked);
+                          liked ? likes.pop() : likes.push(filterGoods[0].id);
+                        }}
+                      >
+                        {liked ? (
+                          <IoBookmark />
+                        ) : (
+                          <IoBookmarkOutline
+                            title="Add to Mylist"
+                            className="text-dim"
+                          />
+                        )}
+                      </span>
+                    </p>
+                    <p
+                      onClick={handleShare}
+                      className=" text-center flex flex-col text-[24px] text-dim"
                     >
-                      {liked ? (
-                        <IoBookmark />
-                      ) : (
-                        <IoBookmarkOutline
-                          title="Add to Mylist"
-                          className="text-dim dark:text-gray-400"
-                        />
-                      )}
-                    </span>
-                  </p>
-                  <p
-                    onClick={handleShare}
-                    className=" text-center flex flex-col text-[24px] text-dim dark:text-gray-400"
-                  >
-                    <IoShareSocial title="Share on Socialmedia" />
-                  </p>
+                      <IoShareSocial title="Share on Socialmedia" />
+                    </p>
+                  </div>
                 </div>
               </div>
               <hr className="px-4" />
               <form className="flex flex-col max-md:gap-3 gap-1">
                 <div className="max-md:flex max-md:gap-4 max-md:items-center box-border text-lg font-semibold">
-                  <h3 className=" text-dim dark:text-gray-200">
+                  <h3 className=" text-dim ">
                     Color:{" "}
                     <span className=" opacity-60 text-base">{color.title}</span>
                   </h3>
@@ -152,7 +152,7 @@ export default function Item({ params }) {
                   </div>
                 </div>
                 <div className="max-md:flex max-md:gap-4 max-md:items-center w-auto h-auto box-border text-lg font-semibold">
-                  <h3 className=" text-dim dark:text-gray-200">
+                  <h3 className=" text-dim">
                     Size: <span className=" opacity-60 text-base">{size}</span>
                   </h3>
                   <ul className="gap-2 flex h-8 flex-row ">
@@ -170,7 +170,7 @@ export default function Item({ params }) {
                   </ul>
                 </div>
                 <div className="max-md:flex max-md:gap-4 max-md:items-center w-auto h-auto box-border text-lg font-semibold">
-                  <h3 className="text-dim dark:text-gray-200">
+                  <h3 className="text-dim ">
                     Material:{" "}
                     <span className=" opacity-60 text-base">{material}</span>
                   </h3>
@@ -179,7 +179,7 @@ export default function Item({ params }) {
                       <li
                         key={i}
                         onClick={() => setMaterial(_)}
-                        className={`w-auto h-full bg-slate-200 p-2 text-sm flex justify-center items-center rounded-xl text-slate-400 border-2 ${
+                        className={`w-auto h-full bg-gray-200 p-2 text-sm flex justify-center items-center rounded-xl text-dim border-2 ${
                           material == _ && "border-primary"
                         }`}
                       >
@@ -189,7 +189,7 @@ export default function Item({ params }) {
                   </ul>
                 </div>
                 {/* <div className="max-md:flex max-md:gap-4 max-md:items-center w-auto h-auto box-border text-lg font-semibold">
-              <h3 className="text-dim dark:text-gray-200">Plug:</h3>
+              <h3 className="text-dim">Plug:</h3>
               <div className="gap-2 flex h-8 flex-row ">
                 <input type="radio" className="sr-only peer/42" name="color_blue" id="42" />
                 <label htmlFor="42" className="w-8 h-full bg-slate-200 p-2 text-sm flex justify-center items-center peer-checked/42:border-primary rounded-xl text-slate-400 border-2"><p>42</p></label>
@@ -199,53 +199,52 @@ export default function Item({ params }) {
             </div>
              */}
                 <div className="max-md:flex max-md:gap-4 max-md:items-center w-auto h-auto box-border text-lg font-semibold">
-                  <h3 className=" text-dim dark:text-gray-200">Quantity:</h3>
-                  <div className=" p-1 w-fit h-8 gap-2 flex dark:text-gray-200 text-slate-600 items-center outline-0 border-0 bg-slate-200 dark:bg-dim rounded-full cursor-pointer ">
-                    <span
-                      onClick={(e) => {
-                        e.currentTarget.disabled = true;
-                        setStockCount((prev) => parseInt(prev) - 1);
-                        stockCount == 0 && removeEventListener("click");
-                      }}
-                      className="p-1 text-white bg-primary dark:bg-secondary rounded-full"
-                    >
-                      <IoRemove className="text-xl " />
-                    </span>
-                    <input
-                      type="tel"
-                      onChange={(e) => setStockCount(e.target.value)}
-                      name="count"
-                      value={stockCount}
-                      className="w-12 px-1 text-xl border-0 bg-none outline-0 text-center bg-transparent"
-                    />
-                    <span
-                      onClick={() =>
-                        setStockCount((prev) => parseInt(prev) + 1)
-                      }
-                      className="text-white bg-primary dark:bg-secondary rounded-full p-1"
-                    >
-                      <IoAdd className="text-xl" />
+                  <h3 className=" text-dim">Quantity:</h3>
+                  <div className=" flex gap-2 items-center">
+                    <div className=" p-1 w-fit h-8 gap-2 flex text-slate-600 items-center outline-0 border-0 bg-slate-200 rounded-full cursor-pointer ">
+                      <span
+                        onClick={(e) => {
+                          e.currentTarget.disabled = true;
+                          setStockCount((prev) => parseInt(prev) - 1);
+                          stockCount == 0 && removeEventListener("click");
+                        }}
+                        className="p-1 text-white bg-primary rounded-full"
+                      >
+                        <IoRemove className="text-xl " />
+                      </span>
+                      <input
+                        type="tel"
+                        onChange={(e) => setStockCount(e.target.value)}
+                        name="count"
+                        value={stockCount}
+                        className="w-12 px-1 text-xl border-0 bg-none outline-0 text-center bg-transparent"
+                      />
+                      <span
+                        onClick={() =>
+                          setStockCount((prev) => parseInt(prev) + 1)
+                        }
+                        className="text-white bg-primary rounded-full p-1"
+                      >
+                        <IoAdd className="text-xl" />
+                      </span>
+                    </div>
+                    <span className="text-dim text-base text-center">
+                      {filterGoods[0].rating.count} available
                     </span>
                   </div>
                 </div>
                 <hr className="my-4" />
                 <div className="price w-full items-baseline flex gap-2 ">
-                  <p className="-my-[2px] text-2xl font-bold flex items-baseline text-dark dark:text-gray-200">
-                    <span className="text-sm">
-                      {currencyCode}
-                    </span>
+                  <p className="-my-[2px] text-2xl font-bold flex items-baseline text-dark">
+                    <span className="text-sm">{currencyCode}</span>
                     {(
-                      filterGoods[0].price -
-                      (filterGoods[0].price *
-                        filterGoods[0].discountPercentage) /
-                        100
+                      filterGoods[0].offers.price -
+                      (filterGoods[0].offers.price * 15) / 100
                     ).toFixed(2)}
                   </p>
-                  <p className=" -my-[2px] text-lg line-through flex items-baseline text-dim dark:text-gray-400 font-medium">
-                    <span className="text-sm">
-                      {currencyCode}
-                    </span>
-                    {filterGoods[0].price}
+                  <p className=" -my-[2px] text-lg line-through flex items-baseline text-dim font-medium">
+                    <span className="text-sm">{currencyCode}</span>
+                    {filterGoods[0].offers.price}
                   </p>
                 </div>
                 <div className="w-full flex gap-2 px-2">
@@ -259,17 +258,159 @@ export default function Item({ params }) {
               </form>
             </div>
           </div>
-          <div className="description w-full h-auto bg-white dark:bg-dark rounded-3xl px-4 py-2">
-            <h2 className="text-dark text-lg font-bold dark:text-gray-200">
-              Description
-            </h2>
-            <div className="w-fill h-auto text-dim dark:text-gray-400">
-              <p>{filterGoods[0].description}</p>
-            </div>
+          <div className="description w-full h-auto bg-white rounded-3xl px-4 py-2">
+            <ul className="flex gap-2">
+              <li
+                onClick={() => {
+                  setTab(true);
+                }}
+                className={
+                  "text-lg font-bold" + tab == true
+                    ? "text-secondary"
+                    : "text-dark"
+                }
+              >
+                Description
+              </li>
+              <li
+                onClick={() => {
+                  setTab(false);
+                }}
+                className={
+                  "text-dark text-lg font-bold" + tab !==
+                  true
+                    ? "text-dark"
+                    : "text-secondary"
+                }
+              >
+                Reviews({filterGoods[0].review.length})
+              </li>
+            </ul>
+
+            {tab ? (
+              <div className="w-fill h-auto text-dim">
+                <p>{filterGoods[0].description}</p>
+              </div>
+            ) : (
+              <div className="p-2 w-full gap-2 flex max-md:flex-col">
+                <div className="w-2/5  gap-2 px-4 flex flex-col items-center justify-center">
+                  <div className="w-full flex flex-col items-center justify-center text-dim text-lg"></div>
+                  <p>{filterGoods[0].rating.rate.toFixed(1)}</p>
+                  <Rating size={6} rate={(1.2 + 2.5 + 3.7 + 4.9 + 0.8) / 5} />
+                  <p>{filterGoods[0].rating.count}</p>
+                  <ul className="w-full flex flex-col gap-2">
+                    <li className="text-dim font-semibold text-md flex items-center">
+                      1&nbsp;
+                      <progress
+                        className="w-full rounded-full h-4 accent-secondary bg-red"
+                        min="0"
+                        max="5"
+                        value="1.2"
+                      ></progress>
+                      &nbsp;1.2
+                    </li>
+                    <li className="text-dim font-semibold  text-md flex items-center">
+                      2&nbsp;
+                      <progress
+                        className="w-full rounded-full h-4 accent-secondary bg-red"
+                        min="0"
+                        max="5"
+                        value="2.5"
+                      ></progress>
+                      &nbsp;2.5
+                    </li>
+                    <li className="text-dim font-semibold text-md flex items-center">
+                      3&nbsp;
+                      <progress
+                        className="w-full rounded-full h-4 accent-secondary bg-red"
+                        min="0"
+                        max="5"
+                        value="3.7"
+                      ></progress>
+                      &nbsp;3.7
+                    </li>
+                    <li className="text-dim font-semiboldtext-gray-400 text-md flex items-center">
+                      4&nbsp;
+                      <progress
+                        className="w-full rounded-full h-4 accent-secondary bg-red"
+                        min="0"
+                        max="5"
+                        value="4.9"
+                      ></progress> 
+                      &nbsp;4.9
+                    </li>
+                    <li className="text-dim font-semibold text-md flex items-center">
+                      5&nbsp;
+                      <progress
+                        className="w-full rounded-full h-4 accent-secondary bg-red"
+                        min="0"
+                        max="5"
+                        value="0.8"
+                      ></progress>
+                      &nbsp;0.8
+                    </li>
+                  </ul>
+                </div>
+                <div className="w-3/5 h-auto gap-2 flex flex-col">
+                  {filterGoods[0].review.map((rev, i) => (
+                    <div
+                      key={i}
+                      className="comments bg-gray-200 rounded-lg p-2"
+                    >
+                      <div className="flex justify-between items-center text-dim ">
+                        <div className="flex items-center gap-1">
+                          <p className="text-lg font-medium">{rev.author}</p>
+                          <span>Flag</span>
+                        </div>
+
+                        <span className="flex items-center gap-1 -my-1 text-sm">
+                          11:34pm
+                        </span>
+                      </div>
+                      <div className="w-full flex flex-col gap-1">
+                        <div className="flex items-center justify-between">
+                          <Rating
+                          className="py-2"
+                          size={3}
+                          rate={rev.reviewRating.ratingValue}
+                          />
+                          <div className="flex gap-2 items-center">
+                            <span>like {rev.reviewRating.bestRating}</span>
+                            <span>dislike {rev.reviewRating.worstRating}</span>
+                          </div>
+                        </div>
+                        <p className="text-sm ">
+                          {rev.reviewBody}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                  <form
+                    encType="utf-8"
+                    method="POST"
+                    className=" w-full p-1 flex h-10 bg-slate-200 max-md:h-10 overflow-hidden rounded-full"
+                  >
+                    <input
+                      type="text"
+                      name="subscription"
+                      id="subscription"
+                      className=" outline-none text-base w-full max-md:w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400"
+                      placeholder="comment"
+                    />
+                    <button
+                      type="submit"
+                      className=" rounded-3xl text-xs px-2 h-full w-auto text-white max-md:text-base bg-primary font-bold "
+                    >
+                      <IoPaperPlane size={20} />
+                    </button>
+                  </form>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="w-1/4 max-md:w-full h-auto flex flex-col gap-3">
-          <div className="discount w-full h-auto rounded-2xl dark:bg-dark bg-white p-2">
+          <div className="discount w-full h-auto rounded-2xl bg-white p-2">
             <div className=" bg-secondary font-semibold flex items-center justify-between text-white pe-4 ps-2 rounded-lg py-2">
               <div className="flex gap-1 items-center">
                 <IoTicket />
@@ -278,55 +419,55 @@ export default function Item({ params }) {
               <IoChevronForward />
             </div>
             <div className=" p-2 flex flex-wrap gap-2">
-              <span className="flex items-center gap-1 text-white text-xs font-medium bg-slate-400 dark:bg-dim rounded-full px-2 w-auto h-auto">
+              <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
                 <IoMedalOutline />
                 Best Seller
               </span>
-              <span className="flex items-center gap-1 text-white text-xs font-medium bg-slate-400 dark:bg-dim rounded-full px-2 w-auto h-auto">
+              <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
                 <IoCashOutline />
                 Best Price
               </span>
-              <span className="flex items-center gap-1 text-white text-xs font-medium bg-slate-400 dark:bg-dim rounded-full px-2 w-auto h-auto">
+              <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
                 <IoCar />
                 Fast Delivery
               </span>
             </div>
-            <div className="flex ps-4 text-dim dark:text-gray-400 font-semibold text-xl items-center">
-              <span>{filterGoods[0].discountPercentage.toFixed(0)}% off</span>
+            <div className="flex ps-4 text-dim font-semibold text-xl items-center">
+              <span>{Math.floor(Math.random() * 50).toFixed(0)}% off</span>
             </div>
-            <div className=" text-normal text-sm text-slate-400">
-              <span className="flex items-center gap-1 font-bold text-sm text-dark dark:text-gray-200">
+            <div className=" text-normal text-sm text-400">
+              <span className="flex items-center gap-1 font-bold text-sm text-dark">
                 <IoBus /> Free Shipping
               </span>
-              <p className="flex ps-4 text-dim dark:text-gray-400">
+              <p className="flex ps-4 text-dim">
                 <b>Delivery: </b>
                 <span className=" font-semibold">April 3rd-17th</span>
               </p>
             </div>
-            <div className=" text-normal text-sm text-slate-400">
-              <span className="flex items-center gap-1 font-bold text-sm text-dark dark:text-gray-200">
+            <div className=" text-normal text-lg">
+              <span className="flex items-center gap-1 font-bold text-sm text-dark">
                 <IoClipboardOutline /> Return Delivery
               </span>
-              <p className="flex ps-4 text-dim dark:text-gray-400">
+              <p className="flex ps-4 text-dim">
                 <b>Returns between: </b>
                 <span className=" font-semibold">April 3rd-17th</span>
               </p>
             </div>
           </div>
-          <div className="security w-full h-auto rounded-2xl dark:bg-dark bg-white p-2">
-            <span className="flex items-center gap-1 font-bold text-sm text-dark dark:text-gray-200">
+          <div className="security w-full h-auto rounded-2xl bg-white p-2">
+            <span className="flex items-center gap-1 font-bold text-sm text-dark">
               <IoShieldCheckmark /> Security & Privacy
             </span>
-            <p className="text-dim dark:text-gray-400 text-sm font-normal">
+            <p className="text-dim text-sm font-normal">
               <b>Safe payments: </b>We do not share your personal details with
               any third partie without your consent.
             </p>
-            <p className="text-dim dark:text-gray-400 text-sm font-normal">
+            <p className="text-dim text-sm font-normal">
               <b>Secure personal details:</b> We protect your privacy and keep
               your personal details safe and secure.
             </p>
           </div>
-          <div className="seller w-full h-auto rounded-2xl dark:bg-dark bg-white p-2">
+          <div className="seller w-full h-auto rounded-2xl  bg-white p-2">
             <div className=" flex justify-between items-center items">
               <div className="seller-Logo -my-1 flex gap-2 items-center">
                 <Image
@@ -337,68 +478,21 @@ export default function Item({ params }) {
                 />
                 <Link
                   href={"/shop?shopname="}
-                  className=" font-bold text-dark dark:text-gray-200 text-base"
+                  className=" font-bold text-dark text-base"
                 >
                   Seller Name
                 </Link>
               </div>
-              <IoChevronForward className=" text-dark dark:text-gray-200 text-xl" />
+              <IoChevronForward className=" text-dark text-xl" />
             </div>
-            <h1 className=" font-medium text-base ps-2 text-dark dark:text-gray-200">
+            <h1 className=" font-medium text-base ps-2 text-dark">
               About shop owner
             </h1>
-            <p className=" text-sm text-dim dark:text-gray-400 ps-2">
+            <p className=" text-sm text-dim ps-2">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Consectetur nihil ea eligendi repellendus est quos corporis
               similique odit quis impedit error qui iste ratione,...
             </p>
-          </div>
-          <div className="reviews w-full h-auto dark:bg-dark bg-white rounded-3xl px-4 py-2">
-            <h2 className="text-dark dark:text-gray-200 text-lg font-bold">
-              Reviews
-            </h2>
-            <div className="w-full h-auto">
-              <div className="flex flex-col py-2 gap-2">
-                <div className="comments dark:bg-dim bg-gray-200 rounded-lg p-1">
-                  <div className="flex gap-2">
-                    <Image
-                      src={Images.avatar}
-                      alt="user"
-                      className=" h-10 w-10 rounded-full"
-                      priority
-                    />
-                    <div className=" flex flex-col dark:text-slate-400 text-dim">
-                      <p className="text-sm font-medium">Oyetade kehinde</p>
-                      <span className="flex items-center gap-1 -my-1 text-xs font-medium">
-                        <IoTimeOutline /> 11:34pm
-                      </span>
-                    </div>
-                  </div>
-                  <div className="w-full flex flex-col gap-1 justify-center items-center">
-                    <p className="text-sm text-dim dark:text-gray-400">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nisi aspernatur magni enim quas quam veritatis?
-                    </p>
-                    <Rating className="py-2" size={6} rate={4.5} />
-                  </div>
-                </div>
-              </div>
-              <form className=" w-full p-1 flex h-10 dark:bg-dim bg-slate-200 max-md:h-10 overflow-hidden rounded-full">
-                <input
-                  type="text"
-                  name="subscription"
-                  id="subscription"
-                  className=" outline-none text-base w-full max-md:w-full max-md:text-lg caret-primary dark:caret-secondary px-2 bg-inherit placeholder:text-slate-400"
-                  placeholder="comment"
-                />
-                <button
-                  type="submit"
-                  className=" rounded-3xl text-xs px-2 h-full w-auto text-white max-md:text-base dark:bg-secondary bg-primary font-bold "
-                >
-                  <IoPaperPlane size={20} />
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>

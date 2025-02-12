@@ -6,18 +6,20 @@ import { useState } from "react";
 import images from "@/_util/constants/images";
 import { useSearchParams } from "next/navigation";
 import Aside from "@/components/Aside/Aside";
+import Filter from "@/components/Nav/Filter";
 export default function Search() {
   let searchParams = useSearchParams();
   let [goodsCount, setGoodsCount] = useState(20);
   let filteredGoods = goods.filter((good) => good.id <= goodsCount);
   return (
-      <div className="w-full py-2 px-8 max-md:px-2 flex">
-        <Aside/>
+      <div className="w-full py-2 px-14 max-md:px-2 flex">
+        <Aside/>  
         <div className="w-5/6 ps-4 max-md:w-full">
-          <div className="flex gap-1 items-center text-lg text-dim dark:text-gray-200">
+         <Filter/>
+          <div className="flex gap-1 items-center text-lg text-dim">
             <p>Search result for &quot;{searchParams.get("product")}&quot;</p>
           </div>
-          <div className=" w-full pt-2 flex justify-center overflow-y-scroll scroll-none items-center flex-wrap gap-4">
+          <div className="w-full h-fit p-2 flex overflow-x-auto gap-1 scroll-none">
             {filteredGoods?.map((_, i) => (
               <Product
                 src={images.img_4}
@@ -41,7 +43,7 @@ export default function Search() {
           <div className="w-full items-center justify-center gap-2 flex py-4">
             <button
               onClick={() => setGoodsCount(goodsCount + 12)}
-              className=" text-base bg-primary dark:bg-secondary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
+              className=" text-base bg-primary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
             >
               Show More
               <IoChevronDown />

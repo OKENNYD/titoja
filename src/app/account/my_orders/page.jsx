@@ -5,15 +5,13 @@ export default function Myorders() {
   let [allOrders, setAllOrders] = useState("");
   return (
     <section className="flex flex-col gap-4 max-md:gap-2">
-      <div className="w-full dark:bg-dark bg-white rounded-xl h-fit py-2 px-4">
-        <p className="font-bold text-xl text-dark dark:text-gray-200">
+        <p className="font-bold text-xl text-dark">
           My Orders
         </p>
-      </div>
-      <div className=" w-full dark:bg-dark bg-white h-auto rounded-lg px-4 py-4">
+      <div className=" w-full bg-white h-auto rounded-lg px-4 py-4">
         <form className="w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2">
           <input
-            className="w-full h-8 px-3 caret-secondary dark:bg-dim dark:text-gray-400 bg-slate-100 rounded-l-full outline-secondary dark:outline-none"
+            className="w-full h-8 px-3 caret-secondary bg-slate-100 rounded-l-full outline-secondary"
             type="text"
             name="order_tracking_id"
             placeholder="Order ID, Product or Store Name "

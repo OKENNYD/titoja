@@ -6,9 +6,9 @@ import Box from "../Card/Box";
 import Carousel from "../Carousel/Carousel";
 export default function Hero() {
   return (
-    <div className="w-full h-fit aspect-video flex flex-col gap-2 px-14 py-2">
+    <div className="w-full h-fit aspect-video flex flex-col gap-2 px-14 max-md:px-2 py-2">
       <Announcement />
-      <div className="w-full h-fit flex gap-2">
+      <div className="w-full h-fit flex gap-2 max-md:flex-col ">
         <div className="w-fit h-fit">
         <span className="font-normal max-md:text-base text-lg border-l-2 border-primary px-2">
           Special
@@ -21,7 +21,7 @@ export default function Hero() {
       <Carousel/>
       </div>
       <div className="w-full h-fit">
-        <div className="flex px-2 justify-between text-base text-dim dark:text-gray-400 font-bold">
+        <div className="flex px-2 justify-between text-base text-dim font-bold">
           <span className="font-normal max-md:text-base text-lg border-l-2 border-primary px-2">
             Bid
           </span>

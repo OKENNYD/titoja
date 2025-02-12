@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import departments from "@/_util/api/departments";
+import departments from "@/_util/api/department";
 import { useState, useEffect } from "react"
 import { FaAlignLeft, FaChevronDown } from "react-icons/fa6";
 export default function Nav() {
@@ -11,7 +11,7 @@ export default function Nav() {
         <li>
           <Link
             href="/"
-            className="text-nowrap hover:bg-gray-100 hover:dark:bg-dim px-3 py-1 whitespace-nowrap rounded-full text-dim dark:text-gray-400 text-lg inline-flex gap-1 justify-center items-center"
+            className="text-nowrap hover:bg-gray-100 px-3 py-1 whitespace-nowrap rounded-full text-dim text-lg inline-flex gap-1 justify-center items-center"
           >
             <FaAlignLeft className=" text-base" />
             All Categories
@@ -24,32 +24,32 @@ export default function Nav() {
             key={i}
             className="cursor-pointer w-auto"
           >
-            <span className="text-nowrap hover:bg-gray-100 hover:dark:bg-dim px-3 py-1 whitespace-nowrap rounded-full font-normal text-dim dark:text-gray-400 text-lg inline-flex gap-1 justify-center items-center">
-              {_d.name}
+            <span className="text-nowrap hover:bg-gray-100 px-3 py-1 whitespace-nowrap rounded-full font-normal text-dim text-lg inline-flex gap-1 justify-center items-center anchor-name">
+              {_d.department}
               <FaChevronDown className=" text-base" />
             </span>
             <ul
               id="category"
               className={
                 activeDepartment === _d.id
-                  ? "place-content-around absolute dark:bg-dark bg-white shadow-sm shadow-slate-400 dark:shadow-dim p-4 mt-2 rounded-lg w-auto text-lg flex gap-4 text-nowrap font-normal text-dark left-[unset]"
+                  ? "place-content-around absolute right-4 bg-white shadow-sm shadow-slate-400 p-4 mt-2 rounded-lg w-auto text-lg flex gap-4 text-nowrap font-normal text-dark left-[unset] position-anchor"
                   : "hidden"
               }
             >
               {_d.categories?.map((_c, j) => (
                 <li key={j} className="relative">
-                  <p className="font-medium text-base dark:text-gray-200">
+                  <p className="font-medium text-base">
                     {_c.name}
                   </p>
                   <ul className="ml-2">
                     {_c.segments?.map((_s, k) => (
                       <li key={k} className="text-sm font medium">
                         <Link
-                          className="font-normal text-dim dark:text-gray-400 text-lg hover:text-primary dark:hover:text-secondary"
+                          className="font-normal text-dim text-lg hover:text-primary"
                           href={
                             "/departments?" +
                             "department=" +
-                            _d.name +
+                            _d.department +
                             "&" +
                             "category=" +
                             _c.name +

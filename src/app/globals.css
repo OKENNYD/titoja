@@ -96,6 +96,9 @@
   /* background-image: url("./assert/img/dish.jpg"); */
 }
 
-.hag{
-  left: unset;
+.anchor-name{
+  anchor-name: --nav-pop;
+}
+.position-anchor{
+  position-anchor: --nav-pop;
 }

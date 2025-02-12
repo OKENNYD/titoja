@@ -19,7 +19,7 @@ export default function Auction({
     currency: "NGN",
   });
   return (
-    <div className="dark:bg-dark bg-white sm:hover:scale-105 w-[200px] shrink-0 grow h-auto box-border duration-200 transition-transform hover:bg-gray-100 hover:dark:bg-dim rounded-xl p-1">
+    <div className="bg-white hover:scale-105 w-[200px] shrink-0 grow h-auto box-border duration-200 transition-transform hover:bg-gray-100 rounded-xl p-1">
       <Suspense fallback={<Loader />}>
         <Link
           className=" "
@@ -38,11 +38,11 @@ export default function Auction({
               </span>}
           </div>
           <div className="w-auto p-1">
-            <p className="capitalize font-medium text-wrap text-base max-md:text-lg text-dark dark:text-gray-200 text-ellipsis">
+            <p className="capitalize text-wrap text-base max-md:text-lg text-dark text-ellipsis">
               Lorem, ipsum dolor.
             </p>
             <div className="price w-full items-baseline flex flex-col ">
-              <p className="text-xl font-extrabold flex items-baseline text-dim dark:text-gray-200">
+              <p className="text-xl font-extrabold flex items-baseline text-dim">
                 {formatter.format(Math.floor(Math.random()*99999))}
               </p>
             </div>

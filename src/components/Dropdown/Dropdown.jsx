@@ -11,7 +11,7 @@ export default function Dropdown() {
     <div
       className={
         isDropDown
-          ? "bg-white dark:bg-dark trans-3 shadow-slate-400 dark:shadow-dim shadow-sm max-md:shadow-none z-50 absolute w-72 right-0 top-6 max-md:top-0 max-md:w-full max-md:bg-white rounded-2xl h-auto max-md:h-full max-md:fixed transition-opacity pb-2"
+          ? "bg-white trans-3 shadow-slate-400 shadow-sm max-md:shadow-none z-50 absolute w-72 right-0 top-6 max-md:top-0 max-md:w-full max-md:bg-white rounded-2xl h-auto max-md:h-full max-md:fixed transition-opacity pb-2"
           : "hidden"
       }
     >
@@ -21,7 +21,7 @@ export default function Dropdown() {
         </span>
         <div>
           <Logo />
-          <p className=" -my-2 ms-8 text-slate-600 text-sm font-medium">
+          <p className=" -my-2 ms-8 text-slate-600 text-base">
             Account
           </p>
         </div>
@@ -32,14 +32,14 @@ export default function Dropdown() {
           alt="avatar_icon"
           className=" w-20 max-md:w-16 rounded-full"
         ></Image>
-        <p className="flex flex-col sm:text-center text-dark dark:text-gray-200 text-sm">
+        <p className="flex flex-col sm:text-center text-dark text-lg">
           Oyetade kehinde
-          <span className=" max-md:text-xs text-dim text-sm dark:text-gray-400">
+          <span className=" max-md:text-xs text-dim text-base">
             kehindeoyetade67@gmail.com
           </span>
         </p>
       </div>
-      <div className=" flex justify-around text-dim dark:text-gray-200 max-md:border-y-[1px] max-md:dark:border-dim px-6 py-1 max-md:py-3">
+      <div className=" flex justify-around text-dim max-md:border-y-[1px] px-6 py-1 max-md:py-3">
         <Link
           href="/account/mylist"
           className="flex hover:text-primary flex-col items-center "
@@ -65,7 +65,7 @@ export default function Dropdown() {
       <ul className=" w-full cursor-pointer px-2">
         <li>
           <Link
-            className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
+            className=" w-full px-4 py-2 text-lg hover:gray-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
             href="/account/my_orders"
           >
             <p>My Orders</p>
@@ -74,20 +74,20 @@ export default function Dropdown() {
         </li>
         <li>
           <Link
-            className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
+            className=" w-full px-4 py-2 text-lg hover:gray-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
             href="/account/my_list"
           >
             <p>My List</p>
             <IoChevronForward />
           </Link>
         </li>
-        <li className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2">
+        <li className=" w-full px-4 py-2 text-lg hover:bg-slate-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2">
           <p>Coupons</p>
           <IoChevronForward />
         </li>
         <li>
           <Link
-            className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
+            className=" w-full px-4 py-2 text-lg hover:gray-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
             href="/account/help_center"
           >
             <p>Help Center</p>
@@ -96,7 +96,7 @@ export default function Dropdown() {
         </li>
         <li>
           <Link
-            className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
+            className=" w-full px-4 py-2 text-lg hover:gray-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
             href="/account/settings"
           >
             <p>Settings</p>
@@ -105,7 +105,7 @@ export default function Dropdown() {
         </li>
         <li
           onClick={() => signOut()}
-          className=" w-full px-4 py-2 text-lg hover:bg-slate-400 dark:hover:bg-dim text-dim dark:text-gray-200 inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
+          className=" w-full px-4 py-2 text-lg hover:gray-400 text-dim inline-flex justify-between rounded-md hover:text-white font-normal items-center gap-2"
         >
           Logout
         </li>

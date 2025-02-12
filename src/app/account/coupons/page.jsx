@@ -5,11 +5,11 @@ export default function Coupon() {
   let [allCoupon, setAllCoupon] = useState("");
   return (
     <section className='flex flex-col gap-4 max-md:gap-2'>
-      <div className="w-full dark:bg-dark bg-white rounded-xl h-fit py-2 px-4">
-        <p className="font-bold text-xl text-dark dark:text-gray-200">My Coupon</p>
+      <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
+        <p className="font-bold text-xl text-dark">My Coupon</p>
       </div>
-      <div className=" w-full dark:bg-dark bg-white h-auto rounded-lg px-4 py-4">
-        <form className='w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2'><input className="w-full h-8 px-3 caret-secondary dark:bg-dim dark:text-gray-400 bg-slate-100 rounded-l-full outline-secondary dark:outline-none" type="text" name="order_tracking_id" placeholder="coupon ID" /><button className='bg-primary text-white font-semibold text-base px-2' type="submit">Search</button> </form>
+      <div className=" w-full bg-white h-auto rounded-lg px-4 py-4">
+        <form className='w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2'><input className="w-full h-8 px-3 caret-secondary bg-slate-100 rounded-l-full outline-secondary" type="text" name="order_tracking_id" placeholder="coupon ID" /><button className='bg-primary text-white font-semibold text-base px-2' type="submit">Search</button> </form>
         <ul className='flex gap-4 font-semibold text-sm text-primary px-2'>
           <li>View All</li>
           <li>Used</li>

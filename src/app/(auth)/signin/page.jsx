@@ -8,8 +8,8 @@ export default async function Signin() {
   console.log(session.user)
   return (
     <main className="max-md:p-10 py-20 w-full h-full flex items-center justify-center">
-      <div className=" w-[30%] max-md:w-4/5 bg-white dark:bg-dark rounded-2xl h-auto py-6 px-6">
-        <p className="dark:text-gray-400 text-dim text-2xl font-bold text-center">
+      <div className=" w-[30%] max-md:w-4/5 bg-white rounded-2xl h-auto py-6 px-6">
+        <p className="text-dim text-2xl font-bold text-center">
           Welcome back
         </p>
         <div
@@ -24,7 +24,7 @@ export default async function Signin() {
                 type="email"
                 name="email"
                 placeholder="email"
-                className="p-2 ps-4 border-primary outline-primary w-full h-10 font-medium caret-secondary text-base placeholder:text-slate-400 bg-gray-200 dark:bg-dim rounded-2xl text-dark dark:text-gray-200"
+                className="p-2 ps-4 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-2xl text-dark"
               />
             </div>
             <div className=" w-full">
@@ -32,12 +32,12 @@ export default async function Signin() {
                 type="password"
                 name="password"
                 placeholder="password"
-                className=" p-2 ps-4 pe-8 border-primary outline-primary w-full h-10 font-medium caret-secondary text-base placeholder:text-slate-400 bg-gray-200 dark:bg-dim rounded-2xl text-dark dark:text-gray-200"
+                className=" p-2 ps-4 pe-8 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-2xl text-dark"
               />
             </div>
           </div>
           <Link
-            className=" text-primary text-sm text-end font-medium mb-2 me-2"
+            className=" text-primary text-sm text-end mb-2 me-2"
             href="/forgotten_password"
           >
             Forgotten password?
@@ -49,8 +49,8 @@ export default async function Signin() {
             Login
           </button>
         </form>
-        <fieldset className=" w-full mt-4 py-2 border-t-[2px] border-slate-200">
-          <legend className=" m-auto text-gray-400 dark:bg-dark bg-white text-center px-2">
+        <fieldset className=" w-full mt-4 py-2 border-t-[2px] border-gray-200">
+          <legend className=" m-auto text-gray-400 bg-white text-center px-2">
             or with
           </legend>
           <div className="flex  gap-3 w-full justify-center items-center">
@@ -86,7 +86,7 @@ export default async function Signin() {
             </form>
           </div>
         </fieldset>
-        <div className="inline-flex dark:text-gray-400 text-dim text-xs font-thin w-full text-center justify-center items-center">
+        <div className="inline-flex text-dim text-xs w-full text-center justify-center items-center">
           <p>
             By continuing, you confirm that you are an adult and you have read
             and accepted our terms, Titaoja Membership Agreement and Privacy

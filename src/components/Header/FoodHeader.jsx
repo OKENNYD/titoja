@@ -11,7 +11,7 @@ export default function AccountHeader({ Menu }) {
   let { theme } = useTheme();
   const { setIsDropDown, isAcctMenu, setIsAcctMenu } = useGlobalContext();
   return (
-    <header className="z-20 sticky left-0 top-0 py-2 px-14 max-md:px-2 w-full h-14 max-md:h-auto bg-white dark:bg-dark flex items-center justify-between border-b-2 border-gray-100 dark:border-dim">
+    <header className="z-20 sticky left-0 top-0 py-2 px-14 max-md:px-2 w-full h-14 max-md:h-auto bg-white flex items-center justify-between border-b-2 border-gray-100">
       <div className="w-1/5 max-md:w-auto flex gap-2 items-center">
         <Link href="/">
           <Image

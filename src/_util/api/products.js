@@ -993,7 +993,6 @@ let products = [
     image: "https://www.example.com/product-image10.jpg",
     brand: { name: "FeedingTime" },
     offers: {
-      "@type": "Offer",
       price: 89.99,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",

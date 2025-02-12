@@ -35,7 +35,7 @@ export default function CartCard(
       />
       <label
         htmlFor={`cartSelect${id}`}
-        className="transition-shadow w-full h-40 max-md:h-24 rounded-xl box-border p-2 bg-white dark:bg-dark flex gap-2 items-center"
+        className="transition-shadow w-full h-40 max-md:h-24 rounded-xl box-border p-2 bg-white flex gap-2 items-center"
       >
         <Image
           src={Images.img_4}
@@ -45,7 +45,7 @@ export default function CartCard(
         />
         <div className=" w-full flex flex-col ">
           <Link href={"item/" + id + "/" + title}>
-            <p className="text-ellipsis capitalize font-medium text-lg max-md:text-sm dark:text-gray-200 text-dark line-clamp-1">
+            <p className="text-ellipsis capitalize font-medium text-lg max-md:text-sm text-dark line-clamp-1">
               {title}
             </p>
           </Link>
@@ -53,18 +53,18 @@ export default function CartCard(
             <div className="">
               <div className="add_ons pt-1 w-auto h-full flex gap-2 text-sm max-md:text-xs text-gray-400">
                 <div className=" bg-red-800 rounded-full px-2 w-auto h-full aspect-square"></div>
-                <div className=" bg-gray-200 dark:bg-dim rounded-full px-2 flex justify-center dark:text-gray-200 items-center">
+                <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">
                   cotton
                 </div>
-                <div className=" bg-gray-200 dark:bg-dim rounded-full px-2 flex justify-center dark:text-gray-200 items-center">
+                <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">
                   42&quot;
                 </div>
               </div>
-              <div className="h-full font-medium text-dim dark:text-gray-400 text-xs py-1 max-md:hidden">
+              <div className="h-full font-medium text-dim text-xs py-1 max-md:hidden">
                 <span>{stock}+ sold</span>
               </div>
               <div className="price">
-                <p className=" text-xl font-bold flex items-baseline max-md:text-lg text-dark dark:text-gray-200">
+                <p className=" text-xl font-bold flex items-baseline max-md:text-lg text-dark">
                   {formatter.format(discountedPrice * stockCount)}
                 </p>
               </div>
@@ -76,16 +76,16 @@ export default function CartCard(
                   {liked ? (
                     <IoBookmark />
                   ) : (
-                    <IoBookmarkOutline className="text-dim dark:text-gray-200" />
+                    <IoBookmarkOutline className="text-dim" />
                   )}
                 </span>
-                <div className=" p-1 w-5/6 gap-2 max-md:gap-1 flex text-dim dark:text-gray-200 items-center text-xl max-md:text-sm outline-0 border-0 cursor-pointer ">
+                <div className=" p-1 w-5/6 gap-2 max-md:gap-1 flex text-dim items-center text-xl max-md:text-sm outline-0 border-0 cursor-pointer ">
                   <button
                     onClick={(e) => {
                       e.currentTarget.disabled = true;
                       setStockCount((prev) => prev--);
                     }}
-                    className=" text-2xl max-md:text-lg text-white bg-primary dark:bg-secondary rounded-full"
+                    className=" text-2xl max-md:text-lg text-white bg-primary rounded-full"
                   >
                     <IoRemove />
                   </button>
@@ -94,7 +94,7 @@ export default function CartCard(
                   </span>
                   <button
                     onClick={() => setStockCount((prev) => prev++)}
-                    className=" text-2xl max-md:text-lg text-white bg-primary dark:bg-secondary rounded-full"
+                    className=" text-2xl max-md:text-lg text-white bg-primary rounded-full"
                   >
                     <IoAdd />
                   </button>

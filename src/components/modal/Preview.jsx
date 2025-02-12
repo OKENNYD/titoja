@@ -34,7 +34,7 @@ export default function Preview() {
             <Image
               src={Images.dimension}
               alt="product img"
-              className=" border-primary border-2 dark:border-secondary mx-auto rounded-2xl aspect-square w-auto h-auto"
+              className=" border-primary border-2 mx-auto rounded-2xl aspect-square w-auto h-auto"
             />
             <Image
               src={Images.dimension}
@@ -93,7 +93,7 @@ export default function Preview() {
               <Image
                 src={Images.dimension}
                 alt="product img"
-                className=" border-primary border-2 dark:border-secondary mx-auto rounded-xl aspect-square w-auto h-auto"
+                className=" border-primary border-2 mx-auto rounded-xl aspect-square w-auto h-auto"
               />
               <Image
                 src={Images.dimension}
@@ -126,18 +126,18 @@ export default function Preview() {
             <div className=" w-full">
               <div className="w-full gap-4 p-1 flex justify-between items-center">
                 <div className=" p-1 w-5/6 gap-2 flex text-slate-600 items-center text-1xl outline-0 border-0 bg-slate-200 rounded-full cursor-pointer ">
-                  <button onClick={handleIncrement} className=" text-3xl text-white bg-primary dark:bg-secondary rounded-full" >
+                  <button onClick={handleIncrement} className=" text-3xl text-white bg-primary rounded-full" >
                   <IoAdd/>
                   </button>
                   <span className=" w-full border-0 outline-0 text-center bg-transparent">{stockCount}
                   </span>
-                  <button onClick={handleDecrement} className=" text-3xl text-white bg-primary dark:bg-secondary rounded-full" >
+                  <button onClick={handleDecrement} className=" text-3xl text-white bg-primary rounded-full" >
                   <IoRemove/>
                   </button>
                 </div>
                 <IoHeart className=" text-3xl text-secondary rounded-full"/>
               </div>
-              <button className=" py-2 font-semibold rounded-full w-full text-white bg-primary dark:bg-secondary">
+              <button className=" py-2 font-semibold rounded-full w-full text-white bg-primary">
                 Add to Cart
               </button>
             </div>

@@ -10,10 +10,9 @@ export default function ChangePassword() {
       }
       console.log(data);
   }
-
     return (
       <main className="max-md:p-6 py-20 w-full h-full flex items-center justify-center">
-        <div className="bg-white dark:bg-dark w-[30%] max-md:w-4/5 h-auto pt-6 pb-4">
+        <div className="bg-white w-[30%] max-md:w-4/5 h-auto pt-6 pb-4">
           <Link href="/">
             <Image
               src={Images.icon}
@@ -23,7 +22,7 @@ export default function ChangePassword() {
               className=" m-auto mb-2"
             ></Image>
           </Link>
-          <p className="dark:text-gray-400 text-dim text-2xl font-bold text-center">
+          <p className="text-dim text-2xl font-bold text-center">
             Change password
           </p>
           <form
@@ -36,11 +35,11 @@ export default function ChangePassword() {
               name="password"
               id="password"
               placeholder="password"
-              className=" p-2 ps-3 border-primary w-full h-9 font-medium caret-secondary text-lg placeholder:text-gray-300 bg-gray-200 dark:bg-gray-400 rounded-2xl mb-3 dark:text-gray-200 text-dark"
+              className=" p-2 ps-3 border-primary w-full h-9 caret-secondary text-lg placeholder:text-gray-300 bg-gray-200 rounded-2xl mb-3 text-dark"
             />
             <button
               type="submit"
-              className=" my-2 bg-primary dark:bg-secondary w-full h-9 font-bold rounded-2xl text-white"
+              className=" my-2 bg-primary w-full h-9 font-bold rounded-2xl text-white"
             >
               Change Password
             </button>

@@ -21,7 +21,7 @@ export default function Food({
   });
   const notify = () => toast.info("check out your order");
   return (
-    <div className="relative sm:hover:scale-105 max-2xl:w-1/6 max-xl:w-1/6 max-lg:w-1/4 max-md:w-1/4 max-sm:w-1/2 h-fit box-border duration-200 transition-transform sm:hover:bg-opacity-90  sm:hover:bg-white sm:hover:dark:bg-dark overflow-hidden rounded-xl sm:hover:p-2 p-1">
+    <div className="relative hover:scale-105  max-xl:w-1/6 max-lg:w-1/4 max-md:w-1/4 max-sm:w-1/2 h-fit box-border duration-200 transition-transform hover:bg-opacity-90  sm:hover:bg-white overflow-hidden rounded-xl hover:p-2 p-1">
       <Suspense fallback={<Loader />}>
         <Image
           src={src}
@@ -30,17 +30,17 @@ export default function Food({
           priority
         />
         <div className="w-auto p-1">
-          <p className="capitalize text-dark dark:text-gray-200 text-ellipsis max-2xl:text-lg max-xl:text-lg max-lg:text-base max-md:text-base max-sm:text-base line-clamp-1">
+          <p className="capitalize text-dark text-ellipsis max-lg:text-lg max-md:text-base max-sm:text-base line-clamp-1">
             {title}
           </p>
           <div className="flex gap-1">
             <Rate size={4} rate={ratings} className=" flex text-primary" />
-            <span className=" flex items-center text-xs gap-[2px] font-normal text-dim dark:text-gray-400">
+            <span className=" flex items-center text-xs gap-[2px] text-dim">
               {ratings.toFixed(1)}
             </span>
           </div>
           <div className="price w-full items-baseline flex flex-col ">
-            <p className=" -my-[2px] font-bold flex items-baseline text-dim dark:text-gray-200 text-lg">
+            <p className=" -my-[2px] font-bold flex items-baseline text-dim text-lg">
               {formatter.format(price)}
             </p>
           </div>

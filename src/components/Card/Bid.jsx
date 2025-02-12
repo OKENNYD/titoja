@@ -10,27 +10,27 @@ export default function Bid({status,name,price}) {
   return (
     <Link
       href="/bid/1?id=2&name=okennyd"
-      className="max-2xl:w-72 max-xl:w-72 max-lg:w-60 max-md:w-full max-sm:w-full h-fit flex gap-2 bg-white dark:bg-dark hover:shadow-2xl hover:shadow-gray-400 hover:dark:shadow-dim rounded-2xl relative p-2 box-border"
+      className="shrink-0 max-lg:w-1/4 max-md:w-1/2 h-auto flex gap-2 bg-white hover:shadow-2xl hover:shadow-gray-400 rounded-2xl relative p-2 box-border"
     >
       <Image
         src={Images.img_3}
         alt="product img"
-        className="aspect-square rounded-xl w-2/5 h-full"
+        className="aspect-square rounded-xl w-2/5 h-auto"
         priority
       />
-      <div className="flex flex-col text-dim dark:text-gray-400 gap-1">
+      <div className="flex flex-col text-dim gap-1">
         <p className="text-lg font-normal text-nowrap text-clip line-clamp-1">
           Product Name
         </p>
         <div className="flex gap-4 items-center">
           {status ? (
-            <span className="flex items-center gap-[2px] bg-[#FF0000] w-fit h-auto px-2 text-sm text-white max-sm:text-xs rounded-2xl animate-pulse font-normal">
+            <span className="flex items-center gap-[2px] bg-[#FF0000] w-fit h-auto px-2 text-sm text-white max-sm:text-xs rounded-2xl animate-pulse">
               <IoDisc />
               Live
             </span>
           ) : (
             <span className="gap-1 bg-[#FF0000] w-fit h-auto px-2 rounded-full">
-              <p className="font-normal text-sm text-white max-sm:text-xs">
+              <p className="text-sm text-white max-sm:text-xs">
                 Ended
               </p>
             </span>

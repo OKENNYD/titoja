@@ -4,12 +4,12 @@ import Link from "next/link"
 import { IoHeartOutline, IoPeopleOutline } from "react-icons/io5"
 export default function Follow() {
   return (
-    <div className="w-full h-auto rounded-xl sm:hover:scale-105 sm:hover:bg-opacity-90 dark:hover:bg-dark hover:bg-white  sm:hover:p-2 p-2">
+    <div className="w-full h-auto rounded-xl hover:scale-105 hover:bg-opacity-90 hover:bg-white  hover:p-2 p-2">
         <Link href={"shop"+"kidet"}></Link>
       <Image src={images.icon} alt="image" className="w-full h-auto aspect-square" />
       <div className="">
-        <p className=" text-center text-dark dark:text-gray-200 font-bold text-lg line-clamp-1">Kidet stores</p>
-        <div className="w-full justify-center gap-4 flex text-dim dark:text-gray-400">
+        <p className=" text-center text-dark font-bold text-lg line-clamp-1">Kidet stores</p>
+        <div className="w-full justify-center gap-4 flex text-dim">
             <div className="flex flex-col items-center justify-center">
               <IoHeartOutline size={20}/>
               <p className=" font-semibold text-sm">123</p>

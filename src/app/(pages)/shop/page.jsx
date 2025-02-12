@@ -21,30 +21,30 @@ export default function Shop() {
         />
         <div className="w-full flex justify-between max-md:flex-col py-2">
           <div className="flex flex-col gap-2">
-            <p className="font-medium text-3xl dark:text-gray-200 text-slate-600">
+            <p className="font-medium text-3xl text-slate-600">
             Grace Oyetade Store
           </p>
           <div className="flex ps-2 items-center gap-1">
             <Rate size={6} rate={4.5} />
-            <span className="text-base text-dim dark:text-gray-400 font-normal">
+            <span className="text-base text-dim font-normal">
               4.5
             </span>
           </div>
-          <div className="flex gap-4 text-base text-dim dark:text-gray-400 font-normal px-2">
+          <div className="flex gap-4 text-base text-dim px-2">
             <span>20+ visits</span>
             <span>20+ followers</span>
           </div>
           </div>
           <div className="flex flex-col justify-end">
-             <div className="flex gap-2 items-center text-dim dark:text-gray-400">
+             <div className="flex gap-2 items-center text-dim">
               <IoCall/>
-              <a className="hover:text-primary dark:hover:text-secondary" href="tel:+2349070387981">+2349070387981</a>
+              <a className="hover:text-primary " href="tel:+2349070387981">+2349070387981</a>
              </div>
-             <div className="flex gap-2 items-center text-dim dark:text-gray-400">
+             <div className="flex gap-2 items-center text-dim">
               <IoMail/>
-              <a className="hover:text-primary dark:hover:text-secondary" href="mailto:info@titaoja.com">info@titaoja.com</a>
+              <a className="hover:text-primary " href="mailto:info@titaoja.com">info@titaoja.com</a>
              </div>
-             <div className="flex gap-2 items-center text-dim dark:text-gray-400">
+             <div className="flex gap-2 items-center text-dim">
               <IoLocation/>
               <address>
                 FUNAAD Road, Abeokuta, Ogun State, Nigeria.
@@ -54,7 +54,7 @@ export default function Shop() {
         </div>
       </div>
       <div className="w-full h-auto rounded-2xl p-2">
-        <h3 className="text-slate-600 ps-2 font-medium text-lg dark:text-gray-200">
+        <h3 className="text-slate-600 ps-2 font-medium text-lg">
           Products
         </h3>
         <div className="w-auto flex content-center flex-wrap gap-2 justify-evenly items-center">
@@ -75,7 +75,7 @@ export default function Shop() {
         <div className="w-full items-center justify-center gap-2 flex py-4">
           <button
             onClick={() => setGoodsCount(goodsCount + 15)}
-            className=" text-base bg-primary dark:bg-secondary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
+            className=" text-base bg-primary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
           >
             Show More
             <IoChevronDown />

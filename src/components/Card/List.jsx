@@ -25,7 +25,7 @@ export default function List(
   }, [])
   return (
     <div className="relative flex items-center ">
-      <div className="transition-shadow w-full h-36 max-md:h-24 rounded-xl box-border p-2 dark:bg-dark bg-white flex gap-2 items-center" >
+      <div className="transition-shadow w-full h-36 max-md:h-24 rounded-xl box-border p-2 bg-white flex gap-2 items-center" >
         <Image
           src={Images.dimension}
           alt="product img"
@@ -34,25 +34,25 @@ export default function List(
         />
         <div className="h-full w-full flex flex-col ">
           <Link href={"item/"+id+"/"+title}>
-            <p className="capitalize font-semibold text-lg max-md:text-sm max-md:font-bold text-dim dark:text-gray-200 line-clamp-1">{title.length > 20 ? title.slice(0, 20) + "..." : title}</p>
+            <p className="capitalize font-semibold text-lg max-md:text-sm max-md:font-bold text-dim line-clamp-1">{title.length > 20 ? title.slice(0, 20) + "..." : title}</p>
           </Link>  
           <div className=" w-full flex justify-between items-center">
             <div className="">
-              <div className="add_ons w-auto h-full flex gap-2 text-sm max-md:text-xs text-slate-400">
+              <div className="add_ons w-auto h-full flex gap-2 text-sm max-md:text-xs text-dim">
                 <div className=" bg-red-800 rounded-full px-2 w-auto h-full aspect-square"></div>
                 <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">cotton</div>
                 <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">42&quot;</div>
               </div>
-              <div className="h-full font-medium text-gray-400 text-xs py-1 max-md:hidden">
+              <div className="h-full text-gray-400 text-xs py-1 max-md:hidden">
                 <span>234+ sold</span>
               </div>
               <div className="price">
-                <p className=" text-xl font-bold flex items-baseline max-md:text-lg text-dim dark:text-gray-200">
+                <p className=" text-xl font-bold flex items-baseline max-md:text-lg text-dim">
                   <span className=" text-sm">{currencyCode}</span>
                   {discountedPrice}
                 </p>
               </div>
-              <a href="store/name" className="store_owner flex items-center text-gray-400 font-semibold max-md:text-sm text-sm ">
+              <a href="store/name" className="store_owner flex items-center text-gray-400 font-semibold text-sm ">
                 <p>Lakeys stores</p>
                 <IoChevronForward />
               </a>
@@ -62,12 +62,12 @@ export default function List(
                 {liked ? <IoHeart /> : <IoHeartOutline className="text-gray-400" />}
               </span>
               <div className=" p-1 w-5/6 gap-2 max-md:gap-1 flex text-dim items-center text-xl max-md:text-sm outline-0 border-0 cursor-pointer ">
-                <button onClick={(e) => {e.currentTarget.disabled = true; setStockCount(stockCount--)}} className=" text-2xl text-white bg-primary dark:bg-secondary rounded-full" >
+                <button onClick={(e) => {e.currentTarget.disabled = true; setStockCount(stockCount--)}} className=" text-2xl text-white bg-primary rounded-full" >
                   <IoRemove />
                 </button>
                 <span className=" w-full border-0 outline-0 text-center bg-transparent">{stockCount}
                 </span>
-                <button onClick={()=>setStockCount(stockCount++)} className=" text-2xl text-white bg-primary dark:bg-secondary rounded-full" >
+                <button onClick={()=>setStockCount(stockCount++)} className=" text-2xl text-white bg-primary rounded-full" >
                   <IoAdd />
                 </button>
               </div>

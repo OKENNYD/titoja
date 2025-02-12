@@ -12,7 +12,7 @@ export default function AuthHeader() {
     { name: "Register", href: "/signup" }
   ];
   return (
-    <header className=" sticky top-0 left-0 w-full border-b-2 border-gray-100 dark:border-dim h-14 flex justify-between items-center bg-white dark:bg-dark px-14 py-2 ">
+    <header className=" sticky top-0 left-0 w-full border-b-2 border-gray-100 h-14 flex justify-between items-center bg-white px-14 py-2 ">
         <Image src={Images.dark} alt="@Titoja" priority className="w-36 max-md:w-32 h-auto"/>
         <nav className={pathname === "/address" ? "hidden" : "flex items-center gap-2"}>
           {logs.map((log,index) => (

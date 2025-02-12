@@ -297,7 +297,7 @@ export default function Products() {
       category: "Paper Crafts",
       subcategory: "Crafting Tools & Equipment",
       segment: "Scissors",
-      color: "Red",
+      color: "Red", 
       size: "8 inches",
       material: "Stainless Steel",
       mpn: "CS-123456",
@@ -1035,18 +1035,18 @@ export default function Products() {
     },
   ];
   return (
-    <div className="px-14">
+    <div className="px-14 max-md:px-2">
       {departments?.map((_, i) => (
         <div
           key={i}
           className="flex flex-col gap-1 w-full justify-center m-auto"
         >
-          <Link href={"/" + _.name} className="max-md:text-base text-dim dark:text-gray-400 font-normal text-lg border-l-2 border-primary px-2 m-1 flex justify-between items-center rounded-r-2xl hover:dark:bg-dark hover:bg-white">
+          <Link href={"/departments/" + _.name} className="text-dim text-lg border-l-2 border-primary px-2 m-1 flex justify-between items-center rounded-r-2xl hover:bg-white">
             {_.name}
-            <IoArrowForward/>
+            <IoArrowForward className=" max-md:text-xl"/>
           </Link>
-          <div className="w-full h-auto flex overflow-x-scroll scroll-none overflow-y-scroll">
-            {products
+            <div className="w-full h-fit p-2 flex overflow-x-auto gap-1 scroll-none">
+              {products
               ?.filter((a) => a.department === _.name)
               ?.map((_p, j) => {
                 return (
@@ -1063,7 +1063,7 @@ export default function Products() {
                   />
                 );
               }) || <Loader />}
-          </div>
+            </div>
         </div>
       ))}
     </div>
