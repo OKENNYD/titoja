@@ -7,9 +7,7 @@ const GlobalProvider = ({ children }) => {
     const [isLogged, setIsLogged] = useState(true);
     const [isMenu, setIsMenu] = useState(false);
     const [isAcctMenu, setIsAcctMenu] = useState(false);
-    const [isModal, setIsModal] = useState(true);
     const [isDropDown, setIsDropDown] = useState(false);
-  const [id, setId] = useState(2);
   const [isPopup, setIsPopup] = useState(false);
   return (
     <GlobalContext.Provider
@@ -20,10 +18,6 @@ const GlobalProvider = ({ children }) => {
         setIsDropDown,
         isMenu,
         setIsMenu,
-        isModal,
-        setIsModal,
-        id,
-        setId,
         isAcctMenu,
         setIsAcctMenu,
         isPopup,

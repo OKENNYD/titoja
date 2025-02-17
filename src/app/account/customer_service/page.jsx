@@ -1,17 +1,15 @@
 import Image from "next/image"
 import Images from "@/_util/constants/images"
 import Message from '@/components/Card/Message'
-import { IoTimeOutline, IoPaperPlane, IoAttach, IoChevronForward } from "react-icons/io5";
+import { Send, Paperclip, ChevronRight } from "lucide-react";
 import Bubble from "@/components/Card/Bubble";
 export default function CustomerService() {
   return (
     <section className="flex flex-col gap-4 max-md:gap-2">
-      <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
-        <p className="font-bold text-xl text-dark">
-          Messages
-        </p>
+      <div className="w-full bg-white rounded-2xl h-fit py-2 px-4">
+        <p className="font-semibold text-xl text-dark">Messages</p>
       </div>
-      <div className=" w-full bg-white h-96 flex gap-4 rounded-lg px-4 max-md:px-2 py-4">
+      <div className=" w-full bg-white h-96 flex gap-4 rounded-2xl px-4 max-md:px-2 py-4">
         <div className="w-2/6 max-md:w-full max-md:hidden bar h-full rounded-md overflow-y-scroll">
           <Message title="Customer Service" />
           <Message title="Report Center" />
@@ -22,8 +20,8 @@ export default function CustomerService() {
           <Message title="Customer Service" />
           <Message title="Customer Service" />
         </div>
-        <div className="w-4/6 max-md:absolute max-md:z-50 max-md:top-0 max-md:left-0 max-md:w-full h-full box-border bg-dim rounded-md max-md:rounded-none overflow-hidden">
-          <div className="flex justify-between h-1/6 max-md:h-14 w-full bg-slate-400 max-md:bg-primary p-2">
+        <div className="w-4/6 max-md:absolute max-md:z-50 max-md:top-0 max-md:left-0 max-md:w-full h-full box-border bg-gray-100 rounded-md max-md:rounded-none overflow-hidden">
+          <div className="flex justify-between h-1/6 max-md:h-14 w-full bg-gray-400 max-md:bg-primary p-2">
             <div className="flex gap-4 max-md:gap-2">
               <Image
                 src={Images.avatar}
@@ -40,10 +38,7 @@ export default function CustomerService() {
                 </p>
               </div>
             </div>
-            <IoChevronForward
-              className=" text-dim max-md:text-dim"
-              size={32}
-            />
+            <ChevronRight strokeWidth={1} className=" text-dim max-md:text-dim" size={32} />
           </div>
           <div className="flex flex-col p-2 gap-2 overflow-y-scroll h-4/6 max-md:h-5/6">
             <Bubble sender={"me"} />
@@ -52,12 +47,9 @@ export default function CustomerService() {
             <Bubble sender={"me"} />
             <Bubble sender={false} />
           </div>
-          <form className=" w-full p-2 gap-1 flex h-1/6 bg-white max-md:h-14 overflow-hidden">
-            <label
-              className=" rounded-3xl text-xs p-2 h-full w-auto text-white max-md:text-base bg-primary max-md:bg-transparent max-md:text-slate-600 font-bold "
-              htmlFor="docUpload"
-            >
-              <IoAttach className=" max-md:size-8" size={25} />
+          <form className=" w-full p-2 gap-1 items-center flex h-1/6 bg-white max-md:h-14 overflow-hidden">
+            <label htmlFor="docUpload">
+              <Paperclip strokeWidth={1} className="size-8 text-secondary" />
             </label>
             <input
               className=" sr-only"
@@ -65,17 +57,14 @@ export default function CustomerService() {
               name="document"
               id="docUpload"
             />
-            <input
-              type="text"
+            <textarea
+              cols="5"
               name="msg"
               className=" outline-none text-lg w-full max-md:w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400 scroll-none"
               placeholder="Message ..."
-            />
-            <button
-              type="submit"
-              className=" rounded-3xl text-xs p-2 h-full w-auto text-white max-md:text-base bg-primary  font-bold "
-            >
-              <IoPaperPlane className=" size-4" size={25} />
+            ></textarea>
+            <button type="submit">
+              <Send strokeWidth={1} className=" text-secondary size-8" />
             </button>
           </form>
         </div>

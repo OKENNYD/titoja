@@ -2,8 +2,6 @@ import {
   FaCcMastercard,
   FaCcVisa,
   FaCcDiscover,
-  FaCcDinersClub,
-  FaCcAmazonPay,
   FaCcAmex,
   FaCcApplePay,
   FaCcJcb,
@@ -21,7 +19,6 @@ import {
   IoLogoTwitter,
   IoLogoWechat,
   IoLogoWhatsapp,
-  IoArrowForward,
 } from "react-icons/io5";
 
 let service = [
@@ -43,7 +40,7 @@ let service = [
   {
     title: "Quick Delivery",
     icon: <FaTruckFast size={30} />,
-    text: "For orders above 100kg"
+    text: "On all products"
   },
 ]
 
@@ -104,7 +101,7 @@ let card = {
 };
 
 let socialHandle = {
-  title: "News Letter",
+  title: "Connect with us on",
   icons: [
   {
     name: "whatsapp",

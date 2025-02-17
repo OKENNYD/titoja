@@ -4,13 +4,11 @@
 
 .bar::-webkit-scrollbar-track {
   @apply bg-gray-200;
-  @apply dark:bg-dim;
   @apply w-2;
 }
 
 .bar::-webkit-scrollbar-thumb {
-  @apply bg-dim;
-  @apply dark:bg-gray-400;
+  @apply bg-gray-400;
   @apply w-2;
   @apply rounded-full;
 }
@@ -95,10 +93,17 @@
   background-repeat: no-repeat;
   /* background-image: url("./assert/img/dish.jpg"); */
 }
-
-.anchor-name{
-  anchor-name: --nav-pop;
+.announceAnimate{
+  animation-name: announcement;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
-.position-anchor{
-  position-anchor: --nav-pop;
+@keyframes announcement {
+  0%{
+    
+  }
+  100%{
+    
+  }
 }

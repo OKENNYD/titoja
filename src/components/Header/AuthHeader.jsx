@@ -3,10 +3,8 @@ import Image from "next/image"
 import Images from "@/_util/constants/images"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
-import { useTheme } from 'next-themes'
 export default function AuthHeader() {
   let pathname = usePathname()
-  let { theme } = useTheme();
   let logs = [
     { name: "Login", href: "/signin" },
     { name: "Register", href: "/signup" }

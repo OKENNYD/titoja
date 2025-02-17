@@ -4,10 +4,8 @@ import Images from "@/_util/constants/images";
 import Rate from "@/components/Rate/Rate";
 import Product from "@/components/Card/Product";
 import goods from "@/_util/api/goods";
-import { IoChevronDown, IoCall, IoMail, IoLocation } from "react-icons/io5";
+import { ChevronDown, Call, Mail, Location } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 export default function Shop() {
   let [goodsCount, setGoodsCount] = useState(40)
   let filteredGoods = goods.filter(good => good.id <= goodsCount)
@@ -22,41 +20,39 @@ export default function Shop() {
         <div className="w-full flex justify-between max-md:flex-col py-2">
           <div className="flex flex-col gap-2">
             <p className="font-medium text-3xl text-slate-600">
-            Grace Oyetade Store
-          </p>
-          <div className="flex ps-2 items-center gap-1">
-            <Rate size={6} rate={4.5} />
-            <span className="text-base text-dim font-normal">
-              4.5
-            </span>
-          </div>
-          <div className="flex gap-4 text-base text-dim px-2">
-            <span>20+ visits</span>
-            <span>20+ followers</span>
-          </div>
+              Grace Oyetade Store
+            </p>
+            <div className="flex ps-2 items-center gap-1">
+              <Rate size={6} rate={4.5} />
+              <span className="text-base text-dim font-normal">4.5</span>
+            </div>
+            <div className="flex gap-4 text-base text-dim px-2">
+              <span>20+ visits</span>
+              <span>20+ followers</span>
+            </div>
           </div>
           <div className="flex flex-col justify-end">
-             <div className="flex gap-2 items-center text-dim">
-              <IoCall/>
-              <a className="hover:text-primary " href="tel:+2349070387981">+2349070387981</a>
-             </div>
-             <div className="flex gap-2 items-center text-dim">
-              <IoMail/>
-              <a className="hover:text-primary " href="mailto:info@titaoja.com">info@titaoja.com</a>
-             </div>
-             <div className="flex gap-2 items-center text-dim">
-              <IoLocation/>
-              <address>
-                FUNAAD Road, Abeokuta, Ogun State, Nigeria.
-              </address>
-             </div>
+            <div className="flex gap-2 items-center text-dim">
+              <Call strokeWidth={1} />
+              <a className="hover:text-primary " href="tel:+2349070387981">
+                +2349070387981
+              </a>
+            </div>
+            <div className="flex gap-2 items-center text-dim">
+              <Mail strokeWidth={1} />
+              <a className="hover:text-primary " href="mailto:info@titaoja.com">
+                info@titaoja.com
+              </a>
+            </div>
+            <div className="flex gap-2 items-center text-dim">
+              <Location strokeWidth={1} />
+              <address>FUNAAD Road, Abeokuta, Ogun State, Nigeria.</address>
+            </div>
           </div>
         </div>
       </div>
       <div className="w-full h-auto rounded-2xl p-2">
-        <h3 className="text-slate-600 ps-2 font-medium text-lg">
-          Products
-        </h3>
+        <h3 className="text-slate-600 ps-2 font-medium text-lg">Products</h3>
         <div className="w-auto flex content-center flex-wrap gap-2 justify-evenly items-center">
           {filteredGoods?.map((_, i) => (
             <Product
@@ -78,13 +74,17 @@ export default function Shop() {
             className=" text-base bg-primary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
           >
             Show More
-            <IoChevronDown />
+            <ChevronDown strokeWidth={1} />
           </button>
         </div>
       </div>
       <div className="">
         <h3>About</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus atque dolores in eos aliquam animi sed nemo vero cumque mollitia harum ad modi, ea ratione eius eum doloremque hic.</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat natus
+          atque dolores in eos aliquam animi sed nemo vero cumque mollitia harum
+          ad modi, ea ratione eius eum doloremque hic.
+        </p>
       </div>
     </div>
   );

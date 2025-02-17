@@ -1,7 +1,7 @@
 import images from "@/_util/constants/images";
 import Image from "next/image"
 import Link from "next/link"
-import { IoChevronForward } from "react-icons/io5"
+import { ChevroRight } from "lucide-react"
 export default function Bid() {
   return (
     <div className="px-12 py-4">
@@ -66,7 +66,7 @@ export default function Bid() {
                 Seller Name
               </Link>
             </div>
-            <IoChevronForward className=" text-dark text-xl" />
+            <ChevroRight strokeWidth={1} className=" text-dark text-xl" />
           </div>
           <h1 className=" font-medium text-base ps-2 text-dark">
             About shop owner

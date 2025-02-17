@@ -1,6 +1,6 @@
 "use client"
-import { useState } from 'react'
-import { IoChevronDown } from 'react-icons/io5'
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 export default function Select({primary, options, style}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(primary);
@@ -19,7 +19,7 @@ export default function Select({primary, options, style}) {
         onMouseEnter={() => setIsOpen(!isOpen)}
       >
         {selectedOption}&nbsp;
-        <IoChevronDown />
+        <ChevronDown strokeWidth={1.5} />
       </span>
       {isOpen && (
         <ul className="absolute z-10 w-auto shadow-md shadow-gray-400 text-nowrap h-auto bg-white border border-gray-400 rounded-xl overflow-hidden">

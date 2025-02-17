@@ -1,7 +1,7 @@
 'use client'
 import departments from "@/_util/api/department";
 import { useState, useRef } from "react"
-import { IoChevronDown } from "react-icons/io5";
+import { ChevronDown } from "lucide-react";
 export default function SelectionCard() {
   const [isOpen, setIsOpen] = useState(false);
   const [select, setSelect] = useState("All Category")
@@ -13,14 +13,14 @@ export default function SelectionCard() {
       onMouseEnter={() => {
         isOpen == false && setIsOpen(true);
       }}
-      className="relative"
+      className="relative max-md:hidden"
     >
       <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex text-base text-nowrap cursor-pointer gap-1 w-auto items-center h-full px-2 py-1 bg-primary text-white font-normal rounded-full"
+        className="flex text-base text-nowrap cursor-pointer gap-1 w-auto items-center h-full px-2 py-1 max-md:py-2 bg-primary text-white font-normal rounded-full"
       >
         <span>{select}</span>
-        <IoChevronDown />
+        <ChevronDown strokeWidth={1} />
       </div>
       {isOpen && (
         <ul className="absolute shadow-sm shadow-dim z-[50] text-nowrap w-auto h-auto bg-white rounded-xl overflow-hidden">

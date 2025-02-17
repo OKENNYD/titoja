@@ -6,14 +6,14 @@ import Box from "../Card/Box";
 import Carousel from "../Carousel/Carousel";
 export default function Hero() {
   return (
-    <div className="w-full h-fit aspect-video flex flex-col gap-2 px-14 max-md:px-2 py-2">
+    <div className="w-full h-fit aspect-video flex flex-col gap-2 px-14 max-md:px-4 py-2">
       <Announcement />
-      <div className="w-full h-fit flex gap-2 max-md:flex-col ">
+      <div className="w-full h-fit flex gap-2 max-md:flex-col-reverse">
         <div className="w-fit h-fit">
         <span className="font-normal max-md:text-base text-lg border-l-2 border-primary px-2">
-          Special
+          Special  
         </span>
-        <div className="flex flex-col max-sm:flex-row gap-2 my-2">
+        <div className="flex max-md:w-full h-auto flex-col max-md:flex-row gap-2 my-2">
           <Box title={"Mystery Box"} />
           <Box title={"Blind Box"} />
         </div>
@@ -27,13 +27,13 @@ export default function Hero() {
           </span>
           <FaChevronRight />
         </div>
-        <div className="w-full flex gap-2 box-border h-fit overflow-x-scroll scroll-none p-2">
+        <div className="w-full flex gap-2 box-border h-fit overflow-x-scroll scroll-none">
           <Bid status={true} />
           <Bid status={false} />
           <Bid status={true} />
           <Bid status={false} />
           <Bid status={true} />
-          {/*<Bid status={false} />*/}
+          <Bid status={false} />
         </div>
       </div>
       <Brand />

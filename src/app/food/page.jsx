@@ -5,7 +5,7 @@ import goods from "@/_util/api/goods";
 import images from "@/_util/constants/images";
 import Food from "@/components/Card/Food";
 import { useState } from "react";
-import { IoChevronDown } from "react-icons/io5";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 export default function Foods() {
   let opts = data.map((val) => val.name);
@@ -15,7 +15,7 @@ export default function Foods() {
     <section>
       <div className="banner w-full h-auto relative flex justify-center items-center">
         <Image alt="dish" className="w-full h-[450px]" src={images.dish}/>
-        <form className="w-3/5 absolute bg-white h-12 flex p-2 rounded-full gap-2 text-lg">
+        <form className="w-3/5 absolute bg-white h-12 flex p-2 rounded-full gap-2 text-lg px-4">
           <Select
             primary={opts[1]}
             options={opts}
@@ -27,14 +27,14 @@ export default function Foods() {
             type="search"
             name="search"
             placeholder="Search dish..."
-            className="w-full marker:text-black h-full bg-transparent outline-none caret-secondary"
+            className="w-full marker:text-dim h-full bg-transparent outline-none caret-secondary"
           />
         </form>
       </div>
       <div className="px-10 py-4 flex flex-col gap-2">
-        <p className="font-semibold text-2xl border-l-2 border-primary p-2">Dishes</p>
+        <p className="font-semibold text-2xl border-l-4 border-primary p-1">Dishes</p>
         <div className="flex gap-2">
-        <div className="w-full h-auto flex flex-wrap">
+        <div className="w-full h-fit flex-wrap gap-1 flex">
           {filteredGoods?.map((_, i) => (
             <Food
               src={images.food}
@@ -53,10 +53,10 @@ export default function Foods() {
       <div className="w-full items-center justify-center gap-2 flex py-4">
         <button
           onClick={() => setGoodsCount(goodsCount + 18)}
-          className=" text-base bg-primary dark:bg-secondary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
+          className=" text-base bg-primary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center"
         >
           Show More
-          <IoChevronDown />
+          <ChevronDown strokeWidth={1} />
         </button>
       </div>
     </section>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Loader from "./Loader";
 import Images from "@/_util/constants/images"
-import { IoPeopleOutline } from "react-icons/io5";
+import { Users } from "lucide-react";
 export default function Auction({
   title,
   price,
@@ -19,7 +19,7 @@ export default function Auction({
     currency: "NGN",
   });
   return (
-    <div className="bg-white hover:scale-105 w-[200px] shrink-0 grow h-auto box-border duration-200 transition-transform hover:bg-gray-100 rounded-xl p-1">
+    <div className="h-auto box-border duration-200 transition-transform rounded-xl grow basis-48 border border-white hover:bg-opacity-10 p-2 hover:bg-secondary ">
       <Suspense fallback={<Loader />}>
         <Link
           className=" "
@@ -32,20 +32,22 @@ export default function Auction({
               className=" mx-auto aspect-square w-full h-auto"
               priority
             />
-            {users && <span className="top-0 absolute bg-secondary w-auto h-auto right-0 ps-3 px-1 text-white text-xs flex items-center rounded-bl-full">
-              <IoPeopleOutline className="text-sm"/>
+            <span className="top-0 absolute bg-secondary w-auto h-auto right-0 ps-3 p-1 text-white text-xs flex items-center rounded-bl-full">
+              <Users strokeWidth={1} size={15}/>
               &nbsp;{users}
-              </span>}
+              </span>
           </div>
-          <div className="w-auto p-1">
-            <p className="capitalize text-wrap text-base max-md:text-lg text-dark text-ellipsis">
+          <div className="w-auto pt-2">
+            <p className="capitalize text-wrap text-lg text-dark text-ellipsis line-clamp-1">
               Lorem, ipsum dolor.
             </p>
-            <div className="price w-full items-baseline flex flex-col ">
-              <p className="text-xl font-extrabold flex items-baseline text-dim">
+            <div className=" flex w-full h-auto flex-wrap gap-2 items-center justify-between">
+              <span className="text-red-500 animate-pulse text-lg -my-2">Live</span>
+              <span className="text-base -my-2">01:20:03</span>
+            </div>
+              <p className="text-xl font-semibold flex items-baseline text-dim">
                 {formatter.format(Math.floor(Math.random()*99999))}
               </p>
-            </div>
           </div>
         </Link>
       </Suspense>

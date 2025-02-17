@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function Carousel({ interval = 10000 }) {
   const [count, setCount] = useState(0);
@@ -41,13 +41,13 @@ export default function Carousel({ interval = 10000 }) {
             className="w-auto h-auto rounded-full p-2 text-4xl text-primary cursor-pointer"
             onClick={handleLeftClick}
           >
-            <IoChevronBackOutline />
+            <ChevronLeft strokeWidth={1} />
           </span>
           <span
             className="w-auto h-auto rounded-full p-2 text-4xl text-primary cursor-pointer"
             onClick={handleRightClick}
           >
-            <IoChevronForwardOutline />
+            <ChevronRight strokeWidth={1} />
           </span>
         </div>
         <div className="w-full h-auto p-2 flex gap-2 items-center justify-center">

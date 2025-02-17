@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { foot, card, socialHandle, service } from "@/_util/api/foot"
-import {IoArrowForward, IoLogoAppleAppstore} from "react-icons/io5";
+import Applestore from "../Icon/Appstore";
+import Playstore from "../Icon/Playstore";
 export default function Footer() {
   return (
     <footer className="bg-white border-t-2 border-gray-100">
@@ -11,12 +12,10 @@ export default function Footer() {
             className="flex items-center gap-3 text-primary text-opacity-80 dark:text-secondary"
           >
             {_s.icon}
-            <span className="font-normal text-gray-400">
-              <h3 className="text-dark max-md:text-sm dark:text-gray-200 font-semibold">
-                {_s.title}
-              </h3>
-              <p className="text-xs ">{_s.text}</p>
-            </span>
+            <div className="font-normal text-dim">
+              <h3 className="font-semibold">{_s.title}</h3>
+              <p className="text-xs">{_s.text}</p>
+            </div>
           </li>
         ))}
       </ul>
@@ -28,15 +27,10 @@ export default function Footer() {
               key={i}
               className="customer_service w-auto max-md:text-lg text-sm"
             >
-              <h4 className="font-bold text-dark">
-                {_n.title}
-              </h4>
+              <h4 className="font-bold text-dark">{_n.title}</h4>
               <ul className="text-base text-dim">
                 {_n.navs.map((_n, index) => (
-                  <li
-                    key={index}
-                    className="hover:text-secondary"
-                  >
+                  <li key={index} className="hover:text-secondary">
                     <Link href={_n.href}>{_n.title}</Link>
                   </li>
                 ))}
@@ -51,10 +45,7 @@ export default function Footer() {
             </h4>
             <ul className=" max-md:w-full w-36 flex gap-1 max-md:gap-1 flex-wrap text-dim">
               {card.cards.map((_p, j) => (
-                <li
-                  key={j}
-                  className="hover:opacity-80"
-                >
+                <li key={j} className="hover:opacity-80">
                   {_p.icon}
                 </li>
               ))}
@@ -65,38 +56,46 @@ export default function Footer() {
               {socialHandle.title}
             </h4>
             <div className="">
-              <form
-                className=" w-full p-1 flex h-10 bg-gray-100 max-md:h-10 overflow-hidden rounded-full"
-                encType="utf-8"
-                method="POST"
-              >
-                <input
-                  type="email"
-                  name="subscription"
-                  id="subscription"
-                  className=" outline-none text-base w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400"
-                  placeholder="email"
-                />
-                <button
-                  type="submit"
-                  className=" rounded-3xl text-xs px-2 h-full text-white max-md:text-base bg-primary font-bold "
-                >
-                  <IoArrowForward size={20} />
-                </button>
-              </form>
               <ul className="social flex max-md:gap-3 gap-2 pt-2">
                 {socialHandle.icons.map((_s, k) => (
                   <li key={k}>
-                    <a
-                      className=" text-dim hover:text-gray-400"
-                      href={_s.href}
-                    >
+                    <a className=" text-dim hover:text-gray-400" href={_s.href}>
                       {_s.Icon}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
+            <div className="customer_service w-full gap-2 justify-start flex text-sm">
+          <ul className="flex gap-2 font-semibold pt-6">
+            <li className="w-auto h-auto flex items-center gap-2 p-1">
+              <Playstore/>
+              <div className="">
+                <p className="inline-grid">
+                  <span className="text-xs text-dark">
+                    GET IT ON
+                  </span>
+                  <span className="text-lg text-dim font-bold relative -top-2">
+                    Play Store
+                  </span>
+                </p>
+              </div>
+            </li>
+            <li className="w-auto h-auto flex items-center gap-2 p-1">
+             <Applestore/>
+              <div className="">
+                <p className="inline-grid">
+                  <span className="text-xs text-dark">
+                    DOWNLOAD ON
+                  </span>
+                  <span className="text-lg text-dim font-bold relative -top-2">
+                    App Store
+                  </span>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
           </div>
         </div>
       </div>
@@ -107,31 +106,18 @@ export default function Footer() {
               Terms and Conditions
             </a>
           </li>
-          <li className="hover:text-primary text-nowrap">
-            Payment Policy
+          <li className="hover:text-primary text-nowrap">Payment Policy</li>
+          <li className="hover:text-primary text-nowrap">Privacy Policy</li>
+          <li className="hover:text-primary text-nowrap">Sitemap</li>
+          <li className="text-nowrap">
+            &copy;2024 Titoja. All rights reserved.
           </li>
-          <li className="hover:text-primary text-nowrap">
-            Privacy Policy
-          </li>
-          <li className="hover:text-primary text-nowrap">
-            Sitemap
-          </li>
-          <li className="hover:text-primary text-nowrap">
-            &copy;2024 Titoja. All rights reserved
+          <li className="text-nowrap">
+            <b>
+              Powered by Fixxage.
+            </b>
           </li>
         </ul>
-        <div className="customer_service w-full gap-2 justify-start flex text-sm">
-      <p className="max-md:text-sm text-nowrap max-md:text-wrap text-dim pb-1 font-normal">
-        Titaoja App is available on Apple Store & Google Play. Get it now.
-      </p>
-      <ul className=" max-md:text-base flex gap-4 text-dim font-semibold">
-        <li className="w-auto h-auto rounded-lg text-dim flex items-center justify-center gap-2 p-2 text-lg font-bold">
-              <IoLogoAppleAppstore size={4}  />
-              <p>GET IT ON</p>
-              <span className=" text-lg">Google Play</span>
-        </li>
-      </ul>  
-    </div>
       </div>
     </footer>
   );

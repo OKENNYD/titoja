@@ -1,4 +1,4 @@
-import Menu from "@/components/Menu/Menu";
+import Aside from "@/components/Aside/Aside";
 import Hero from "@/components/Hero/Hero";
 import Products from "@/components/Products/Products";
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <div>
         <Hero />
         <Products />
-        <Menu />
+        <Aside />
       </div>
     </main>
   );

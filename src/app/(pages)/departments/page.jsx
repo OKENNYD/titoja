@@ -1,5 +1,5 @@
 "use client"
-import { IoChevronDown, IoChevronForward } from "react-icons/io5";
+import { ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
 import Product from "@/components/Card/Product"
 import goods from "@/_util/api/goods"
 import {useState} from "react"
@@ -12,23 +12,29 @@ export default function Slug() {
   return (
     <div className="max-md:px-4 px-14">
       <div className="sm:px-8 gap-2 w-full h-auto">
-        <div className="flex gap-1 items-center text-lg text-dim">
+        <div className="flex gap-1 items-center pb-1 text-lg text-dim">
         {searchParams.get("department")}
-        <IoChevronForward/>
+          <ChevronRight strokeWidth={1} />
         {searchParams.get("category")}
-        <IoChevronForward/>
+        <ChevronRight strokeWidth={1}/>
         {searchParams.get("segment")}
-        <IoChevronForward/>
+        <ChevronRight strokeWidth={1}/>
       </div>
-      <div className="w-full h-fit p-2 flex overflow-x-auto gap-1 scroll-none">
+      <div className="w-full h-fit flex-wrap gap-1 flex">
         {filteredGoods?.map((_,i)=>(
-          <Product src={images.img_4} price={_.price} url={_.title} id={_.id} discount={_.discountPercentage.toFixed(0)} discountedPrice={(_.price-(_.discountPercentage / 100) * _.price).toFixed(2)} ratings={_.rating.toFixed(1)} ratingsCount={_.stock} title={_.title} key={i} />
+          <Product src={images.img_4} price={_.price} url={_.title} id={_.id}  ratings={_.rating.toFixed(1)} ratingsCount={_.stock} title={_.title} key={i} />
         ))}
       </div>
-      <div className="w-full items-center justify-center gap-2 flex py-4">
-        <button onClick={()=>setGoodsCount(goodsCount + 12)} className=" text-base bg-primary rounded-full text-white font-semibold px-4 py-1 flex gap-1 justify-center items-center">Show More
-          <IoChevronDown />
-        </button>
+      <div className="w-full bg-white rounded-full p-2 h-fit text-lg flex items-center justify-between gap-3 text-dim my-2">
+        <ChevronLeft strokeWidth={2} className="text-secondary hover:bg-opacity-70 hover:bg-secondary hover:text-white rounded-full"/>
+        <ul className="flex gap-2 text-base font-medium">
+          <li className="hover:text-primary">1</li>
+          <li className="hover:text-primary">2</li>
+          <li className="hover:text-primary">3</li>
+          <li className="hover:text-primary">4</li>
+          <li className="hover:text-primary">5</li>
+        </ul>
+        <ChevronRight strokeWidth={2} className="text-secondary hover:bg-opacity-70 hover:bg-secondary hover:text-white rounded-full"/>
       </div>
       </div>
     </div>

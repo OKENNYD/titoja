@@ -1,14 +1,14 @@
 "use client"
 import { useState } from 'react'
-import { IoSearch, IoClipboardOutline } from 'react-icons/io5'
-export default function Myorders() {
+import { Clipboard } from 'lucide-react'
+export default function Orders() {
   let [allOrders, setAllOrders] = useState("");
   return (
     <section className="flex flex-col gap-4 max-md:gap-2">
-        <p className="font-bold text-xl text-dark">
-          My Orders
+        <p className="font-semibold text-xl text-dim">
+          Orders
         </p>
-      <div className=" w-full bg-white h-auto rounded-lg px-4 py-4">
+      <div className=" w-full bg-white h-auto rounded-2xl px-4 ml-4 py-4">
         <form className="w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2">
           <input
             className="w-full h-8 px-3 caret-secondary bg-slate-100 rounded-l-full outline-secondary"
@@ -35,7 +35,7 @@ export default function Myorders() {
           <div className="">yes</div>
         ) : (
           <div className="w-full h-64 flex flex-col justify-center items-center text-dim">
-            <IoClipboardOutline className="text-4xl" />
+            <Clipboard strokeWidth={1} className="text-4xl" />
             <p>You have not made any order</p>
           </div>
         )}

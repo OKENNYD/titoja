@@ -4,7 +4,7 @@ import {useState} from "react"
 import department from "@/_util/api/department";
 import { useGlobalContext } from "@/_util/constants/context";
 import Logo from "../Icon/Logo";
-import { IoChevronDown, IoClose } from "react-icons/io5";
+import { ChevronDown, X } from "lucide-react"
 export default function Menu() {
   var {isMenu,setIsMenu } = useGlobalContext();
   const [active, setActive] = useState(false);
@@ -12,14 +12,14 @@ export default function Menu() {
     <div
       className={
         isMenu
-          ? "bg-gray-400 duration-1000 transition z-[100] bg-opacity-50 w-full sm:hidden h-full fixed top-0 left-0 block"
+          ? "bg-gray-400 duration-1000 transition z-[100] bg-opacity-50 w-full sm:hidden h-full fixed top-0 left-0"
           : "hidden"
       }
     >
       <div className="w-4/5 bg-white h-full rounded-tr-xl pb-6 overflow-y-scroll scroll-none ">
         <div className="w-full sticky  flex justify-between items-center p-4">
           <Logo className="h-4" />
-          <IoClose
+          <X
             onClick={() => setIsMenu(!isMenu)}
             className=" cursor-pointer text-2xl text-dim"
           />
@@ -32,7 +32,7 @@ export default function Menu() {
                 className="w-full flex justify-between items-center p-2"
               >
                 {_d.department}
-                <IoChevronDown className=" text-lg" />
+                <ChevronDown strokeWidth={1} className=" text-lg" />
               </span>
               {active === _d.id && (
                 <ul className="">

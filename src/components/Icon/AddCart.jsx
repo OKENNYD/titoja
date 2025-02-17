@@ -1,9 +1,6 @@
-'use client'
-import { useGlobalContext } from "@/_util/constants/context";
-export default function AddCart({id}) {
-  const { isModal, setIsModal, setId } = useGlobalContext();
+export default function AddCart() {
   return (
-    <div onClick={() => {setIsModal(!isModal); setId(id)}} className="flex w-auto aspect-square h-auto justify-center items-center bg-secondary max-md:hidden p-2 rounded-full">
+    <div className="flex w-auto aspect-square h-auto justify-center items-center bg-secondary max-md:hidden p-2 rounded-full">
       <svg
         className=" w-7"
         xmlns="http://www.w3.org/2000/svg"

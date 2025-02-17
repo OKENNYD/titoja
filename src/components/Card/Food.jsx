@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Rate from "../Rate/Rate";
-import { toast } from 'react-toastify';
 import Loader from "./Loader";
 import { useGlobalContext } from "@/_util/constants/context";
 export default function Food({
@@ -19,9 +18,8 @@ export default function Food({
     style: "currency",
     currency: "NGN",
   });
-  const notify = () => toast.info("check out your order");
   return (
-    <div className="relative hover:scale-105  max-xl:w-1/6 max-lg:w-1/4 max-md:w-1/4 max-sm:w-1/2 h-fit box-border duration-200 transition-transform hover:bg-opacity-90  sm:hover:bg-white overflow-hidden rounded-xl hover:p-2 p-1">
+    <div className="relative hover:scale-105 h-fit box-border duration-200 transition-transform hover:bg-opacity-90 sm:hover:bg-white overflow-hidden rounded-xl hover:p-2 p-1 grow basis-48 border border-white">
       <Suspense fallback={<Loader />}>
         <Image
           src={src}
@@ -30,7 +28,7 @@ export default function Food({
           priority
         />
         <div className="w-auto p-1">
-          <p className="capitalize text-dark text-ellipsis max-lg:text-lg max-md:text-base max-sm:text-base line-clamp-1">
+          <p className="text-dim text-lg line-clamp-1">
             {title}
           </p>
           <div className="flex gap-1">
@@ -49,7 +47,6 @@ export default function Food({
           onClick={() => {
             setIsPopup(true);
             setId(id);
-            notify;
           }}
           className="w-full bg-secondary font-semibold rounded-lg text-base p-1 text-white"
         >

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect,useRef } from "react";
 import depts from "@/_util/api/departments";
-import { IoAperture, IoSearch } from "react-icons/io5";
 import Selection from "../Selection/SelectionCard"
-import Search from "../Dropdown/Search";
+import SearchDrop from "../Dropdown/Search";
+import { Aperture, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 export default function Searchbar() {
   let [isCamera, setIsCamera] = useState(false)
@@ -50,7 +50,7 @@ export default function Searchbar() {
         onMouseEnter={()=>setIsCamera(true)}
         onMouseLeave={()=>setIsCamera(false)}
           className=" text-white my-2 fill-white align-middle relative p-2"
-        ><IoAperture size={25} className="text-slate-400 max-md:text-4xl"/>
+        ><Aperture strokeWidth={1} size={25} className="text-slate-400 max-md:text-4xl"/>
         {isCamera && <div className="bg-gray-100 shadow shadow-gray-400  p-2 z-50 w-72 h-48 absolute rounded-2xl flex justify-center items-center max-md:right-2">
         <div className="w-full h-full flex flex-col gap-2" >
           <div className="bg-white h-full rounded-lg w-full flex flex-col justify-center items-center">
@@ -68,15 +68,16 @@ export default function Searchbar() {
         </div> 
         <button
           type="submit"
-          className=" text-white my-2 fill-white aspect-square w-auto h-full align-middle p-2 rounded-full bg-primary"
+          className=" text-white my-2 fill-white aspect-square w-auto h-full justify-center items-center flex p-2 rounded-full bg-primary"
         >
-          <IoSearch
+          <Search
+          strokeWidth={2}
             size={15}
-            className="max-md:text-4xl text-white align-middle"
+            className="max-md:text-4xl text-white text-center"
           />
         </button>
       </form>
-      <Search prompt={isprompt} show={isSearch} /> 
+      <SearchDrop prompt={isprompt} show={isSearch} /> 
     </div>
   );
 }

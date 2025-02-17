@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import Images from "@/_util/constants/images";
 export default function Box({ title }) {
   return (
     <Link
       href="/bid?id=2&name=okennyd"
-      className="shrink-0 max-lg:w-1/4 max-md:w-1/2 aspect-square h-auto hover:scale-105 relative p-2 bg-white rounded-2xl"
+      className="w-48 max-md:w-1/2 max-md:shrink-0 aspect-square h-auto hover:bg-opacity-10 p-2 hover:bg-secondary relative rounded-2xl border border-white"
     >
       <Image
-        src="/asserts/img/surprise.png"
+        src="/assets/img/surprise.png"
         alt="product img"
         width="100"
         height="100"
@@ -20,4 +19,4 @@ export default function Box({ title }) {
       </span>
     </Link>
   );
-}
+}  

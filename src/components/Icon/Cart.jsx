@@ -1,6 +1,6 @@
 export default function Cart() {
   return (
-    <svg className=" w-8" viewBox="0 0 35 25.19">
+    <svg className="w-8 max-md:w-9" viewBox="0 0 35 25.19">
       <g>
         <g>
           <path

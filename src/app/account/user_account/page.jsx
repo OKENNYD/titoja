@@ -2,21 +2,21 @@
 import Link from "next/link"
 import Image from "next/image"
 import Images from "@/_util/constants/images"
-import { IoTicketOutline, IoStorefrontOutline, IoHeartOutline, IoPeopleOutline } from 'react-icons/io5'
-export default function User() {
-
+import { Tickets, Store, Heart, User } from 'react-icons/io5'
+export default function UserAccount() {
+          
   const data = [
-    { name: 'My List', icon: <IoHeartOutline className="text-secondary" size={25}/>, url: "my_list"},
-    { name: 'Following', icon: <IoPeopleOutline size={25}/>, url: "following"},
-    { name: 'Visited', icon: <IoStorefrontOutline size={25}/>, url: "visited"},
-    { name: 'Coupon', icon: <IoTicketOutline size={25}/>, url: "coupons"},
+    { name: 'My List', icon: <Heart strokeWidth={1} className="text-secondary" size={25}/>, url: "my_list"},
+    { name: 'Following', icon: <User strokeWidth={1} size={25}/>, url: "following"},
+    { name: 'Visited', icon: <Store strokeWidth={1} size={25}/>, url: "visited"},
+    { name: 'Coupon', icon: <Tickets strokeWidth={1} size={25}/>, url: "coupons"},
   ];
   return (
     <section className="flex flex-col gap-4 max-md:gap-2">
       <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
-        <p className="font-bold text-xl text-dark">User</p>
+        <p className="font-semibold text-xl text-dark">User</p>
       </div>
-      <div className=" w-full bg-white h-auto text-dim rounded-lg px-4 py-4">
+      <div className=" w-full bg-white h-auto text-dim rounded-2xl px-4 py-4">
         <div className="flex gap-2 items-center">
           <Image
             src={Images.avatar}

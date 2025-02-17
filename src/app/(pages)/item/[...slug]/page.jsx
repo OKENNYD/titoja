@@ -7,7 +7,7 @@ import Head from "next/head";
 import likes from "@/_util/api/liked"
 import Rating from "@/components/Rate/Rate";
 import products from "../../../../_util/api/products"
-import { IoAdd, IoRemove, IoClipboardOutline, IoChevronForward, IoTicket, IoMedalOutline, IoCashOutline, IoCar, IoTimeOutline, IoPaperPlane, IoShieldCheckmark, IoBus, IoShareSocial, IoBookmark, IoBookmarkOutline } from "react-icons/io5";
+import { Plus, Minus, ClipboardList, ChevronRight, Ticket, Medal, Send, ShieldCheck, Share, Bookmark, Ship } from "lucide-react";
 import { useGlobalContext } from "@/_util/constants/context";
 export default function Item({ params }) {
   const { currencyCode } = useGlobalContext();
@@ -114,9 +114,10 @@ export default function Item({ params }) {
                         }}
                       >
                         {liked ? (
-                          <IoBookmark />
+                          <Bookmark strokeWidth={1} />
                         ) : (
-                          <IoBookmarkOutline
+                          <Bookmark
+                            strokeWidth={1}
                             title="Add to Mylist"
                             className="text-dim"
                           />
@@ -127,7 +128,7 @@ export default function Item({ params }) {
                       onClick={handleShare}
                       className=" text-center flex flex-col text-[24px] text-dim"
                     >
-                      <IoShareSocial title="Share on Socialmedia" />
+                      <Share strokeWidth={1} title="Share on Socialmedia" />
                     </p>
                   </div>
                 </div>
@@ -210,7 +211,7 @@ export default function Item({ params }) {
                         }}
                         className="p-1 text-white bg-primary rounded-full"
                       >
-                        <IoRemove className="text-xl " />
+                        <Minus strokeWidth={1} size={20} />
                       </span>
                       <input
                         type="tel"
@@ -225,7 +226,7 @@ export default function Item({ params }) {
                         }
                         className="text-white bg-primary rounded-full p-1"
                       >
-                        <IoAdd className="text-xl" />
+                        <Plus strokeWidth={1} size={20} />
                       </span>
                     </div>
                     <span className="text-dim text-base text-center">
@@ -259,177 +260,29 @@ export default function Item({ params }) {
             </div>
           </div>
           <div className="description w-full h-auto bg-white rounded-3xl px-4 py-2">
-            <ul className="flex gap-2">
-              <li
-                onClick={() => {
-                  setTab(true);
-                }}
-                className={
-                  "text-lg font-bold" + tab == true
-                    ? "text-secondary"
-                    : "text-dark"
-                }
+              <p
+                className="text-dark text-lg font-semibold"
               >
-                Description
-              </li>
-              <li
-                onClick={() => {
-                  setTab(false);
-                }}
-                className={
-                  "text-dark text-lg font-bold" + tab !==
-                  true
-                    ? "text-dark"
-                    : "text-secondary"
-                }
-              >
-                Reviews({filterGoods[0].review.length})
-              </li>
-            </ul>
-
-            {tab ? (
+                Details
+              </p>
               <div className="w-fill h-auto text-dim">
                 <p>{filterGoods[0].description}</p>
               </div>
-            ) : (
-              <div className="p-2 w-full gap-2 flex max-md:flex-col">
-                <div className="w-2/5  gap-2 px-4 flex flex-col items-center justify-center">
-                  <div className="w-full flex flex-col items-center justify-center text-dim text-lg"></div>
-                  <p>{filterGoods[0].rating.rate.toFixed(1)}</p>
-                  <Rating size={6} rate={(1.2 + 2.5 + 3.7 + 4.9 + 0.8) / 5} />
-                  <p>{filterGoods[0].rating.count}</p>
-                  <ul className="w-full flex flex-col gap-2">
-                    <li className="text-dim font-semibold text-md flex items-center">
-                      1&nbsp;
-                      <progress
-                        className="w-full rounded-full h-4 accent-secondary bg-red"
-                        min="0"
-                        max="5"
-                        value="1.2"
-                      ></progress>
-                      &nbsp;1.2
-                    </li>
-                    <li className="text-dim font-semibold  text-md flex items-center">
-                      2&nbsp;
-                      <progress
-                        className="w-full rounded-full h-4 accent-secondary bg-red"
-                        min="0"
-                        max="5"
-                        value="2.5"
-                      ></progress>
-                      &nbsp;2.5
-                    </li>
-                    <li className="text-dim font-semibold text-md flex items-center">
-                      3&nbsp;
-                      <progress
-                        className="w-full rounded-full h-4 accent-secondary bg-red"
-                        min="0"
-                        max="5"
-                        value="3.7"
-                      ></progress>
-                      &nbsp;3.7
-                    </li>
-                    <li className="text-dim font-semiboldtext-gray-400 text-md flex items-center">
-                      4&nbsp;
-                      <progress
-                        className="w-full rounded-full h-4 accent-secondary bg-red"
-                        min="0"
-                        max="5"
-                        value="4.9"
-                      ></progress> 
-                      &nbsp;4.9
-                    </li>
-                    <li className="text-dim font-semibold text-md flex items-center">
-                      5&nbsp;
-                      <progress
-                        className="w-full rounded-full h-4 accent-secondary bg-red"
-                        min="0"
-                        max="5"
-                        value="0.8"
-                      ></progress>
-                      &nbsp;0.8
-                    </li>
-                  </ul>
-                </div>
-                <div className="w-3/5 h-auto gap-2 flex flex-col">
-                  {filterGoods[0].review.map((rev, i) => (
-                    <div
-                      key={i}
-                      className="comments bg-gray-200 rounded-lg p-2"
-                    >
-                      <div className="flex justify-between items-center text-dim ">
-                        <div className="flex items-center gap-1">
-                          <p className="text-lg font-medium">{rev.author}</p>
-                          <span>Flag</span>
-                        </div>
-
-                        <span className="flex items-center gap-1 -my-1 text-sm">
-                          11:34pm
-                        </span>
-                      </div>
-                      <div className="w-full flex flex-col gap-1">
-                        <div className="flex items-center justify-between">
-                          <Rating
-                          className="py-2"
-                          size={3}
-                          rate={rev.reviewRating.ratingValue}
-                          />
-                          <div className="flex gap-2 items-center">
-                            <span>like {rev.reviewRating.bestRating}</span>
-                            <span>dislike {rev.reviewRating.worstRating}</span>
-                          </div>
-                        </div>
-                        <p className="text-sm ">
-                          {rev.reviewBody}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                  <form
-                    encType="utf-8"
-                    method="POST"
-                    className=" w-full p-1 flex h-10 bg-slate-200 max-md:h-10 overflow-hidden rounded-full"
-                  >
-                    <input
-                      type="text"
-                      name="subscription"
-                      id="subscription"
-                      className=" outline-none text-base w-full max-md:w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400"
-                      placeholder="comment"
-                    />
-                    <button
-                      type="submit"
-                      className=" rounded-3xl text-xs px-2 h-full w-auto text-white max-md:text-base bg-primary font-bold "
-                    >
-                      <IoPaperPlane size={20} />
-                    </button>
-                  </form>
-                </div>
-              </div>
-            )}
           </div>
         </div>
         <div className="w-1/4 max-md:w-full h-auto flex flex-col gap-3">
-          <div className="discount w-full h-auto rounded-2xl bg-white p-2">
+          {/* <div className="discount w-full h-auto rounded-2xl bg-white p-2">
             <div className=" bg-secondary font-semibold flex items-center justify-between text-white pe-4 ps-2 rounded-lg py-2">
               <div className="flex gap-1 items-center">
-                <IoTicket />
+                <Ticket strokeWidth={1} />
                 <p>Discount & Coupon</p>
               </div>
-              <IoChevronForward />
+              <ChevronRight strokeWidth={1} />
             </div>
             <div className=" p-2 flex flex-wrap gap-2">
               <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
-                <IoMedalOutline />
+                <Medal strokeWidth={1} />
                 Best Seller
-              </span>
-              <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
-                <IoCashOutline />
-                Best Price
-              </span>
-              <span className="flex items-center gap-1 text-white text-xs font-medium bg-dim rounded-full px-2 w-auto h-auto">
-                <IoCar />
-                Fast Delivery
               </span>
             </div>
             <div className="flex ps-4 text-dim font-semibold text-xl items-center">
@@ -437,7 +290,7 @@ export default function Item({ params }) {
             </div>
             <div className=" text-normal text-sm text-400">
               <span className="flex items-center gap-1 font-bold text-sm text-dark">
-                <IoBus /> Free Shipping
+                <Ship strokeWidth={1} /> Free Shipping
               </span>
               <p className="flex ps-4 text-dim">
                 <b>Delivery: </b>
@@ -446,17 +299,127 @@ export default function Item({ params }) {
             </div>
             <div className=" text-normal text-lg">
               <span className="flex items-center gap-1 font-bold text-sm text-dark">
-                <IoClipboardOutline /> Return Delivery
+                <ClipboardList /> Return Delivery
               </span>
               <p className="flex ps-4 text-dim">
                 <b>Returns between: </b>
                 <span className=" font-semibold">April 3rd-17th</span>
               </p>
             </div>
+          </div> */}
+          <div className="p-2 bg-white rounded-xl w-full gap-2 flex flex-col">
+            <div className="w-full  gap-2 px-4 flex flex-col items-center justify-center">
+              <div className="w-full flex flex-col items-center justify-center text-dim text-lg"></div>
+              <p className=" -mb-2">{filterGoods[0].rating.rate.toFixed(1)}</p>
+              <Rating size={6} rate={(1.2 + 2.5 + 3.7 + 4.9 + 0.8) / 5} />
+              <p className=" -mt-2">{filterGoods[0].rating.count}</p>
+              <ul className="w-full flex flex-col gap-2">
+                <li className="text-gray-400 font-semibold text-md flex items-center">
+                  1&nbsp;
+                  <progress
+                    className="w-full rounded-full h-4 bg-secondary accent-secondary bg-red"
+                    min="0"
+                    max="5"
+                    value="1.2"
+                  ></progress>
+                  &nbsp;1.2
+                </li>
+                <li className="text-gray-400 font-semibold  text-md flex items-center">
+                  2&nbsp;
+                  <progress
+                    className="w-full rounded-full h-4 bg-secondary accent-secondary bg-red"
+                    min="0"
+                    max="5"
+                    value="2.5"
+                  ></progress>
+                  &nbsp;2.5
+                </li>
+                <li className="text-gray-400 font-semibold text-md flex items-center">
+                  3&nbsp;
+                  <progress
+                    className="w-full rounded-full h-4 bg-secondary accent-secondary bg-red"
+                    min="0"
+                    max="5"
+                    value="3.7"
+                  ></progress>
+                  &nbsp;3.7
+                </li>
+                <li className="font-semibold text-gray-400 text-md flex items-center">
+                  4&nbsp;
+                  <progress
+                    className="w-full rounded-full h-4 bg-secondary accent-secondary bg-red"
+                    min="0"
+                    max="5"
+                    value="4.9"
+                  ></progress>
+                  &nbsp;4.9
+                </li>
+                <li className="text-gray-400 font-semibold text-md flex items-center">
+                  5&nbsp;
+                  <progress
+                    className="w-full rounded-full h-4 bg-secondary accent-secondary bg-red"
+                    min="0"
+                    max="5"
+                    value="0.8"
+                  ></progress>
+                  &nbsp;0.8
+                </li>
+              </ul>
+            </div>
+            <ul>
+              <li>Review { "(" + filterGoods[0].review.length + ")"}</li>
+            </ul>
+            <div className="w-full h-auto gap-2 flex flex-col">
+              {filterGoods[0].review.map((rev, i) => (
+                <div key={i} className="comments bg-gray-200 rounded-lg p-2">
+                  <div className="flex justify-between items-center text-dim ">
+                    <div className="flex items-center gap-1">
+                      <p className="text-lg">{rev.author}</p>
+                      <Image
+                        width={15}
+                        height={10}
+                        src="/assets/img/flags/ae.svg"
+                        alt="flag"
+                      />
+                    </div>
+                    <span className="flex items-center gap-1 -my-1 text-sm">
+                      11:34pm
+                    </span>
+                  </div>
+                  <div className="w-full flex flex-col gap-1">
+                    <Rating
+                      className="py-2"
+                      size={4}
+                      rate={rev.reviewRating.ratingValue}
+                    />
+                    <p className="text-sm ">{rev.reviewBody}</p>
+                  </div>
+                </div>
+              ))}
+              <form
+                encType="utf-8"
+                method="POST"
+                className=" w-full p-1 flex h-10 bg-slate-200 max-md:h-10 overflow-hidden rounded-full"
+              >
+                <input
+                  type="text"
+                  name="subscription"
+                  id="subscription"
+                  className=" outline-none text-base w-full max-md:w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400"
+                  placeholder="comment"
+                />
+                <button
+                  type="submit"
+                  className=" rounded-3xl text-xs px-2 h-full w-auto text-white max-md:text-base bg-primary font-bold "
+                >
+                  <Send strokeWidth={1} size={20} />
+                </button>
+              </form>
+            </div>
           </div>
           <div className="security w-full h-auto rounded-2xl bg-white p-2">
             <span className="flex items-center gap-1 font-bold text-sm text-dark">
-              <IoShieldCheckmark /> Security & Privacy
+              <ShieldCheck strokeWidth={1} /> Security & Privacy
             </span>
             <p className="text-dim text-sm font-normal">
               <b>Safe payments: </b>We do not share your personal details with
@@ -483,7 +446,7 @@ export default function Item({ params }) {
                   Seller Name
                 </Link>
               </div>
-              <IoChevronForward className=" text-dark text-xl" />
+              <ChevronRight className=" text-dark text-xl" />
             </div>
             <h1 className=" font-medium text-base ps-2 text-dark">
               About shop owner

@@ -20,8 +20,7 @@ export default function Preview() {
     setStockCount(stockCount--);
   }
 
-  return (
-    <div className={isModal ? "hidden" : "fixed bg-slate-400 bg-opacity-30 z-40 w-full h-screen left-0 top-0 justify-center items-center" }>
+  return (<div className="fixed bg-slate-400 bg-opacity-30 z-40 w-full h-screen left-0 top-0 justify-center items-center">
       <div className="rounded-3xl w-4/6 m-auto my-20 h-auto gap-4 flex flex-row bg-white p-4 box-border">
       <IoClose onClick={handelclick} className="absolute z-50 text-slate-600 rounded-full text-4xl "/>
         <div className="imgs box-border gap-2 flex w-full">

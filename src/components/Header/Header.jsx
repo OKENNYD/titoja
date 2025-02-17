@@ -3,57 +3,50 @@ import Link from "next/link";
 import Image from "next/image"
 import Images from "@/_util/constants/images"
 import Searchbar from "../SearchBar/Searchbar";
-import { IoMenu } from "react-icons/io5";
 import Avatar from "../Avatar/Avatar";
 import Dropdown from "../Dropdown/Dropdown";
 import { useGlobalContext } from "@/_util/constants/context";
 import Cart from "../Icon/Cart";
 import Country from "../Country/Country";
 import Languages from "../Languages/Languages";
-import Theme from "../Toggle/Theme";
 import Nav from "../Nav/Nav";
-import { useTheme } from "next-themes";
+import { Menu } from "lucide-react";
 export default function Header() {
-  let { theme } = useTheme();
   const { isMenu, setIsMenu, setIsDropDown } = useGlobalContext();
   return (
-    <header className="z-50 sticky left-0 top-0 py-4 px-14 max-md:px-2 w-full h-auto max-md:h-auto bg-white border-b-2 border-gray-100 flex flex-col gap-2">
+    <header className="z-50 sticky left-0 top-0 py-4 px-14 max-md:py-1 max-md:px-2 w-full h-auto max-md:h-auto bg-white border-b-2 border-gray-100 flex flex-col gap-2">
       <div className=" flex items-center gap-4">
         <div className="w-auto max-md:hidden flex gap-2 items-center ">
-          <Link href="/">
-          { theme == "light" ? <Image
-              src={Images.light}
+          <Link href="/"><Image
+              src="/assets/img/light.png"
               alt="@Titoja"
               priority
-              className="w-40 max-md:w-56 h-auto"
-            />:<Image
-              src={Images.dark}
-              alt="@Titoja"
-              priority
-              className="hidden w-40 max-md:w-56 h-auto"
-            />}
+              width={150}
+              height={70}
+            />
           </Link>
         </div>
         <div className="w-full flex max-md:flex-col-reverse">
           <Searchbar />
           <div className="w-auto flex max-md:justify-between items-center">
-            <div className="hidden max-md:flex max-md:w-auto gap-2 items-center">
-              <IoMenu
+            <div className="sm:hidden flex gap-2 items-center">
+              <Menu
+                size={48}
+                strokeWidth={1.5}
                 onClick={() => setIsMenu(!isMenu)}
-                className="text-5xl sm-hidden"
+                className="sm-hidden"
               />
               <Link href="/">
                 <Image
-                  src={theme == "light" ? Images.dark : Images.light}
+                  src={Images.dark}
                   alt="@Titoja"
                   priority
-                  className="w-24 h-auto"
+                  className="w-auto h-"
                 />
-              </Link>
+              </Link>  
             </div>
             <div className="px-2 justify-end w-full items-center text-slate-400 flex gap-4">
-              <Theme />
-              <div className="flex gap-2 max-md:hidden">
+              <div className="flex gap-2 ">
                 <Country />
                 <Languages />
               </div>
