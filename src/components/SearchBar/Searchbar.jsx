@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect,useRef } from "react";
-import depts from "@/_util/api/departments";
-import Selection from "../Selection/SelectionCard"
+import depts from "@/_util/api/department";
 import SearchDrop from "../Dropdown/Search";
 import { Aperture, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -12,29 +11,28 @@ export default function Searchbar() {
   let [isprompt, setIsPrompt] = useState();
   let searchPrompt = useRef(null)
   let imageVal = useRef(null)
-  let router = useRouter()
-  useEffect(() => {
-    setInterval(() => {
-      for (let i = 0; i < depts.length; i++) {
-        setPlaceholderVal(
-          depts[Math.floor(Math.random() * depts.length)].name
-        );
-      }
-    }, 10000);
-  }, []);
+  let router = useRouter() 
+    useEffect(() => {
+      fetch("/api/departments")
+        .then((res) => res.json())
+        .then((data) => { 
+          setInterval(() => {
+            for (let i = 0; i < depts.length; i++) {
+              setPlaceholderVal(
+                depts[Math.floor(Math.random() * depts.length)].department
+              );
+            }
+          }, 10000);
+        });
+    }, []);
   return (
     <div className="w-3/4 max-md:w-full relative">
       <form
         encType="utf-8"
         method="POST"
-        action={async(searchParam) => {
-          const searchObj = {
-            search : searchParam.get("search"),
-            category: searchParam.get("category_selection")
-          }; router.push("/search?category="+ searchObj.category + "&product=" + searchObj.search)}}
-        className="w-full relative flex bg-gray-100 max-md:items-center max-md:justify-center rounded-3xl max-md:mt-2 p-1 bg-opacity-70 items-center h-10 max-md:h-12"
+        action="/search"
+        className="w-full relative flex bg-gray-100 max-md:items-center max-md:justify-center rounded-3xl max-md:mt-2 p-1 bg-opacity-70 items-center h-10 max-md:h-10"
       >
-        <Selection />
         <input
           type="search"
           name="search"
@@ -60,15 +58,16 @@ export default function Searchbar() {
           </label>
            </p>
           </div>
-          <button onSubmit={(e) => { e.preventdefault(); router.push("/search?image="+ imageVal.current)}} type="submit" className="w-full rounded-full bg-primary text-base py-1 text-white">
+          <button name="search" onSubmit={(e) => { e.preventdefault(); router.push("/search?image="+ imageVal.current)}} type="submit" className="w-full rounded-full bg-primary text-base py-1 text-white">
             Search
           </button>
         </div>
     </div>}
         </div> 
         <button
+        name="search"
           type="submit"
-          className=" text-white my-2 fill-white aspect-square w-auto h-full justify-center items-center flex p-2 rounded-full bg-primary"
+          className=" text-white my-2 fill-white aspect-square w-auto h-full justify-center items-center flex p-2 max-md:p-0 rounded-full bg-primary"
         >
           <Search
           strokeWidth={2}

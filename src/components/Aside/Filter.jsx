@@ -1,5 +1,5 @@
 "use client";
-import departments from "@/_util/api/departments";
+import departments from "@/_util/api/department";
 import { ArrowDownWideNarrow } from "lucide-react";
 export default function Filter() {
   let sizes = [
@@ -33,14 +33,15 @@ export default function Filter() {
     { range: "37-48" },
   ];
   return (
-    <aside className="p-4 h-fit w-1/4 rounded-2xl bg-white cursor-pointer max-md:hidden">
-      <div className=" justify-between flex text-dim items-center font-bold text-lg">
+    <aside className="md:w-1/4 max-md:h-dvh max-md:top-0 max-md:left-0 max-md:w-full max-md:bg-secondary max-md:bg-opacity-10 max-md:fixed md:relative msx-md:z-50 max-md:flex max-md:justify-center max-md:items-center max-md:p-4">
+      <div className="p-4 h-fit w-full max-md:h-auto max-md:w-3/4 rounded-2xl bg-white max-md:overflow-y-scroll ">
+      <div className=" justify-between flex text-dim items-center font-semibold text-lg">
         <p>Filter</p>
         <ArrowDownWideNarrow size={20} />
       </div>
       <ul className=" h-auto scroll-none overflow-y-scroll">
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Category
           </p>
           <ul className="ms-2 accent-secondary">
@@ -49,21 +50,21 @@ export default function Filter() {
                 key={i}
                 className="flex gap-1 text-base text-dim text-nowrap"
               >
-                <input type="checkbox" name="category" id={_c.name} />
-                <label htmlFor={_c.name}>{_c.name}</label>
+                <input type="checkbox" name="category" id={_c.department} />
+                <label htmlFor={_c.department}>{_c.department}</label>
               </li>
             ))}
           </ul>
         </li>
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Size
           </p>
-          <ul className="ms-2 accent-secondary">
+          <ul className="ms-2 accent-secondary text-dim">
             {sizes.map((_s, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-base font-medium "
+                className="flex gap-1 text-base"
               >
                 <input type="checkbox" name="category" id={_s.range} />
                 <label htmlFor={_s.range}>{_s.range}</label>
@@ -72,14 +73,14 @@ export default function Filter() {
           </ul>
         </li>
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Color
           </p>
-          <ul className="ms-2 accent-secondary">
+          <ul className="ms-2 accent-secondary text-dim">
             {sizes.map((_s, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-sm font-medium "
+                className="flex gap-1 text-sm"
               >
                 <input type="checkbox" name="category" id={_s.range} />
                 <label htmlFor={_s.range}>{_s.range}</label>
@@ -88,14 +89,14 @@ export default function Filter() {
           </ul>
         </li>
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Price
           </p>
-          <ul className="ms-2 accent-secondary">
+          <ul className="ms-2 accent-secondary text-dim">
             {prices.map((_p, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-sm font-medium "
+                className="flex gap-1 text-sm"
               >
                 <input type="checkbox" name="category" id={_p.range} />
                 <label htmlFor={_p.range}>{_p.range}</label>
@@ -104,14 +105,14 @@ export default function Filter() {
           </ul>
         </li>
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Plug
           </p>
-          <ul className="ms-2 accent-secondary">
+          <ul className="ms-2 accent-secondary text-dim">
             {plugs.map((_l, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-sm font-medium "
+                className="flex gap-1 text-sm"
               >
                 <input type="checkbox" name="category" id={_l.type} />
                 <label htmlFor={_l.type}>{_l.type}</label>
@@ -120,14 +121,14 @@ export default function Filter() {
           </ul>
         </li>
         <li>
-          <p className="text-lg font-semibold text-dim">
+          <p className="text-lg font-medium text-dim">
             Materials
           </p>
-          <ul className="ms-2 accent-secondary">
+          <ul className="ms-2 accent-secondary text-dim">
             {materials.map((_m, i) => (
               <li
                 key={i}
-                className="flex gap-1 text-sm font-medium "
+                className="flex gap-1 text-sm"
               >
                 <input type="checkbox" name="category" id={_m.type} />
                 <label htmlFor={_m.type}>{_m.type}</label>
@@ -136,6 +137,7 @@ export default function Filter() {
           </ul>
         </li>
       </ul>
+      </div>
     </aside>
   );
 }

@@ -18,7 +18,7 @@ export default function CheckoutCard({
   });
   return (
     <div className="transition-shadow w-full h-36 max-md:h-24 rounded-xl box-border p-2 bg-white flex gap-2">
-      <Image
+      <Image 
         src={Images.img_3}
         alt="product img"
         className="aspect-square rounded-xl h-full w-auto"
@@ -28,27 +28,25 @@ export default function CheckoutCard({
         <p className="text-ellipsis capitalize text-lg max-md:text-sm text-dark line-clamp-1">
           {title}
         </p>
-        <div className=" w-full">
-          <div className="w-full flex justify-between items-center">
-            <div className="add_ons pt-1 w-auto h-full flex gap-2 text-sm max-md:text-xs text-gray-400">
-              <div className=" bg-red-800 rounded-full px-2 w-auto h-full aspect-square"></div>
-              <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">
-                cotton
+        <div className="w-full flex flex-col gap-2">
+            <div className="flex gap-2 text-sm text-dim">
+              <div className="h-4 w-auto aspect-square bg-red-800 rounded-full px-2"></div>
+              <div className="h-fit w-fit bg-gray-200 rounded-full px-2">
+                <p>cotton</p>
               </div>
-              <div className=" bg-gray-200 rounded-full px-2 flex justify-center items-center">
-                42&quot;
+              <div className="h-fit w-fit bg-gray-200 rounded-full px-2">
+                <p>42&quot;</p>
               </div>
             </div>
-            <div className="price">
-              <p className=" text-xl font-bold flex items-baseline max-md:text-lg text-dark">
+            <div className="price flex justify-between">
+            <div className="text-base flex gap-1 w-fit bg-gray-100 rounded-lg px-2 py-1">
+              <p>{quantity}</p>&#120;
+              <span>{formatter.format(discountedPrice)}</span>
+            </div>
+              <p className="text-lg flex items-baseline text-dim mr-2">
                 {formatter.format(discountedPrice*quantity)}
               </p>
             </div>
-          </div>
-          <div className="text-base">
-            <p>Quantity: {quantity}</p>
-            <p>price: {formatter.format(discountedPrice)}</p>
-          </div>
         </div>
       </div>
     </div>

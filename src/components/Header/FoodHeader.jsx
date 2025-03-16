@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Images from "@/_util/constants/images";
 import Avatar from "../Avatar/Avatar";
 import Dropdown from "../Dropdown/Dropdown";
 import { useGlobalContext } from "@/_util/constants/context";
@@ -12,10 +11,11 @@ export default function AccountHeader({ Menu }) {
       <div className="w-1/5 max-md:w-auto flex gap-2 items-center">
         <Link href="/">
           <Image
-            src={Images.light}
+            src="/assets/img/logo.png"
             alt="@Titoja"
             priority
-            className="w-40 h-auto"
+            width={150}
+            height={70}
           />
         </Link>
       </div>

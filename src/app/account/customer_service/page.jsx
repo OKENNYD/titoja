@@ -5,7 +5,7 @@ import { Send, Paperclip, ChevronRight } from "lucide-react";
 import Bubble from "@/components/Card/Bubble";
 export default function CustomerService() {
   return (
-    <section className="flex flex-col gap-4 max-md:gap-2">
+    <section className="flex flex-col gap-2">
       <div className="w-full bg-white rounded-2xl h-fit py-2 px-4">
         <p className="font-semibold text-xl text-dark">Messages</p>
       </div>
@@ -63,7 +63,7 @@ export default function CustomerService() {
               className=" outline-none text-lg w-full max-md:w-full max-md:text-lg caret-primary px-2 bg-inherit placeholder:text-slate-400 scroll-none"
               placeholder="Message ..."
             ></textarea>
-            <button type="submit">
+            <button name="send" type="submit">
               <Send strokeWidth={1} className=" text-secondary size-8" />
             </button>
           </form>

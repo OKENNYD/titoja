@@ -2,15 +2,19 @@
 import { ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
 import Product from "@/components/Card/Product"
 import goods from "@/_util/api/goods"
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import images from "@/_util/constants/images";
 import { useSearchParams } from "next/navigation";
 export default function Slug() {
+  let [products, setProducts] = useState([]);
+      useEffect(() => {
+        fetch("/api/products")
+          .then((res) => res.json())
+          .then((data) => {
+            setProducts(data.filter(good => good.id <= 20))})})
   let searchParams = useSearchParams()
-  let [goodsCount, setGoodsCount] = useState(20)
-  let filteredGoods = goods.filter(good => good.id <= goodsCount)
   return (
-    <div className="max-md:px-4 px-14">
+    <div className="max-md:px-1 px-14">
       <div className="sm:px-8 gap-2 w-full h-auto">
         <div className="flex gap-1 items-center pb-1 text-lg text-dim">
         {searchParams.get("department")}
@@ -20,9 +24,9 @@ export default function Slug() {
         {searchParams.get("segment")}
         <ChevronRight strokeWidth={1}/>
       </div>
-      <div className="w-full h-fit flex-wrap gap-1 flex">
-        {filteredGoods?.map((_,i)=>(
-          <Product src={images.img_4} price={_.price} url={_.title} id={_.id}  ratings={_.rating.toFixed(1)} ratingsCount={_.stock} title={_.title} key={i} />
+      <div className="w-full h-fit flex-wrap flex">
+        {products?.map((_,i)=>(
+          <Product src={images.img_4} price={_.price} url={_.title} id={_.id}  ratings={_.rating.toFixed(1)} ratingsCount={_.stock} title={_.title} card={true} key={i} />
         ))}
       </div>
       <div className="w-full bg-white rounded-full p-2 h-fit text-lg flex items-center justify-between gap-3 text-dim my-2">

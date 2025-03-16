@@ -19,7 +19,7 @@ export default function Food({
     currency: "NGN",
   });
   return (
-    <div className="relative hover:scale-105 h-fit box-border duration-200 transition-transform hover:bg-opacity-90 sm:hover:bg-white overflow-hidden rounded-xl hover:p-2 p-1 grow basis-48 border border-white">
+    <div className="relative hover:scale-105 h-fit box-border duration-200 transition-transform hover:bg-opacity-90 sm:hover:bg-white overflow-hidden rounded-xl hover:p-2 p-1 md:w-1/5 max-md:1/2 border border-white">
       <Suspense fallback={<Loader />}>
         <Image
           src={src}
@@ -44,6 +44,7 @@ export default function Food({
           </div>
         </div>
         <button
+        name="order"
           onClick={() => {
             setIsPopup(true);
             setId(id);

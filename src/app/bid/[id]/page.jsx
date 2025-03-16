@@ -10,7 +10,7 @@ export default function Bid() {
           <span className="absolute flex items-center gap-[2px] bg-secondary w-auto h-auto ps-3 px-3 text-base max-sm:text-xs max-md:text-sm text-white font-normal rounded-bl-xl rounded-2xl">
             15:30
           </span>
-          <Image
+          <Image  
             src={images.dimension}
             alt="image"
             className="w-full h-auto aspect-video max-md:aspect-square  rounded-xl"
@@ -28,6 +28,7 @@ export default function Bid() {
               name="bid-price"
             />
             <button
+            name="bid"
               className="w-auto h-full text-white rounded-lg px-3 bg-primary"
               type="submit"
             >

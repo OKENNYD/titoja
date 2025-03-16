@@ -1,26 +1,27 @@
 "use client";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import Product from "@/components/Card/Product";
-import goods from "@/_util/api/goods";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import images from "@/_util/constants/images";
 import { useSearchParams } from "next/navigation";
 import Filter from "@/components/Aside/Filter";
-import FilterPopUp from "@/components/popup/Filter";
 export default function Search() {
-  let searchParams = useSearchParams();
-  let [goodsCount, setGoodsCount] = useState(21);
-  let filteredGoods = goods.filter((good) => good.id <= goodsCount);
+  let searchParams = useSearchParams()
+  let [products, setProducts] = useState([]);
+      useEffect(() => {
+        fetch("/api/products")
+          .then((res) => res.json())
+          .then((data) => {
+            setProducts(data.filter(good => good.id <= 17))})});
   return (
-    <div className="w-full py-2 px-14 max-md:px-2 flex">
-        <FilterPopUp/>
+    <div className="w-full py-2 px-14 max-md:px-1 flex">
         <Filter/>
-        <div className="w-5/6 ps-4 max-md:w-full">
-          <div className="flex gap-1 items-center text-lg text-dim pb-2">
+        <div className="w-5/6 ps-4 max-md:ps-0 max-md:w-full">
+          <div className="flex gap-1 items-center text-lg text-dim">
             <p>Result for &quot;{searchParams.get("product")}&quot;</p>
           </div>
-          <div className="w-full h-fit flex-wrap gap-1 flex">
-            {filteredGoods?.map((_, i) => (  
+          <div className="w-full h-fit flex-wrap flex">
+            {products?.map((_, i) => (  
               <Product
                 src={images.img_4}
                 price={_.price}
@@ -29,6 +30,7 @@ export default function Search() {
                 ratings={_.rating}
                 ratingsCount={_.stock}
                 title={_.title}
+                card={false}
                 key={i}
               />
             ))}

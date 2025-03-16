@@ -1,0 +1,327 @@
+[
+    {
+      "productId": "1",
+      "name": "Smartphone X",
+      "description": "A high-end smartphone with advanced features.",
+      "price": 999.99,
+      "currency": "USD",
+      "department": "Electronics",
+      "category": "Mobile Phones & Accessories",
+      "subcategory": "Smartphones",
+      "brand": "Apple",
+      "sellerId": "seller123",
+      "stock": 50,
+      "images": ["/asset/img/1", "/asset/img/1", "/asset/img/1"],
+      "ratings": 4.5,
+      "reviews": [
+        {
+          "userId": "user1",
+          "rating": 5,
+          "comment": "Great phone!",
+          "date": "2023-10-01"
+        },
+        {
+          "userId": "user2",
+          "rating": 4,
+          "comment": "Good battery life.",
+          "date": "2023-10-02"
+        },
+        {
+          "userId": "user3",
+          "rating": 4,
+          "comment": "Excellent camera.",
+          "date": "2023-10-03"
+        },
+        {
+          "userId": "user4",
+          "rating": 5,
+          "comment": "Fast and responsive.",
+          "date": "2023-10-04"
+        },
+        {
+          "userId": "user5",
+          "rating": 4,
+          "comment": "Sleek design.",
+          "date": "2023-10-05"
+        }
+      ],
+      "specifications": {
+        "color": "Black",
+        "storage": "128GB"
+      },
+      "tags": ["smartphone", "5G", "iOS"],
+      "shippingInfo": {
+        "weight": 200,
+        "dimensions": {
+          "length": 15,
+          "width": 7,
+          "height": 0.8
+        },
+        "shippingCost": 10,
+        "estimatedDelivery": "3-5 business days"
+      },
+      "createdAt": "2023-10-01",
+      "updatedAt": "2023-10-01",
+      "isActive": true
+    },
+    {
+      "productId": "2",
+      "name": "Laptop Pro",
+      "description": "A powerful laptop for professionals.",
+      "price": 1499.99,
+      "currency": "USD",
+      "department": "Electronics",
+      "category": "Computers & Office",
+      "subcategory": "Laptops",
+      "brand": "Dell",
+      "sellerId": "seller456",
+      "stock": 30,
+      "images": ["/asset/img/1", "/asset/img/1", "/asset/img/1"],
+      "ratings": 4.7,
+      "reviews": [
+        {
+          "userId": "user6",
+          "rating": 5,
+          "comment": "Excellent performance.",
+          "date": "2023-10-06"
+        },
+        {
+          "userId": "user7",
+          "rating": 4,
+          "comment": "Great display.",
+          "date": "2023-10-07"
+        },
+        {
+          "userId": "user8",
+          "rating": 5,
+          "comment": "Fast and reliable.",
+          "date": "2023-10-08"
+        },
+        {
+          "userId": "user9",
+          "rating": 4,
+          "comment": "Good battery life.",
+          "date": "2023-10-09"
+        },
+        {
+          "userId": "user10",
+          "rating": 5,
+          "comment": "Sleek design.",
+          "date": "2023-10-10"
+        }
+      ],
+      "specifications": {
+        "color": "Silver",
+        "storage": "512GB SSD"
+      },
+      "tags": ["laptop", "professional", "Windows"],
+      "shippingInfo": {
+        "weight": 1500,
+        "dimensions": {
+          "length": 30,
+          "width": 20,
+          "height": 2
+        },
+        "shippingCost": 15,
+        "estimatedDelivery": "5-7 business days"
+      },
+      "createdAt": "2023-10-01",
+      "updatedAt": "2023-10-01",
+      "isActive": true
+    },
+    {
+      "productId": "3",
+      "name": "Running Shoes",
+      "description": "Comfortable running shoes for all terrains.",
+      "price": 120.00,
+      "currency": "USD",
+      "department": "Fashion",
+      "category": "Shoes",
+      "subcategory": "Sports Shoes",
+      "brand": "Nike",
+      "sellerId": "seller789",
+      "stock": 100,
+      "images": ["/asset/img/1", "/asset/img/1", "/asset/img/1"],
+      "ratings": 4.8,
+      "reviews": [
+        {
+          "userId": "user11",
+          "rating": 5,
+          "comment": "Very comfortable.",
+          "date": "2023-10-11"
+        },
+        {
+          "userId": "user12",
+          "rating": 4,
+          "comment": "Great for running.",
+          "date": "2023-10-12"
+        },
+        {
+          "userId": "user13",
+          "rating": 5,
+          "comment": "Excellent grip.",
+          "date": "2023-10-13"
+        },
+        {
+          "userId": "user14",
+          "rating": 4,
+          "comment": "Good value for money.",
+          "date": "2023-10-14"
+        },
+        {
+          "userId": "user15",
+          "rating": 5,
+          "comment": "Lightweight and durable.",
+          "date": "2023-10-15"
+        }
+      ],
+      "specifications": {
+        "color": "Black",
+        "size": "10"
+      },
+      "tags": ["running", "shoes", "sports"],
+      "shippingInfo": {
+        "weight": 500,
+        "dimensions": {
+          "length": 30,
+          "width": 20,
+          "height": 10
+        },
+        "shippingCost": 5,
+        "estimatedDelivery": "2-3 business days"
+      },
+      "createdAt": "2023-10-01",
+      "updatedAt": "2023-10-01",
+      "isActive": true
+    },
+    {
+      "productId": "4",
+      "name": "Bluetooth Headset",
+      "description": "Wireless headset with noise cancellation.",
+      "price": 150.00,
+      "currency": "USD",
+      "department": "Electronics",
+      "category": "Mobile Phones & Accessories",
+      "subcategory": "Bluetooth Headsets",
+      "brand": "Sony",
+      "sellerId": "seller101",
+      "stock": 75,
+      "images": ["/asset/img/1", "/asset/img/1", "/asset/img/1"],
+      "ratings": 4.6,
+      "reviews": [
+        {
+          "userId": "user16",
+          "rating": 5,
+          "comment": "Great sound quality.",
+          "date": "2023-10-16"
+        },
+        {
+          "userId": "user17",
+          "rating": 4,
+          "comment": "Comfortable to wear.",
+          "date": "2023-10-17"
+        },
+        {
+          "userId": "user18",
+          "rating": 5,
+          "comment": "Long battery life.",
+          "date": "2023-10-18"
+        },
+        {
+          "userId": "user19",
+          "rating": 4,
+          "comment": "Good noise cancellation.",
+          "date": "2023-10-19"
+        },
+        {
+          "userId": "user20",
+          "rating": 5,
+          "comment": "Easy to connect.",
+          "date": "2023-10-20"
+        }
+      ],
+      "specifications": {
+        "color": "Black",
+        "batteryLife": "20 hours"
+      },
+      "tags": ["bluetooth", "headset", "wireless"],
+      "shippingInfo": {
+        "weight": 300,
+        "dimensions": {
+          "length": 15,
+          "width": 10,
+          "height": 5
+        },
+        "shippingCost": 8,
+        "estimatedDelivery": "3-5 business days"
+      },
+      "createdAt": "2023-10-01",
+      "updatedAt": "2023-10-01",
+      "isActive": true
+    },
+    {
+      "productId": "5",
+      "name": "Coffee Maker",
+      "description": "Automatic coffee maker with programmable settings.",
+      "price": 89.99,
+      "currency": "USD",
+      "department": "Home & Garden",
+      "category": "Kitchen & Dining",
+      "subcategory": "Small Appliances",
+      "brand": "Breville",
+      "sellerId": "seller202",
+      "stock": 40,
+      "images": ["/asset/img/1", "/asset/img/1", "/asset/img/1"],
+      "ratings": 4.4,
+      "reviews": [
+        {
+          "userId": "user21",
+          "rating": 5,
+          "comment": "Makes great coffee.",
+          "date": "2023-10-21"
+        },
+        {
+          "userId": "user22",
+          "rating": 4,
+          "comment": "Easy to use.",
+          "date": "2023-10-22"
+        },
+        {
+          "userId": "user23",
+          "rating": 4,
+          "comment": "Good value for money.",
+          "date": "2023-10-23"
+        },
+        {
+          "userId": "user24",
+          "rating": 5,
+          "comment": "Fast brewing.",
+          "date": "2023-10-24"
+        },
+        {
+          "userId": "user25",
+          "rating": 4,
+          "comment": "Compact design.",
+          "date": "2023-10-25"
+        }
+      ],
+      "specifications": {
+        "color": "Silver",
+        "capacity": "12 cups"
+      },
+      "tags": ["coffee", "maker", "appliance"],
+      "shippingInfo": {
+        "weight": 5000,
+        "dimensions": {
+          "length": 30,
+          "width": 20,
+          "height": 30
+        },
+        "shippingCost": 20,
+        "estimatedDelivery": "5-7 business days"
+      },
+      "createdAt": "2023-10-01",
+      "updatedAt": "2023-10-01",
+      "isActive": true
+    }
+  ]

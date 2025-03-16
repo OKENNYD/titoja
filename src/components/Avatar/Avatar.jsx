@@ -4,10 +4,8 @@ import Images from "@/_util/constants/images";
 import { ChevronDown, ChevronUp, User } from "lucide-react";
 import Link from "next/link";
 import { useGlobalContext } from "@/_util/constants/context";
-import { useSession } from "next-auth/react";
 export default function Avatar() {
   var { isLogged, isDropDown } = useGlobalContext();
-  let { data: session } = useSession()
   return (
     <div>
       {isLogged ? (
@@ -15,20 +13,22 @@ export default function Avatar() {
           <Image
             src={Images.avatar}
             alt="avatar_icon"
-            className=" w-8 h-8 max-md:w-8 max-md:h-8 rounded-full"
+            className=" w-8 h-8 rounded-full"
             priority
-          ></Image>
+            width={100}
+            height={100}
+          />
           {isDropDown ? (
-            <ChevronUp strokeWidth={1.5} className="max-md:w-5 w-6 text-dim" />
+            <ChevronUp strokeWidth={1.5} size={30} className="text-dim" />
           ) : (
-            <ChevronDown strokeWidth={1.5} className="max-md:w-5 w-6 text-dim" />
+            <ChevronDown strokeWidth={1.5} size={30} className="text-dim" />
           )}
         </div>
       ) : (
         <Link className=" flex items-center w-auto h-auto" href="/signin">
-          <div className="w-auto text-slate-400 h-auto flex items-center gap-1">
-            <User className="text-2xl sm:text-2xl" />
-            <ChevronDown strokeWidth={1.5} className="text-lg fill-dim max-md:w-5  me-2" />
+          <div className="w-auto text-gray-400 h-auto flex items-center gap-1">
+            <User size={35}/>
+            <ChevronDown strokeWidth={1.5} className="text-lg fill-dim max-md:w-5" />
           </div>
         </Link>
       )}

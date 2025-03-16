@@ -1,12 +1,19 @@
+"use client";
+import { useState, useEffect } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import Product from "@/components/Card/Product";
 import images from "@/_util/constants/images";
-import products from "@/_util/api/products";
 import Loader from "@/components/Card/Loader";
 export default function My_List() {
+  let [products, setProducts] = useState([]);
+    useEffect(() => {
+      fetch("/api/products")
+        .then((res) => res.json())
+        .then((data) => {
+          setProducts(data.filter(good => good.id <= 15))})})
   return (
-    <div className="w-full h-auto pt-2">
-      <div className="w-full h-fit flex-wrap gap-1 flex">
+    <div className="w-full h-auto pt-2 max-md:pt-0">
+      <div className="w-full h-fit flex-wrap flex">
         {products?.map((_p, j) => {
           return (
             <Product
@@ -19,6 +26,7 @@ export default function My_List() {
               ratingsCount={_p.rating.count}
               title={_p.name}
               key={j}
+              card={true}
             />
           );
         }) || <Loader />}

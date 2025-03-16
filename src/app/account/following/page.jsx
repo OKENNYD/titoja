@@ -5,12 +5,12 @@ import { Clipboard } from 'lucide-react'
 export default function Following() {
   let [isFollowing, setIsFollowing] = useState(true);
   return (
-    <section className='flex flex-col gap-4 max-md:gap-2'>
+    <section className='flex flex-col gap-2'>
       <div className="w-full bg-white rounded-2xl h-fit py-2 px-4">
         <p className="font-semibold text-xl text-dark">Following</p>
       </div>
       <div className=" w-full h-auto">
-        {isFollowing ? <div className=" grid grid-cols-5 max-md:grid-cols-3 justify-center gap-4">
+        {isFollowing ? <div className="flex flex-wrap justify-center">
         <Follow/>
         <Follow/>
         <Follow/>

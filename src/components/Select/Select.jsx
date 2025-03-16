@@ -26,8 +26,8 @@ export default function Select({primary, options, style}) {
           {options?.map((option, i) => (
             <li
               key={i}
-              className={`hover:bg-gray-400 hover:text-dim px-2 py-1 ${
-                selectedOption === option.value && "bg-secondary"
+              className={`hover:text-dim px-2 py-1 ${
+                selectedOption === option.value ? "bg-secondary bg-opacity-60" : "hover:bg-gray-400"
               } `}
               onClick={() => {
                 setSelectedOption(option.value);

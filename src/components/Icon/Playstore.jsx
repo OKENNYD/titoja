@@ -15,10 +15,10 @@ export default function Playstore({size}) {
         y2="34.74"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#35ab4a"></stop>
-        <stop offset=".297" stop-color="#31a145"></stop>
-        <stop offset=".798" stop-color="#288739"></stop>
-        <stop offset="1" stop-color="#237a33"></stop>
+        <stop offset="0" stopColor="#35ab4a"></stop>
+        <stop offset=".297" stopColor="#31a145"></stop>
+        <stop offset=".798" stopColor="#288739"></stop>
+        <stop offset="1" stopColor="#237a33"></stop>
       </linearGradient>
       <path
         fill="url(#AraffhWwwEqZfgFEBZFoqa_L1ws9zn2uD01_gr1)"
@@ -32,9 +32,9 @@ export default function Playstore({size}) {
         y2="66.931"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#f14e5d"></stop>
-        <stop offset=".499" stop-color="#ea3d4f"></stop>
-        <stop offset="1" stop-color="#e12138"></stop>
+        <stop offset="0" stopColor="#f14e5d"></stop>
+        <stop offset=".499" stopColor="#ea3d4f"></stop>
+        <stop offset="1" stopColor="#e12138"></stop>
       </linearGradient>
       <path
         fill="url(#AraffhWwwEqZfgFEBZFoqb_L1ws9zn2uD01_gr2)"
@@ -48,9 +48,9 @@ export default function Playstore({size}) {
         y2="43.612"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#ffd844"></stop>
-        <stop offset=".519" stop-color="#ffc63f"></stop>
-        <stop offset="1" stop-color="#ffb03a"></stop>
+        <stop offset="0" stopColor="#ffd844"></stop>
+        <stop offset=".519" stopColor="#ffc63f"></stop>
+        <stop offset="1" stopColor="#ffb03a"></stop>
       </linearGradient>
       <path
         fill="url(#AraffhWwwEqZfgFEBZFoqc_L1ws9zn2uD01_gr3)"
@@ -64,8 +64,8 @@ export default function Playstore({size}) {
         y2="42.811"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".003" stop-color="#0090e6"></stop>
-        <stop offset="1" stop-color="#0065a0"></stop>
+        <stop offset=".003" stopColor="#0090e6"></stop>
+        <stop offset="1" stopColor="#0065a0"></stop>
       </linearGradient>
       <path
         fill="url(#AraffhWwwEqZfgFEBZFoqd_L1ws9zn2uD01_gr4)"

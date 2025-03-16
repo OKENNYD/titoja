@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image"
-import Images from "@/_util/constants/images"
 import Avatar from "../Avatar/Avatar";
 import Dropdown from "../Dropdown/Dropdown";
 import { useGlobalContext } from "@/_util/constants/context";
@@ -14,21 +13,26 @@ export default function AccountHeader() {
         {isAcctMenu ? (
           
           <X
+            size={30}
+            strokeWidth={1.5}
             onClick={() => setIsAcctMenu(!isAcctMenu)}
-            className=" text-4xl sm:hidden flex text-dim gap-2"
+            className="text-dim"
           />
         ) : (
           <Menu
+            size={30}
+            strokeWidth={1.5}
             onClick={() => setIsAcctMenu(!isAcctMenu)}
-            className=" text-4xl sm:hidden flex text-dim gap-2"
+            className=" text-dim"
           />
         )}
         <Link href="/">
           <Image
-            src={Images.light}
+            src="/assets/img/logo.png"
             alt="@Titoja"
             priority
-            className="w-40 h-auto"
+            width={100}
+            height={70}
           />
         </Link>
       </div>
@@ -41,7 +45,7 @@ export default function AccountHeader() {
           <Avatar />
           <Dropdown />
         </div> 
-      </div>
+      </div> 
     </header>
   );
 }

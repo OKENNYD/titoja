@@ -35,7 +35,11 @@ export default function AcctAside() {
       url: "/account/help_center",
     },
     {
-      title: "Feedback",
+      title: "Review",
+      url: "/account/review",
+    },
+    {
+      title: "Coupon",
       url: "/account/feedback",
     },
     {
@@ -47,7 +51,7 @@ export default function AcctAside() {
     <aside
           className={`w-1/4 h-fit p-2 bg-white duration-1000 ${
             isAcctMenu
-              ? "max-md:w-3/4 max-md:absolute max-md:shadow max-md:z-auto max-md:h-full max-md:shadow-gray-200"
+              ? "max-md:w-3/4 max-md:fixed max-md:shadow max-md:z-auto max-md:h-full max-md:shadow-gray-200"
               : "max-md:w-0 max-md:hidden"
           }`}
         >

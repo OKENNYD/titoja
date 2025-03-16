@@ -3,11 +3,11 @@ import { Clipboard } from 'lucide-react'
 export default function ReturnRefund() {
   let coupon = true;
   return (
-    <section className="flex flex-col gap-4 max-md:gap-2">
-      <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
+    <section className="flex flex-col gap-2">
+      <div className="w-full bg-white rounded-2xl h-fit py-2 px-4">
         <p className="font-semibold text-xl text-dark">Return & Refund</p>
       </div>
-      <div className=" w-full bg-white h-auto rounded-2xl px-4 py-3">
+      <div className=" w-full bg-white h-auto rounded-2xl p-4 max-md:p-2">
         <form className="w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2">
           <input
             className="w-full h-8 px-3 caret-secondary bg-gray-100 rounded-l-full outline-secondary"
@@ -16,6 +16,7 @@ export default function ReturnRefund() {
             placeholder="Order ID, Product Name "
           />
           <button
+          name='search'
             className="bg-primary text-white font-semibold text-base px-2"
             type="submit"
           >
@@ -23,9 +24,9 @@ export default function ReturnRefund() {
           </button>
         </form>
         <ul className="flex gap-4 font-semibold text-sm text-primary px-2">
-          <li>View All</li>
-          <li>Awaiting</li>
-          <li>In Progress</li>
+          <li className=' text-nowrap'>View All</li>
+          <li className=' text-nowrap'>Awaiting</li>
+          <li className=' text-nowrap'>In Progress</li>
         </ul>
         <hr className=" my-2" />
         {coupon ? (

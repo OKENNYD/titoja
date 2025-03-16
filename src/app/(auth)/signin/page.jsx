@@ -1,15 +1,12 @@
 "use server";
 import { login } from "@/_util/action/login";
-import { auth, signIn } from "@/auth";
+// import { signIn } from "@/auth";
 import Link from "next/link";
-import { IoLogoGoogle, IoLogoFacebook, IoLogoApple } from "react-icons/io5";
 export default async function Signin() {
-  const session = await auth();
-  console.log(session.user)
   return (
-    <main className="max-md:p-10 py-20 w-full h-full flex items-center justify-center">
-      <div className=" w-[30%] max-md:w-4/5 bg-white rounded-2xl h-auto py-6 px-6">
-        <p className="text-dim text-2xl font-bold text-center">
+    <main className="py-20 w-full h-full flex items-center justify-center">
+      <div className="w-1/4 max-md:w-4/5 bg-white rounded-2xl h-auto p-6 max-md:px-2 max-md:my-4">
+        <p className="text-dim text-xl font-medium text-center">
           Welcome back
         </p>
         <div
@@ -17,14 +14,14 @@ export default async function Signin() {
         >
           Login successful
         </div>
-        <form action={login} className=" flex flex-col pt-3 ">
+        <form className="flex flex-col gap-4 max-md:px-2">
           <div className="gap-4 flex flex-col">
             <div className=" w-full">
               <input
                 type="email"
                 name="email"
                 placeholder="email"
-                className="p-2 ps-4 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-2xl text-dark"
+                className="p-2 ps-4 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-full text-dark"
               />
             </div>
             <div className=" w-full">
@@ -32,36 +29,37 @@ export default async function Signin() {
                 type="password"
                 name="password"
                 placeholder="password"
-                className=" p-2 ps-4 pe-8 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-2xl text-dark"
+                className=" p-2 ps-4 pe-8 border-primary outline-primary w-full h-10 caret-secondary text-base placeholder:text-gray-400 bg-gray-200 rounded-full text-dark"
               />
             </div>
           </div>
           <Link
-            className=" text-primary text-sm text-end mb-2 me-2"
-            href="/forgotten_password"
+            className=" text-primary text-sm text-end me-2 -my-3"
+            href="/verification"
           >
             Forgotten password?
           </Link>
           <button
+          name="login"
             type="submit"
-            className=" my-1 bg-primary w-full h-10 font-bold rounded-2xl text-sm text-white"
+            className=" my-1 bg-primary w-full h-10 rounded-full text-sm text-white"
           >
             Login
           </button>
         </form>
-        <fieldset className=" w-full mt-4 py-2 border-t-[2px] border-gray-200">
+        <fieldset className=" w-full mt-4 py-1 border-t-[2px] border-gray-200">
           <legend className=" m-auto text-gray-400 bg-white text-center px-2">
             or with
           </legend>
-          <div className="flex  gap-3 w-full justify-center items-center">
+          {/* <div className="flex  gap-3 w-full justify-center items-center">
             <form
               action={async () => {
                 "use server";
                 await signIn("google");
               }}
             >
-              <button className="  text-gray-400">
-                <IoLogoGoogle size={30} className="" />
+              <button name="signin with google" className="  text-gray-400">
+                <Image src="/assets/img/google.svg" alt="" width={40} height={40}/>
               </button>
             </form>
             <form
@@ -70,8 +68,8 @@ export default async function Signin() {
                 await signIn("facebook");
               }}
             >
-              <button className="  text-gray-400">
-                <IoLogoFacebook size={30} className="" />
+              <button name="signin with facebook"  className="  text-gray-400">
+                <Image src="/assets/img/facebook.svg" alt="" width={40} height={40}/>
               </button>
             </form>
             <form
@@ -80,16 +78,16 @@ export default async function Signin() {
                 await signIn("apple");
               }}
             >
-              <button className="  text-gray-400">
-                <IoLogoApple size={30} className="" />
+              <button name="signin with apple"  className="  text-gray-400">
+                <Image src="/assets/img/apple.svg" alt="" width={40} height={40}/>
               </button>
             </form>
-          </div>
+          </div> */}
         </fieldset>
         <div className="inline-flex text-dim text-xs w-full text-center justify-center items-center">
           <p>
             By continuing, you confirm that you are an adult and you have read
-            and accepted our terms, Titaoja Membership Agreement and Privacy
+            and accepted our terms, Titoja Membership Agreement and Privacy
             Policy.
           </p>
         </div>

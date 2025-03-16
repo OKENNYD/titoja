@@ -93,17 +93,62 @@
   background-repeat: no-repeat;
   /* background-image: url("./assert/img/dish.jpg"); */
 }
-.announceAnimate{
-  animation-name: announcement;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+.announceAnimate {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 40s linear infinite;
 }
-@keyframes announcement {
-  0%{
-    
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
   }
-  100%{
-    
+  100% {
+    transform: translateX(-100%);
   }
+}
+.carts {
+  fill: none;
+  @apply stroke-white;
+  stroke-miterlimit: 133.33;
+  stroke-width: 50px;
+}
+.linecap {
+  stroke-linecap: round;
+}
+.miter{
+  stroke-miterlimit: 133.33;
+}
+.linejoin {
+  stroke-linejoin: round;
+}
+.wallet{
+  fill: none;
+  @apply stroke-dim;
+  stroke-linecap: round;
+  stroke-width: 50px;
+}
+.shield{
+  fill: none;
+  @apply stroke-dim;
+  stroke-miterlimit: 133.33;
+  stroke-width: 50px;
+}
+progress{
+  border: none;
+  width: 100%;
+  border-radius: 50px;
+  @apply bg-gray-100;
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 50px;
+  @apply bg-gray-100;
+}
+progress[value]::-webkit-progress-value {
+  border-radius: 50px;
+  @apply bg-secondary;
+}
+progress[value]::-moz-progress-bar {
+  border-radius: 50px;
+  @apply bg-secondary;
 }

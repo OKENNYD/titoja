@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image"
 import department from "@/_util/api/department";
 import { useGlobalContext } from "@/_util/constants/context";
-import Logo from "../Icon/Logo";
 import { ChevronDown, X } from "lucide-react";
 export default function Aside() {
   var { isMenu, setIsMenu } = useGlobalContext();
@@ -18,8 +18,15 @@ export default function Aside() {
     >
       <div className="w-4/5 bg-white h-full rounded-tr-xl pb-6 overflow-y-scroll scroll-none ">
         <div className="w-full sticky  flex justify-between items-center p-4">
-          <Logo className="h-4" />
+          <Image
+            src="/assets/img/logo.png"
+            alt="@Titoja"
+            priority
+            width={100}
+            height={80}
+          />
           <X
+          strokeWidth={1.5}
             onClick={() => setIsMenu(!isMenu)}
             className=" cursor-pointer text-2xl text-dim"
           />
@@ -32,7 +39,7 @@ export default function Aside() {
                 className="w-full flex justify-between items-center px-2"
               >
                 {_d.department}
-                <ChevronDown strokeWidth={1} className=" text-lg" />
+                <ChevronDown strokeWidth={1.5} className=" text-lg" />
               </span>
               {active === _d.id && (
                 <ul className="">

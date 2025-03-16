@@ -32,7 +32,7 @@ const bidSchema = {
     description: "The timestamp when the bid was placed."
   },
   bidStatus: {
-    type: String,
+    type: String,  
     enum: ["active", "won", "lost", "cancelled"],
     default: "active",
     description: "The status of the bid (e.g., active, won, lost, cancelled)."

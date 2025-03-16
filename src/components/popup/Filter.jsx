@@ -1,5 +1,5 @@
 "use client";
-import departments from "@/_util/api/departments";
+import departments from "@/_util/api/department";
 import { ArrowDownWideNarrow } from "lucide-react";
 export default function FilterPopUp() {
   let sizes = [

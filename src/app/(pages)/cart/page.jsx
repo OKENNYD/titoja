@@ -14,20 +14,19 @@ export default function Cart() {
     currency: "NGN",
   });
   return (
-    <div className=" w-full flex flex-col gap-2 max-md:gap-2">
+    <div className=" w-full flex flex-col gap-2 max-md:gap-0">
       <div className=" w-full flex max-lg:flex-col gap-2">
-        <div className="w-[60%] max-md:w-full rounded-2xl h-auto flex flex-col gap-2 p-2 max-md:p-1">
+        <div className="w-[60%] max-md:w-full rounded-2xl h-auto flex flex-col gap-2 p-2 max-md:p-0">
             {filteredGoods?.map((_, i) => (
               <CartCard
                 key={i}
                 id={_.id}
                 price={_.price}
-                title={_.title}
+                name={_.title}
                 stock={_.stock}
-                discount={_.discountPercentage}
               />
             ))}
-            <div className="w-full bg-white rounded-full p-2 h-fit text-lg flex items-center justify-between gap-3 text-dim my-2">
+            <div className="w-full bg-white rounded-full p-2 h-fit text-lg flex items-center justify-between gap-3 text-dim my-2 max-md:my-0">
         <ChevronLeft strokeWidth={2} className="text-secondary hover:bg-opacity-70 hover:bg-secondary hover:text-white rounded-full"/>
         <ul className="flex gap-2 text-base font-medium">
           <li className="hover:text-primary">1</li>
@@ -39,8 +38,8 @@ export default function Cart() {
         <ChevronRight strokeWidth={2} className="text-secondary hover:bg-opacity-70 hover:bg-secondary hover:text-white rounded-full"/>
       </div>
         </div>
-        <div className="flex w-[40%] gap-4 max-md:w-full max-md:p-2 mt-2 flex-col">
-          <div className="summary w-full bg-white rounded-xl h-auto py-2 pb-5 px-5">
+        <div className="flex w-[40%] gap-4 max-md:gap-0 max-md:w-full max-md:p-0 mt-2 max-md:mt-0 flex-col">
+          <div className="summary w-full bg-white rounded-xl h-auto py-2 pb-5 px-5 max-md:px-2">
             <h1 className=" font-bold text-lg max-md:text-base max-md:font-extrabold text-dark">
               Summary
             </h1>
@@ -57,6 +56,7 @@ export default function Cart() {
                 </div>
               ))}
               <button
+              name="checkout"
                 onClick={() => redirect("/checkout")}
                 className=" w-full bg-primary text-white rounded-full py-2 font-bold"
               >

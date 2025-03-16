@@ -1,10 +1,9 @@
-"use client"
+"use client";
 import Link from "next/link"
 import Image from "next/image"
 import Images from "@/_util/constants/images"
-import { Tickets, Store, Heart, User } from 'react-icons/io5'
+import { Tickets, Store, Heart, User } from 'lucide-react'
 export default function UserAccount() {
-          
   const data = [
     { name: 'My List', icon: <Heart strokeWidth={1} className="text-secondary" size={25}/>, url: "my_list"},
     { name: 'Following', icon: <User strokeWidth={1} size={25}/>, url: "following"},
@@ -12,7 +11,7 @@ export default function UserAccount() {
     { name: 'Coupon', icon: <Tickets strokeWidth={1} size={25}/>, url: "coupons"},
   ];
   return (
-    <section className="flex flex-col gap-4 max-md:gap-2">
+    <section className="flex flex-col gap-2">
       <div className="w-full bg-white rounded-xl h-fit py-2 px-4">
         <p className="font-semibold text-xl text-dark">User</p>
       </div>
@@ -21,10 +20,12 @@ export default function UserAccount() {
           <Image
             src={Images.avatar}
             alt="avatar"
+            width={100}
+            height={100}
             className="w-12 h-12 rounded-full"
           />
           <p className="font-semibold text-lg text-dim">
-            Oyetade Kehinde
+          okennyd
           </p>
         </div>
         <ul className="flex justify-evenly">

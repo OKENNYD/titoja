@@ -1,44 +1,25 @@
 "use client"
-import { useState } from 'react'
-import { Clipboard } from 'lucide-react'
+import Order from '@/components/Card/Order';
 export default function Orders() {
-  let [allOrders, setAllOrders] = useState("");
   return (
-    <section className="flex flex-col gap-4 max-md:gap-2">
-        <p className="font-semibold text-xl text-dim">
-          Orders
-        </p>
-      <div className=" w-full bg-white h-auto rounded-2xl px-4 ml-4 py-4">
-        <form className="w-2/5 max-md:w-full flex overflow-hidden rounded-full my-2">
-          <input
-            className="w-full h-8 px-3 caret-secondary bg-slate-100 rounded-l-full outline-secondary"
-            type="text"
-            name="order_tracking_id"
-            placeholder="Order ID, Product or Store Name "
-          />
-          <button
-            className="bg-primary text-white font-semibold text-base px-2"
-            type="submit"
-          >
-            Search
-          </button>{" "}
-        </form>
-        <ul className="flex gap-4 font-semibold text-sm text-primary px-2">
-          <li>View All</li>
-          <li>To Pay</li>
-          <li>To Ship</li>
-          <li>Shipped</li>
-          <li>Processed</li>
-        </ul>
-        <hr className=" my-2" />
-        {allOrders ? (
-          <div className="">yes</div>
-        ) : (
-          <div className="w-full h-64 flex flex-col justify-center items-center text-dim">
-            <Clipboard strokeWidth={1} className="text-4xl" />
-            <p>You have not made any order</p>
+    <section className="flex flex-col gap-2">
+      <div className="w-full bg-white rounded-2xl h-fit py-2 px-4">
+        <p className="font-semibold text-xl text-dark">Orders</p>
+      </div>
+      <div className=" w-full h-auto">
+        <section className='flex gap-2'>
+          <div className="w-1/2 h-auto">
+            <Order status={1} />
           </div>
-        )}
+          <div className="w-1/2 h-auto rounded-xl bg-white p-2">
+            <div className="w-full h-auto aspect-square rounded-lg bg-gray-100">
+            </div>
+            <div className="w-full flex gap-2 mt-2">
+              <button name='return' className="w-1/2 rounded-full bg-secondary text-white text-base py-1.5">Return order</button>
+              <button name='cancel' className="w-1/2 rounded-full bg-gray-200 text-gray-400 text-base py-1.5">Cancel order</button>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

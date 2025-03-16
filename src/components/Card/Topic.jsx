@@ -9,7 +9,7 @@ export default function Faq() {
         </div>
       </summary>
       <div className="px-3 pb-2">
-        <p className="text-dim text-lg z-20">
+        <p className="text-dim text-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque! Voluptatem, officia adipisci iure optio voluptates rerum asperiores dignissimos incidunt expedita, praesentium cumque aliquid perferendis beatae sequi, itaque quisquam at!
         </p>
       </div>

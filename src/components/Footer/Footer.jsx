@@ -1,94 +1,120 @@
 import Link from "next/link";
-import { foot, card, socialHandle, service } from "@/_util/api/foot"
 import Applestore from "../Icon/Appstore";
 import Playstore from "../Icon/Playstore";
+import {footer} from "@/app/_utils/api/footer" ;
+import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bg-white border-t-2 border-gray-100">
-      <ul className=" w-full h-auto bg-white py-4 px-4 bg-opacity flex justify-center items-center gap-6 max-md:gap-2">
-        {service.map((_s, i) => (
-          <li
-            key={i}
-            className="flex items-center gap-3 text-primary text-opacity-80 dark:text-secondary"
-          >
-            {_s.icon}
-            <div className="font-normal text-dim">
-              <h3 className="font-semibold">{_s.title}</h3>
-              <p className="text-xs">{_s.text}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <hr />
-      <div className="w-auto h-auto py-6 px-16 max-md:px-4 flex max-md:flex-col gap-2">
-        <div className=" w-7/12 max-md:w-full max-md:grid max-md:grid-cols-2 flex justify-evenly">
-          {foot.map((_n, i) => (
-            <div
-              key={i}
-              className="customer_service w-auto max-md:text-lg text-sm"
-            >
-              <h4 className="font-bold text-dark">{_n.title}</h4>
-              <ul className="text-base text-dim">
-                {_n.navs.map((_n, index) => (
-                  <li key={index} className="hover:text-secondary">
-                    <Link href={_n.href}>{_n.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className=" w-5/12 max-md:w-full max-md:flex-col gap-4 flex justify-evenly">
-          <div className="payment w-auto">
-            <h4 className=" font-bold max-md:text-base text-sm text-slate-800 pb-1">
-              {card.title}
+    <footer className="bg-dim px-14 max-md:p-2 py-4 ">
+        <div className="py-4 max-md:py-0 max-md:px-2 w-full max-md:flex-wrap justify-around flex">
+          {footer?.map((_,i)=>(
+            <div key={i} className="payment w-auto">
+            <h4 className=" font-bold text-base text-nowrap text-white">
+              {_.title}
             </h4>
-            <ul className=" max-md:w-full w-36 flex gap-1 max-md:gap-1 flex-wrap text-dim">
-              {card.cards.map((_p, j) => (
-                <li key={j} className="hover:opacity-80">
-                  {_p.icon}
+            <ul className=" text-gray-400">
+              {_.list?.map((_l,i)=>( 
+                    <li key={i}>
+                  <Link className="hover:text-white text-nowrap" href={_l.url}>
+                    {_l.name}
+                  </Link>
                 </li>
-              ))}
+            ))}
             </ul>
           </div>
-          <div className="newsletter w-full">
-            <h4 className=" font-bold text-sm text-dim max-md:text-lg pb-1">
-              {socialHandle.title}
+          ))}
+        </div>
+        <div className="flex max-md:flex-col md:justify-around md:items-center ">
+          <div className="payment w-auto">
+            <h4 className=" font-bold text-base text-white">
+              Pay with
+            </h4>
+            <ul className="max-md:w-full w-auto flex gap-1 max-md:gap-1 flex-wrap text-dim">
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card1.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card2.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card3.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card4.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card5.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card6.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card7.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card8.webp" width={50} height={30}  alt=""/>
+                </li>
+                <li className="hover:opacity-80">
+                  <Image src="/assets/img/card9.webp" width={50} height={30}  alt=""/>
+                </li>
+            </ul>
+          </div>
+           <div className="max-md:mt-2">
+            <h4 className=" font-bold text-base text-white">
+              Connect with us on
             </h4>
             <div className="">
-              <ul className="social flex max-md:gap-3 gap-2 pt-2">
-                {socialHandle.icons.map((_s, k) => (
-                  <li key={k}>
-                    <a className=" text-dim hover:text-gray-400" href={_s.href}>
-                      {_s.Icon}
+              <ul className="max-md:w-full w-auto flex gap-3 max-md:gap-2 flex-wrap text-dim">
+                  <li>
+                    <a href="https://whatsapp.com/titoja">
+                    <Image src="/assets/img/whatsapp.svg" alt="" width={30} height={30}/>
                     </a>
                   </li>
-                ))}
+                  <li>
+                    <a href="https://facebook.com/titoja">
+                    <Image src="/assets/img/facebook.svg" alt="" width={30} height={30}/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://instagram.com/titoja">
+                    <Image src="/assets/img/instagram.svg" alt="" width={30} height={30}/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://wechat.com/titoja">
+                    <Image src="/assets/img/wechat.svg" alt="" width={30} height={30}/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/titoja">
+                    <Image src="/assets/img/x.svg" alt="" width={30} height={30}/>
+                    </a>
+                  </li>
               </ul>
             </div>
-            <div className="customer_service w-full gap-2 justify-start flex text-sm">
+          </div>
           <ul className="flex gap-2 font-semibold pt-6">
-            <li className="w-auto h-auto flex items-center gap-2 p-1">
+            <li className="w-auto h-auto flex items-center gap-2">
               <Playstore/>
               <div className="">
                 <p className="inline-grid">
-                  <span className="text-xs text-dark">
-                    GET IT ON
+                  <span className="text-xs text-white">
+                    Get it on
                   </span>
-                  <span className="text-lg text-dim font-bold relative -top-2">
+                  <span className="text-lg text-gray-200 font-semibold -mt-1.5">
                     Play Store
                   </span>
                 </p>
               </div>
             </li>
-            <li className="w-auto h-auto flex items-center gap-2 p-1">
+            <li className="w-auto h-auto flex items-center gap-2">
              <Applestore/>
               <div className="">
                 <p className="inline-grid">
-                  <span className="text-xs text-dark">
-                    DOWNLOAD ON
+                  <span className="text-xs text-white">
+                    Download on the
                   </span>
-                  <span className="text-lg text-dim font-bold relative -top-2">
+                  <span className="text-lg text-gray-200 font-semibold -mt-1.5">
                     App Store
                   </span>
                 </p>
@@ -96,11 +122,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-full max-md:flex-col-reverse gap-4 max-md:gap-2 max-md:justify-start h-auto text-white font-normal text-lg flex justify-center items-center py-2 px-16 max-md:px-4 bg-gray-200">
-        <ul className=" inline-flex text-sm gap-2 flex-wrap text-dim">
+        <ul className="w-full flex text-base gap-2 text-gray-400 py-4 max-md:flex-wrap">
           <li className="hover:text-primary text-nowrap">
             <a href="../legal/terms%20&%20conditions.md">
               Terms and Conditions
@@ -112,13 +134,12 @@ export default function Footer() {
           <li className="text-nowrap">
             &copy;2024 Titoja. All rights reserved.
           </li>
-          <li className="text-nowrap">
+          <li className="text-nowrap text-white">
             <b>
               Powered by Fixxage.
             </b>
           </li>
         </ul>
-      </div>
     </footer>
   );
 }

@@ -14,14 +14,17 @@ export default function Announcement({ message }) {
     setDate()
   }, []);
   return (
-    <div className="w-full rounded-full h-10 bg-white overflow-hidden px-4 flex flex-nowrap items-center gap-4">
+    <div className="w-full rounded-full h-10 bg-white overflow-hidden px-2 max-md:px-1 flex flex-nowrap items-center gap-2">
       <Megaphone
-        strokeWidth={2}
-        className="text-secondary animate-pulse text-3xl"
+        strokeWidth={1}
+        size={25}
+        className="text-primary animate-pulse rotate-[340deg] "
       />
-      <span className="text-lg text-nowrap pe-4 text-dim opacity-60 ease-out overflow-x-hidden announceAnimate">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsa dolorum, quas tempore dicta a quisquam voluptatum aliquid labore reiciendis? Ad minus velit voluptate accusamus nemo esse repellendus rerum eius?
-      </span>
+      <div className="w-full h-auto py-2 overflow-hidden">
+        <span className="w-full text-lg text-nowrap text-secondary ease-out announceAnimate">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsa dolorum, quas tempore dicta a quisquam voluptatum aliquid labore reiciendis? Ad minus velit voluptate accusamus nemo esse repellendus rerum eius?
+        </span>
+      </div>
     </div>
   );
 }

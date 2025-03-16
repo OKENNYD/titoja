@@ -1,33 +1,12 @@
 export default function Cart() {
   return (
-    <svg className="w-8 max-md:w-9" viewBox="0 0 35 25.19">
-      <g>
-        <g>
-          <path
-            className=" fill-dark"
-            d="m9.26,20.19c-1.38,0-2.49,1.13-2.49,2.5s1.11,2.49,2.49,2.49,2.5-1.11,2.5-2.49-1.12-2.5-2.5-2.5Z"
-          />
-          <path
-            className=" fill-dark"
-            d="m20.66,20.19c-1.38,0-2.5,1.12-2.5,2.5s1.12,2.49,2.5,2.49,2.49-1.11,2.49-2.49-1.1-2.5-2.49-2.5Z"
-          />
-          <path
-            className=" fill-dark"
-            d="m25.22,5.42C8.69,5.42,4.48,4.72,0,0c1.88,2.83,2.91,8.14,20.4,7.89,18.23-.27,7.11,4.71,3.87,10.33,10.21-9.12,17.47-12.79.94-12.79Z"
-          />
-        </g>
-        <text
-          className="font-medium fill-dark text-sm"
-          transform="translate(7.34 19.12)"
-        >
-          <tspan x="0" y="0">
-            1
-          </tspan>
-          <tspan x="8.07" y="0">
-            0
-          </tspan>
-        </text>
-      </g>
+    <div className="relative">
+      <svg className="w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 683.24 650">
+  <path className="shield" d="m208.3,525c27.6,0,50,22.4,50,50s-22.4,50-50,50-50-22.4-50-50,22.4-50,50-50Z"/>
+  <path className="shield" d="m508.3,525c27.6,0,50,22.4,50,50s-22.4,50-50,50-50-22.4-50-50,22.4-50,50-50Z"/>
+  <path className="shield linecap" d="m25,25l8.7,3.1c43.4,15.3,65.1,22.9,77.5,41,12.4,18.2,12.4,42.3,12.4,90.5v90.7c0,98.1,2.1,130.4,31,160.9,28.9,30.5,75.4,30.5,168.3,30.5h35.4m141.3,0c52,0,78,0,96.4-15s23.6-40.5,34.1-91.4l16.7-80.8c11.6-58,17.4-87,2.6-106.2-14.7-19.3-65.3-19.3-121.5-19.3h-202.1m-202.2,0h68.1"/>
     </svg>
+    <span className="absolute right-0 text-[10px] p-0.5 rounded-full text-white bg-secondary top-0">10</span>
+    </div>
   );
 }

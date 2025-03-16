@@ -1,16 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from "next/image";
 
-export default function Carousel({ interval = 10000 }) {
+export default function Carousel({ interval = 8000 }) {
   const [count, setCount] = useState(0);
   const slides = [
-    { id: 0, title: "Slide Topic 1", src: "/asserts/img/banner1.png" },
-    { id: 1, title: "Slide Topic 2", src: "/asserts/img/banner2.png" },
-    { id: 2, title: "Slide Topic 3", src: "/asserts/img/banner3.png" },
-    { id: 3, title: "Slide Topic 4", src: "url" },
-    { id: 4, title: "Slide Topic 5", src: "url" },
-    { id: 5, title: "Slide Topic 6", src: "url" },
+    { id: 0, title: "Slide Topic 1", src: "/assets/img/banner1.webp" },
+    { id: 1, title: "Slide Topic 2", src: "/assets/img/banner2.webp" },
+    { id: 2, title: "Slide Topic 3", src: "/assets/img/banner3.webp" },
+    { id: 3, title: "Slide Topic 4", src: "/assets/img/banner4.webp" }
   ];
 
   useEffect(() => {
@@ -29,28 +28,29 @@ export default function Carousel({ interval = 10000 }) {
   const currentSlide = slides[count];
 
   return (
-    <div className="w-full h-auto relative rounded-2xl bg-white">
+    <div className="w-full h-auto aspect-[21/4] max-md:aspect-[21/9] relative rounded-2xl">
       <div className="slides w-full object-cover flex rounded-2xl overflow-hidden h-full">
-        <div className="w-full h-full flex justify-center items-center text-white text-3xl font-extrabold bg-secondary object-cover">
+        <Image alt="" src={currentSlide.src} className="w-full h-full object-cover aspect-[21/4]" width={100} height={100}/>
+        {/* <div >
           <p>{currentSlide.title}</p>
-        </div>
+        </div> */}
       </div>
       <div className="controls w-full h-full absolute top-0 left-0">
-        <div className="w-full h-[90%] px-2 flex justify-between items-center">
+        <div className="w-full h-[90%] px-2 max-md:px-0 max-md:text-white flex justify-between items-center">
           <span
-            className="w-auto h-auto rounded-full p-2 text-4xl text-primary cursor-pointer"
+            className="w-auto h-auto rounded-full p-2 text-4xl text-secondary cursor-pointer"
             onClick={handleLeftClick}
           >
-            <ChevronLeft strokeWidth={1} />
+            <ChevronLeft strokeWidth={2} size={35}/>
           </span>
           <span
-            className="w-auto h-auto rounded-full p-2 text-4xl text-primary cursor-pointer"
+            className="w-auto h-auto rounded-full p-2 text-4xl text-secondary cursor-pointer"
             onClick={handleRightClick}
           >
-            <ChevronRight strokeWidth={1} />
+            <ChevronRight strokeWidth={2} size={35}/>
           </span>
         </div>
-        <div className="w-full h-auto p-2 flex gap-2 items-center justify-center">
+        <div className="w-full h-auto p-2 max-md:p-0 flex gap-2 items-center justify-center">
           {slides.map((slide, j) => (
             <span
               key={j}

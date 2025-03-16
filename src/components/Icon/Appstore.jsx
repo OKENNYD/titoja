@@ -15,8 +15,8 @@ export default function Applestore() {
         y2="40.096"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#33bef0"></stop>
-        <stop offset="1" stop-color="#0a85d9"></stop>
+        <stop offset="0" stopColor="#33bef0"></stop>
+        <stop offset="1" stopColor="#0a85d9"></stop>
       </linearGradient>
       <path
         fill="url(#OpwYZ9nhL01h2sErtedzua_4PbFeZOKAc61_gr1)"
