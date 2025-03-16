@@ -24,21 +24,21 @@ export default async function sitemap() {
             };
         });
 
-        const departmentResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/departments`);
-        if (!departmentResponse.ok) throw new Error('Failed to fetch departments');
-        const departments = await departmentResponse.json();
-        const departmentEntries = departments.flatMap(_d => {
-            return _d.categories.flatMap(_c => {
-                return _c.segments.map(_s => {
-                    return {
-                        url: `${process.env.NEXT_PUBLIC_BASE_URL}/${_d.department}/${_c.name}/${_s}`,
-                        lastModified: new Date(),
-                        changeFrequency: 'yearly',
-                        priority: 1,
-                    };
-                });
-            });
-        });
+        // const departmentResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/departments`);
+        // if (!departmentResponse.ok) throw new Error('Failed to fetch departments');
+        // const departments = await departmentResponse.json();
+        // const departmentEntries = departments.flatMap(_d => {
+        //     return _d.categories.flatMap(_c => {
+        //         return _c.segments.map(_s => {
+        //             return {
+        //                 url: `${process.env.NEXT_PUBLIC_BASE_URL}/${_d.department}/${_c.name}/${_s}`,
+        //                 lastModified: new Date(),
+        //                 changeFrequency: 'yearly',
+        //                 priority: 1,
+        //             };
+        //         });
+        //     });
+        // });
 
         return [
             {
@@ -49,7 +49,7 @@ export default async function sitemap() {
             },
             ...productEntries,
             ...auctionEntries,
-            ...departmentEntries
+            // ...departmentEntries
         ];
     } catch (error) {
         console.error('Error generating sitemap:', error);

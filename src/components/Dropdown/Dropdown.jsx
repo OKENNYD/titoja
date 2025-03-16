@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { signOut } from "next-auth/react"
 import { useGlobalContext } from "@/_util/constants/context";
-import { LogOut, Bolt, User, Boxes } from "lucide-react"
+import { LogOut, Bolt, User, Boxes, User2, Users, Ticket } from "lucide-react"
 export default function Dropdown() {
   const { isDropDown, setIsDropDown,  } = useGlobalContext();
   return (
@@ -26,7 +26,7 @@ export default function Dropdown() {
             className=" w-full p-2 text-base hover:bg-gray-100 text-dim flex rounded-md items-center gap-1"
             href="/account/following"
           >
-            <User strokeWidth={1} size={16} />
+            <Users strokeWidth={1} size={16} />
             Following
           </Link>
         </li>
@@ -35,7 +35,7 @@ export default function Dropdown() {
             className=" w-full p-2 text-base hover:bg-gray-100 text-dim flex rounded-md items-center gap-1"
             href="/account/coupon"
           >
-            <User strokeWidth={1} size={16} />
+            <Ticket strokeWidth={1} size={16} />
             Coupon
           </Link>
         </li>

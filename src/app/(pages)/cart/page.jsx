@@ -38,7 +38,7 @@ export default function Cart() {
         <ChevronRight strokeWidth={2} className="text-secondary hover:bg-opacity-70 hover:bg-secondary hover:text-white rounded-full"/>
       </div>
         </div>
-        <div className="flex w-[40%] gap-4 max-md:gap-0 max-md:w-full max-md:p-0 mt-2 max-md:mt-0 flex-col">
+        <div className="flex w-[40%] gap-4 max-md:gap-2 max-md:w-full max-md:p-0 mt-2 max-md:mt-0 flex-col">
           <div className="summary w-full bg-white rounded-xl h-auto py-2 pb-5 px-5 max-md:px-2">
             <h1 className=" font-bold text-lg max-md:text-base max-md:font-extrabold text-dark">
               Summary
